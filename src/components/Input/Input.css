@@ -1,0 +1,175 @@
+/* ============================================================
+   MinimalDS — Input
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Wrapper --- */
+
+.mds-input {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);   /* 8px */
+  width:          320px;
+  font-family:    var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Label --- */
+
+.mds-input__label {
+  display:     block;
+  font-size:   var(--font-size-body);          /* 14px */
+  font-weight: var(--font-weight-strong);      /* 700 */
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+.mds-input--disabled .mds-input__label {
+  color: var(--color-text-disabled);
+}
+
+/* --- Field container --- */
+
+.mds-input__field {
+  display:          flex;
+  flex-direction:   row;
+  align-items:      center;
+  gap:              var(--space-component-md);  /* 12px */
+  width:            100%;
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-interactive-default-base);
+  border-radius:    var(--radius-input);
+  box-sizing:       border-box;
+  transition:       border-color 0.15s ease, border-width 0.15s ease;
+  overflow:         hidden;
+}
+
+/* --- Default size field --- */
+
+.mds-input--default .mds-input__field {
+  height:  48px;
+  padding: 0 var(--space-component-lg);        /* 0 16px */
+}
+
+/* --- Large size field (textarea) --- */
+
+.mds-input--large .mds-input__field {
+  height:  120px;
+  padding: 15.5px var(--space-component-lg);   /* 15.5px 16px */
+  align-items: flex-start;
+}
+
+/* --- State: hover --- */
+
+.mds-input--base .mds-input__field:hover {
+  border-color: var(--color-interactive-brand-hover);
+}
+
+/* --- State: active (focus) --- */
+
+.mds-input__field:focus-within {
+  border-color: var(--color-interactive-brand-active);
+  border-width:  var(--border-strong);          /* 2px */
+}
+
+/* --- State: error --- */
+
+.mds-input--error .mds-input__field {
+  border-color: var(--color-interactive-danger-base);
+  border-width:  var(--border-strong);          /* 2px */
+}
+
+/* --- State: disabled --- */
+
+.mds-input--disabled .mds-input__field {
+  border-color: var(--color-interactive-default-disabled);
+  cursor:       not-allowed;
+}
+
+/* --- Leading icon --- */
+
+.mds-input__leading-icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-icon-subtle);
+  width:       16px;
+  height:      16px;
+}
+
+/* --- Prefix --- */
+
+.mds-input__prefix {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+/* --- Input control --- */
+
+.mds-input__control {
+  flex:        1;
+  min-width:   0;
+  border:      none;
+  outline:     none;
+  background:  transparent;
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);          /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  padding:     0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-input__control::placeholder {
+  color: var(--color-text-muted);
+}
+
+.mds-input__control:disabled {
+  color:  var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* --- Textarea specific --- */
+
+.mds-input__control--textarea {
+  resize:     vertical;
+  height:     100%;
+  min-height: 88px;
+}
+
+/* --- Helper text --- */
+
+.mds-input__helper {
+  display:     block;
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+/* --- Error text --- */
+
+.mds-input__error {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-component-xs);      /* 4px */
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-danger);
+  line-height: 1.5;
+}
+
+.mds-input__error-icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-text-danger);
+  width:       16px;
+  height:      16px;
+}
