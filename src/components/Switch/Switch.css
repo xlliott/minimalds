@@ -1,0 +1,144 @@
+/* ============================================================
+   MinimalDS — Switch
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Wrapper --- */
+
+.mds-switch {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-component-sm);    /* 8px */
+  cursor:      pointer;
+  font-family: var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-switch--disabled {
+  cursor: not-allowed;
+}
+
+/* --- Hide native input --- */
+
+.mds-switch__input {
+  position: absolute;
+  opacity:  0;
+  width:    0;
+  height:   0;
+  margin:   0;
+  padding:  0;
+}
+
+/* --- Track --- */
+
+.mds-switch__track {
+  position:         relative;
+  display:          flex;
+  align-items:      center;
+  width:            40px;
+  height:           24px;
+  padding:          var(--space-component-xs);   /* 4px */
+  background-color: var(--color-interactive-pale-base);
+  border:           var(--border-default) solid var(--color-interactive-default-base);
+  border-radius:    var(--radius-full);
+  transition:       background-color 0.2s ease, border-color 0.2s ease;
+  box-sizing:       border-box;
+  flex-shrink:      0;
+}
+
+/* --- Hover unchecked --- */
+
+.mds-switch--base:hover .mds-switch__track {
+  background-color: var(--color-interactive-pale-hover);
+  border-color:     var(--color-interactive-default-hover);
+}
+
+/* --- Disabled unchecked --- */
+
+.mds-switch--disabled .mds-switch__track {
+  border-color: var(--color-interactive-default-disabled);
+}
+
+/* --- Checked --- */
+
+.mds-switch--checked .mds-switch__track {
+  background-color: var(--color-interactive-brand-base);
+  border-color:     transparent;
+}
+
+/* --- Checked hover --- */
+
+.mds-switch--checked.mds-switch--base:hover .mds-switch__track {
+  background-color: var(--color-interactive-brand-hover);
+}
+
+/* --- Checked disabled --- */
+
+.mds-switch--checked.mds-switch--disabled .mds-switch__track {
+  background-color: var(--color-interactive-brand-disabled);
+  border-color:     transparent;
+}
+
+/* --- Thumb --- */
+
+.mds-switch__thumb {
+  position:         absolute;
+  left:             var(--space-component-xs);   /* 4px from left */
+  width:            16px;
+  height:           16px;
+  background-color: var(--color-interactive-default-base);
+  border-radius:    var(--radius-full);
+  transition:       transform 0.2s ease, background-color 0.2s ease;
+  flex-shrink:      0;
+}
+
+/* --- Thumb hover unchecked --- */
+
+.mds-switch--base:hover .mds-switch__thumb {
+  background-color: var(--color-interactive-default-hover);
+}
+
+/* --- Thumb disabled unchecked --- */
+
+.mds-switch--disabled .mds-switch__thumb {
+  background-color: var(--color-interactive-default-disabled);
+}
+
+/* --- Thumb checked — slides to right --- */
+
+.mds-switch--checked .mds-switch__thumb {
+  transform:        translateX(16px);              /* 40 - 4 - 4 - 16 = 16px travel */
+  background-color: var(--color-interactive-pale-base);
+}
+
+/* --- Thumb checked hover --- */
+
+.mds-switch--checked.mds-switch--base:hover .mds-switch__thumb {
+  background-color: var(--color-interactive-pale-hover);
+}
+
+/* --- Thumb checked disabled --- */
+
+.mds-switch--checked.mds-switch--disabled .mds-switch__thumb {
+  background-color: var(--color-interactive-pale-disabled);
+}
+
+/* --- Optional label --- */
+
+.mds-switch__label {
+  font-size:   var(--font-size-body);          /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+.mds-switch--disabled .mds-switch__label {
+  color: var(--color-text-disabled);
+}
+
+/* --- Focus ring --- */
+
+.mds-switch__input:focus-visible ~ .mds-switch__track {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
