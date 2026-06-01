@@ -1,0 +1,171 @@
+/* ============================================================
+   MinimalDS — Alert
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-alert {
+  display:        flex;
+  flex-direction: row;
+  align-items:    flex-start;
+  gap:            var(--space-component-md);   /* 12px */
+  border:         var(--border-default) solid;
+  border-radius:  var(--radius-none);
+  font-family:    var(--font-family-global);
+  width:          100%;
+  box-sizing:     border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Sizes --- */
+
+.mds-alert--default {
+  padding: var(--space-component-md); /* 12px */
+}
+
+.mds-alert--large {
+  padding: var(--space-component-xl); /* 20px */
+}
+
+/* --- Roles --- */
+
+.mds-alert--success {
+  background-color: var(--color-surface-positive);
+  border-color:     var(--color-border-positive);
+  color:            var(--color-text-positive);
+}
+
+.mds-alert--warning {
+  background-color: var(--color-surface-warning);
+  border-color:     var(--color-border-warning);
+  color:            var(--color-text-warning);
+}
+
+.mds-alert--danger {
+  background-color: var(--color-surface-danger);
+  border-color:     var(--color-border-danger);
+  color:            var(--color-text-danger);
+}
+
+.mds-alert--info {
+  background-color: var(--color-surface-info);
+  border-color:     var(--color-border-info);
+  color:            var(--color-text-info);
+}
+
+/* --- Icon --- */
+
+.mds-alert__icon {
+  display:     flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  padding-top: 2px;
+  width:       16px;
+  height:      16px;
+  color:       inherit;
+}
+
+/* --- Content --- */
+
+.mds-alert__content {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-lg);  /* 16px */
+  flex:           1;
+  min-width:      0;
+}
+
+/* --- Text block --- */
+
+.mds-alert__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-xs);  /* 4px */
+}
+
+/* --- Title --- */
+
+.mds-alert__title {
+  display:     block;
+  font-size:   var(--font-size-body);         /* 14px */
+  font-weight: var(--font-weight-strong);     /* 700 */
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+/* --- Description --- */
+
+.mds-alert__description {
+  display:     block;
+  font-size:   var(--font-size-body);         /* 14px */
+  font-weight: var(--font-weight-regular);    /* 400 */
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+/* --- Action button --- */
+
+.mds-alert__action {
+  display:          inline-flex;
+  align-items:      center;
+  justify-content:  center;
+  height:           32px;
+  padding:          0 var(--space-component-xl);   /* 0 20px */
+  background-color: var(--color-interactive-ghost-base);
+  border:           var(--border-default) solid var(--color-interactive-default-base);
+  border-radius:    var(--radius-button);
+  font-family:      var(--font-family-global);
+  font-size:        var(--font-size-body);
+  font-weight:      var(--font-weight-strong);
+  color:            var(--color-text-default);
+  cursor:           pointer;
+  transition:       background-color 0.15s ease;
+  align-self:       flex-start;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-alert__action:hover {
+  background-color: var(--color-interactive-ghost-hover);
+}
+
+.mds-alert__action:active {
+  background-color: var(--color-interactive-ghost-active);
+}
+
+.mds-alert__action:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --- Dismiss button --- */
+
+.mds-alert__dismiss {
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  flex-shrink:      0;
+  width:            24px;
+  height:           24px;
+  padding:          0;
+  background-color: transparent;
+  border:           none;
+  color:            var(--color-text-default);
+  cursor:           pointer;
+  border-radius:    var(--radius-none);
+  transition:       background-color 0.15s ease;
+  margin-left:      auto;
+}
+
+.mds-alert__dismiss:hover {
+  background-color: var(--color-interactive-ghost-hover);
+}
+
+.mds-alert__dismiss:active {
+  background-color: var(--color-interactive-ghost-active);
+}
+
+.mds-alert__dismiss:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
