@@ -1,0 +1,83 @@
+/* ============================================================
+   MinimalDS — Radio Group
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-radio-group {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-md);   /* 12px */
+  border:         none;
+  padding:        0;
+  margin:         0;
+  font-family:    var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Group label --- */
+
+.mds-radio-group__label {
+  display:     block;
+  font-size:   var(--font-size-body);          /* 14px */
+  font-weight: var(--font-weight-strong);      /* 700 */
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  padding:     0;
+  margin:      0;
+}
+
+.mds-radio-group--disabled .mds-radio-group__label {
+  color: var(--color-text-disabled);
+}
+
+/* --- Radios container --- */
+
+.mds-radio-group__radios--vertical {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);   /* 8px */
+}
+
+.mds-radio-group__radios--horizontal {
+  display:        flex;
+  flex-direction: row;
+  flex-wrap:      wrap;
+  gap:            var(--space-component-2xl);  /* 24px */
+}
+
+/* --- Helper text --- */
+
+.mds-radio-group__helper {
+  display:     block;
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+.mds-radio-group--disabled .mds-radio-group__helper {
+  color: var(--color-text-disabled);
+}
+
+/* --- Error text --- */
+
+.mds-radio-group__error {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-component-xs);      /* 4px */
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-danger);
+  line-height: 1.5;
+}
+
+.mds-radio-group__error-icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-text-danger);
+  width:       16px;
+  height:      16px;
+}
