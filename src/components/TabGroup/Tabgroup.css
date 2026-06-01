@@ -1,0 +1,13 @@
+/* ============================================================
+   MinimalDS — Tab Group
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+.mds-tab-group {
+  display:        flex;
+  flex-direction: row;
+  align-items:    center;
+  gap:            0;
+  padding:        0;
+  width:          fit-content;
+}
