@@ -1,0 +1,31 @@
+/* ============================================================
+   MinimalDS — Menu
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-menu {
+  display:          flex;
+  flex-direction:   column;
+  width:            300px;
+  background-color: var(--color-interactive-pale-base);
+  border-radius:    var(--radius-none);
+  box-shadow:       0px 8px 12px rgba(0, 0, 0, 0.08);
+  overflow:         hidden;
+}
+
+/* --- Item wrapper --- */
+
+.mds-menu__item-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Divider between items --- */
+
+.mds-menu__divider {
+  height:           1px;
+  background-color: var(--color-surface-subtle);
+  flex-shrink:      0;
+}
