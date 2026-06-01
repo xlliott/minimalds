@@ -1,0 +1,157 @@
+/* ============================================================
+   MinimalDS — Radio
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base wrapper --- */
+
+.mds-radio {
+  display:     inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap:         var(--space-component-sm);    /* 8px */
+  cursor:      pointer;
+  font-family: var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-radio--disabled {
+  cursor: not-allowed;
+}
+
+/* --- Hide native input --- */
+
+.mds-radio__input {
+  position: absolute;
+  opacity:  0;
+  width:    0;
+  height:   0;
+  margin:   0;
+  padding:  0;
+}
+
+/* --- Control wrapper (aligns control to first line of text) --- */
+
+.mds-radio__control-wrapper {
+  position:    relative;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* --- Control circle --- */
+
+.mds-radio__control {
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  width:            16px;
+  height:           16px;
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-interactive-default-base);
+  border-radius:    var(--radius-full);
+  transition:       border-color 0.15s ease, background-color 0.15s ease;
+  box-sizing:       border-box;
+}
+
+/* --- Hover ring --- */
+
+.mds-radio--base:hover .mds-radio__control {
+  background-color: var(--color-interactive-pale-hover);
+}
+
+/* --- Checked --- */
+
+.mds-radio--checked .mds-radio__control {
+  border-color: var(--color-interactive-brand-base);
+}
+
+.mds-radio--checked:hover .mds-radio__control {
+  border-color: var(--color-interactive-brand-hover);
+}
+
+/* --- Inner dot --- */
+
+.mds-radio__dot {
+  display:          block;
+  width:            6px;
+  height:           6px;
+  border-radius:    var(--radius-full);
+  background-color: var(--color-interactive-brand-base);
+  flex-shrink:      0;
+}
+
+.mds-radio--checked:hover .mds-radio__dot {
+  background-color: var(--color-interactive-brand-hover);
+}
+
+/* --- Disabled --- */
+
+.mds-radio--disabled .mds-radio__control {
+  border-color: var(--color-interactive-default-disabled);
+}
+
+.mds-radio--disabled.mds-radio--checked .mds-radio__control {
+  border-color: var(--color-interactive-brand-disabled);
+}
+
+.mds-radio--disabled .mds-radio__dot {
+  background-color: var(--color-interactive-brand-disabled);
+}
+
+/* --- Error --- */
+
+.mds-radio--error .mds-radio__control {
+  border-color: var(--color-interactive-danger-base);
+}
+
+.mds-radio--error .mds-radio__label {
+  color: var(--color-text-danger);
+}
+
+.mds-radio--error .mds-radio__description {
+  color: var(--color-text-danger);
+}
+
+/* --- Focus ring --- */
+
+.mds-radio__input:focus-visible ~ .mds-radio__control,
+.mds-radio__control-wrapper:focus-within .mds-radio__control {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --- Text block --- */
+
+.mds-radio__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-xs);  /* 4px */
+}
+
+/* --- Label --- */
+
+.mds-radio__label {
+  display:     block;
+  font-size:   var(--font-size-body);         /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+.mds-radio--disabled .mds-radio__label {
+  color: var(--color-text-disabled);
+}
+
+/* --- Description --- */
+
+.mds-radio__description {
+  display:     block;
+  font-size:   var(--font-size-helper);       /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+.mds-radio--disabled .mds-radio__description {
+  color: var(--color-text-disabled);
+}
