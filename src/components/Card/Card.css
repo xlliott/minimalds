@@ -1,0 +1,128 @@
+/* ============================================================
+   MinimalDS — Card
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-card {
+  display:          flex;
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-border-default);
+  border-radius:    var(--radius-card);
+  font-family:      var(--font-family-global);
+  box-sizing:       border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Sizes --- */
+
+.mds-card--default {
+  width: 480px;
+}
+
+.mds-card--small {
+  width: 320px;
+}
+
+/* --- Button position: bottom (default) --- */
+
+.mds-card--bottom {
+  flex-direction: column;
+}
+
+.mds-card--bottom .mds-card__content {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-3xl);   /* 28px */
+  padding:        var(--space-component-3xl);   /* 28px */
+  width:          100%;
+}
+
+/* --- Button position: side --- */
+
+.mds-card--side {
+  flex-direction: row;
+  align-items:    center;
+  gap:            var(--space-component-2xl);   /* 24px */
+  padding:        var(--space-component-3xl);   /* 28px */
+}
+
+.mds-card--side .mds-card__content {
+  display:        flex;
+  flex-direction: row;
+  align-items:    center;
+  gap:            var(--space-component-2xl);   /* 24px */
+  flex:           1;
+  min-width:      0;
+}
+
+.mds-card--side .mds-card__text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* --- Icon --- */
+
+.mds-card__icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-icon-default);
+  width:       24px;
+  height:      24px;
+}
+
+/* --- Text block --- */
+
+.mds-card--bottom .mds-card__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);    /* 8px */
+}
+
+/* --- Title --- */
+
+.mds-card__title {
+  margin:      0;
+  font-size:   var(--font-size-desktop-h4);     /* 18px */
+  font-weight: var(--font-weight-strong);       /* 700 */
+  color:       var(--color-text-default);
+  line-height: 1.2;
+}
+
+/* --- Description --- */
+
+.mds-card__description {
+  margin:      0;
+  font-size:   var(--font-size-body);           /* 14px */
+  font-weight: var(--font-weight-regular);      /* 400 */
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+/* --- Slot --- */
+
+.mds-card__slot {
+  width: 100%;
+}
+
+/* --- Buttons --- */
+
+.mds-card__buttons {
+  display:   flex;
+  flex-direction: row;
+  gap:       var(--space-component-md);         /* 12px */
+  flex-shrink: 0;
+}
+
+/* --- Hover state (card is interactive) --- */
+
+.mds-card:hover {
+  background-color: var(--color-interactive-pale-hover);
+  cursor: pointer;
+}
+
+.mds-card:active {
+  background-color: var(--color-interactive-pale-active);
+}
