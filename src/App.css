@@ -1,0 +1,36 @@
+/* ============================================================
+   MinimalDS — Global Styles
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin:  0;
+  padding: 0;
+  height:  100%;
+}
+
+body {
+  font-family: var(--font-family-global);
+  background-color: var(--color-surface-page);
+  color: var(--color-text-default);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
