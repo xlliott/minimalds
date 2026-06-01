@@ -1,0 +1,73 @@
+/* ============================================================
+   MinimalDS — Link
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-link {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             var(--space-component-sm);   /* 8px */
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-body);       /* 14px */
+  color:           var(--color-interactive-default-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor:          pointer;
+  transition:      color 0.15s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Styles --- */
+
+.mds-link--regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.mds-link--bold {
+  font-weight: var(--font-weight-strong);
+}
+
+/* --- States --- */
+
+.mds-link:hover {
+  color: var(--color-interactive-default-hover);
+}
+
+.mds-link:active {
+  color: var(--color-interactive-default-active);
+}
+
+/* --- Brand variant --- */
+
+.mds-link--brand {
+  color: var(--color-interactive-brand-base);
+}
+
+.mds-link--brand:hover {
+  color: var(--color-interactive-brand-hover);
+}
+
+.mds-link--brand:active {
+  color: var(--color-interactive-brand-active);
+}
+
+/* --- External icon --- */
+
+.mds-link__external-icon {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width:       16px;
+  height:      16px;
+  color:       inherit;
+}
+
+/* --- Focus ring --- */
+
+.mds-link:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+  border-radius:  2px;
+}
