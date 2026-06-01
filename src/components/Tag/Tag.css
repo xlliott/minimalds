@@ -1,0 +1,66 @@
+/* ============================================================
+   MinimalDS — Tag
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-tag {
+  display:        inline-flex;
+  flex-direction: row;
+  align-items:    center;
+  gap:            var(--space-component-sm);   /* 8px */
+  height:         32px;
+  padding:        0 12px;
+  border:         var(--border-default) solid;
+  border-radius:  var(--radius-none);
+  font-family:    var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Roles --- */
+
+.mds-tag--success {
+  background-color: var(--color-surface-positive);
+  border-color:     var(--color-border-positive);
+  color:            var(--color-text-default);
+}
+
+.mds-tag--warning {
+  background-color: var(--color-surface-warning);
+  border-color:     var(--color-border-warning);
+  color:            var(--color-text-default);
+}
+
+.mds-tag--danger {
+  background-color: var(--color-surface-danger);
+  border-color:     var(--color-border-danger);
+  color:            var(--color-text-default);
+}
+
+.mds-tag--info {
+  background-color: var(--color-surface-info);
+  border-color:     var(--color-border-info);
+  color:            var(--color-text-default);
+}
+
+/* --- Icon --- */
+
+.mds-tag__icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  width:       16px;
+  height:      16px;
+  color:       inherit;
+}
+
+/* --- Label --- */
+
+.mds-tag__label {
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-strong);      /* 700 */
+  color:       var(--color-text-default);
+  line-height: 1;
+  white-space: nowrap;
+}
