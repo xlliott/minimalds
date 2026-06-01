@@ -1,0 +1,87 @@
+/* ============================================================
+   MinimalDS — About Page
+   ============================================================ */
+
+.mds-page-about {
+  max-width: 720px;
+}
+
+.mds-page-about__title {
+  font-family:    var(--font-family-heading);
+  font-size:      var(--font-size-desktop-h1);
+  font-weight:    var(--font-weight-strong);
+  color:          var(--color-text-default);
+  line-height:    1.2;
+  margin:         0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-about__subtitle {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-sm);
+}
+
+.mds-page-about__body {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-component-lg);
+}
+
+.mds-page-about__body:last-of-type {
+  margin-bottom: var(--space-layout-2xl);
+}
+
+/* --- Cards --- */
+
+.mds-page-about__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-layout-sm);
+}
+
+.mds-page-about__card {
+  padding:          var(--space-layout-md);
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-border-default);
+  border-radius:    var(--radius-card);
+}
+
+.mds-page-about__card-title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-component-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-about__card-body {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-xs);
+}
+
+.mds-page-about__card-link {
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-body);
+  font-weight:     var(--font-weight-regular);
+  color:           var(--color-interactive-default-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition:      color 0.15s ease;
+}
+
+.mds-page-about__card-link:hover {
+  color: var(--color-interactive-default-hover);
+}
