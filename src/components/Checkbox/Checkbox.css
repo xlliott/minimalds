@@ -1,0 +1,140 @@
+/* ============================================================
+   MinimalDS — Checkbox
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base wrapper --- */
+
+.mds-checkbox {
+  display:     inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap:         var(--space-component-sm);    /* 8px */
+  cursor:      pointer;
+  font-family: var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-checkbox--disabled {
+  cursor: not-allowed;
+}
+
+/* --- Hide native input --- */
+
+.mds-checkbox__input {
+  position: absolute;
+  opacity:  0;
+  width:    0;
+  height:   0;
+  margin:   0;
+  padding:  0;
+}
+
+/* --- Control wrapper (aligns control to first line of text) --- */
+
+.mds-checkbox__control-wrapper {
+  position:    relative;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* --- Control box --- */
+
+.mds-checkbox__control {
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  width:            16px;
+  height:           16px;
+  background-color: var(--color-interactive-pale-base);
+  border:           var(--border-default) solid var(--color-interactive-default-base);
+  border-radius:    var(--radius-none);
+  transition:       background-color 0.15s ease, border-color 0.15s ease;
+  box-sizing:       border-box;
+}
+
+/* --- Hover --- */
+
+.mds-checkbox--base:not(.mds-checkbox--checked):hover .mds-checkbox__control {
+  background-color: var(--color-interactive-pale-hover);
+}
+
+.mds-checkbox--base.mds-checkbox--checked:hover .mds-checkbox__control {
+  background-color: var(--color-interactive-brand-hover);
+}
+
+/* --- Checked --- */
+
+.mds-checkbox--checked .mds-checkbox__control {
+  background-color: var(--color-interactive-brand-base);
+  border-color:     transparent;
+}
+
+/* --- Disabled --- */
+
+.mds-checkbox--disabled .mds-checkbox__control {
+  border-color: var(--color-interactive-default-disabled);
+}
+
+.mds-checkbox--disabled.mds-checkbox--checked .mds-checkbox__control {
+  background-color: var(--color-interactive-brand-disabled);
+  border-color:     transparent;
+}
+
+/* --- Error --- */
+
+.mds-checkbox--error .mds-checkbox__control {
+  border-color: var(--color-interactive-danger-base);
+}
+
+/* --- Focus ring --- */
+
+.mds-checkbox__input:focus-visible + .mds-checkbox__control,
+.mds-checkbox__control-wrapper:focus-within .mds-checkbox__control {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --- Text block --- */
+
+.mds-checkbox__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-xs);  /* 4px */
+}
+
+/* --- Label --- */
+
+.mds-checkbox__label {
+  display:     block;
+  font-size:   var(--font-size-body);         /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+.mds-checkbox--disabled .mds-checkbox__label {
+  color: var(--color-text-disabled);
+}
+
+.mds-checkbox--error .mds-checkbox__label {
+  color: var(--color-text-danger);
+}
+
+/* --- Description --- */
+
+.mds-checkbox__description {
+  display:     block;
+  font-size:   var(--font-size-helper);       /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+.mds-checkbox--disabled .mds-checkbox__description {
+  color: var(--color-text-disabled);
+}
+
+.mds-checkbox--error .mds-checkbox__description {
+  color: var(--color-text-danger);
+}
