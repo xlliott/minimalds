@@ -1,0 +1,116 @@
+/* ============================================================
+   MinimalDS — Release Notes Page
+   ============================================================ */
+
+.mds-page-releases {
+  max-width: 720px;
+}
+
+.mds-page-releases__title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-releases__subtitle {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-2xl);
+}
+
+/* --- Release list --- */
+
+.mds-page-releases__list {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-layout-md);
+}
+
+.mds-page-releases__release {
+  padding:          var(--space-layout-md);
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-border-default);
+  border-radius:    var(--radius-card);
+}
+
+.mds-page-releases__release-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  margin-bottom:   var(--space-layout-sm);
+}
+
+.mds-page-releases__release-meta {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-layout-xs);
+}
+
+.mds-page-releases__version {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-releases__date {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+}
+
+.mds-page-releases__label {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-helper);
+  font-weight:  var(--font-weight-strong);
+  padding:      0 12px;
+  height:       24px;
+  display:      inline-flex;
+  align-items:  center;
+  border-radius: var(--radius-none);
+  border:       var(--border-default) solid;
+}
+
+.mds-page-releases__label--major {
+  background-color: var(--color-surface-info);
+  border-color:     var(--color-border-info);
+  color:            var(--color-text-info);
+}
+
+.mds-page-releases__label--minor {
+  background-color: var(--color-surface-positive);
+  border-color:     var(--color-border-positive);
+  color:            var(--color-text-positive);
+}
+
+.mds-page-releases__label--patch {
+  background-color: var(--color-surface-warning);
+  border-color:     var(--color-border-warning);
+  color:            var(--color-text-warning);
+}
+
+/* --- Notes --- */
+
+.mds-page-releases__notes {
+  margin:      0;
+  padding:     0 0 0 var(--space-layout-sm);
+  list-style:  disc;
+}
+
+.mds-page-releases__note {
+  font-family:   var(--font-family-global);
+  font-size:     var(--font-size-body);
+  font-weight:   var(--font-weight-regular);
+  color:         var(--color-text-default);
+  line-height:   1.5;
+  margin-bottom: var(--space-component-xs);
+}
