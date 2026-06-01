@@ -1,0 +1,192 @@
+/* ============================================================
+   MinimalDS — Button
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-button {
+  display:         inline-flex;
+  flex-direction:  row;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-component-md);        /* 12px */
+  padding:         0 var(--space-component-xl);      /* 0 20px */
+  border-radius:   var(--radius-button);
+  border:          var(--border-default) solid transparent;
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-body);            /* 14px */
+  font-weight:     var(--font-weight-strong);        /* 700 */
+  line-height:     1;
+  white-space:     nowrap;
+  cursor:          pointer;
+  transition:      background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Sizes --- */
+
+.mds-button--default {
+  height: 48px;
+}
+
+.mds-button--small {
+  height: 32px;
+}
+
+/* --- Icons --- */
+
+.mds-button__icon {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width:       16px;
+  height:      16px;
+}
+
+/* ============================================================
+   ROLES
+   ============================================================ */
+
+/* --- Primary --- */
+
+.mds-button--primary {
+  background-color: var(--color-interactive-brand-base);
+  border-color:     transparent;
+  color:            var(--color-text-inverse);
+}
+
+.mds-button--primary:hover:not(:disabled) {
+  background-color: var(--color-interactive-brand-hover);
+}
+
+.mds-button--primary:active:not(:disabled) {
+  background-color: var(--color-interactive-brand-active);
+}
+
+.mds-button--primary:disabled {
+  background-color: var(--color-interactive-default-disabled);
+  color:            var(--color-text-disabled);
+  cursor:           not-allowed;
+}
+
+/* --- Secondary --- */
+
+.mds-button--secondary {
+  background-color: var(--color-interactive-ghost-base);
+  border-color:     var(--color-interactive-default-base);
+  color:            var(--color-text-default);
+}
+
+.mds-button--secondary:hover:not(:disabled) {
+  background-color: var(--color-interactive-ghost-hover);
+  border-color:     var(--color-interactive-default-hover);
+}
+
+.mds-button--secondary:active:not(:disabled) {
+  background-color: var(--color-interactive-ghost-active);
+  border-color:     var(--color-interactive-default-active);
+}
+
+.mds-button--secondary:disabled {
+  background-color: var(--color-interactive-ghost-disabled);
+  border-color:     var(--color-interactive-default-disabled);
+  color:            var(--color-text-disabled);
+  cursor:           not-allowed;
+}
+
+/* --- Ghost --- */
+
+.mds-button--ghost {
+  background-color: var(--color-interactive-ghost-base);
+  border-color:     transparent;
+  color:            var(--color-text-default);
+}
+
+.mds-button--ghost:hover:not(:disabled) {
+  background-color: var(--color-interactive-ghost-hover);
+}
+
+.mds-button--ghost:active:not(:disabled) {
+  background-color: var(--color-interactive-ghost-active);
+}
+
+.mds-button--ghost:disabled {
+  background-color: var(--color-interactive-ghost-disabled);
+  color:            var(--color-text-disabled);
+  cursor:           not-allowed;
+}
+
+/* --- Inverse --- */
+
+.mds-button--inverse {
+  background-color: var(--color-interactive-inverse-base);
+  border-color:     transparent;
+  color:            var(--color-text-default);
+}
+
+.mds-button--inverse:hover:not(:disabled) {
+  background-color: var(--color-interactive-inverse-hover);
+}
+
+.mds-button--inverse:active:not(:disabled) {
+  background-color: var(--color-interactive-inverse-active);
+}
+
+.mds-button--inverse:disabled {
+  background-color: var(--color-interactive-inverse-disabled);
+  color:            var(--color-text-disabled);
+  cursor:           not-allowed;
+}
+
+/* --- Success --- */
+
+.mds-button--success {
+  background-color: var(--color-interactive-positive-base);
+  border-color:     transparent;
+  color:            var(--color-text-inverse);
+}
+
+.mds-button--success:hover:not(:disabled) {
+  background-color: var(--color-interactive-positive-hover);
+}
+
+.mds-button--success:active:not(:disabled) {
+  background-color: var(--color-interactive-positive-active);
+}
+
+.mds-button--success:disabled {
+  background-color: var(--color-interactive-positive-disabled);
+  color:            var(--color-text-disabled);
+  cursor:           not-allowed;
+}
+
+/* --- Danger --- */
+
+.mds-button--danger {
+  background-color: var(--color-interactive-danger-base);
+  border-color:     transparent;
+  color:            var(--color-text-inverse);
+}
+
+.mds-button--danger:hover:not(:disabled) {
+  background-color: var(--color-interactive-danger-hover);
+}
+
+.mds-button--danger:active:not(:disabled) {
+  background-color: var(--color-interactive-danger-active);
+}
+
+.mds-button--danger:disabled {
+  background-color: var(--color-interactive-danger-disabled);
+  color:            var(--color-text-disabled);
+  cursor:           not-allowed;
+}
+
+/* --- Focus ring (accessibility) --- */
+
+.mds-button:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
