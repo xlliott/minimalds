@@ -1,0 +1,161 @@
+/* ============================================================
+   MinimalDS — Select
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Wrapper --- */
+
+.mds-select {
+  position:       relative;
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);   /* 8px */
+  width:          320px;
+  font-family:    var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Label --- */
+
+.mds-select__label {
+  display:     block;
+  font-size:   var(--font-size-body);          /* 14px */
+  font-weight: var(--font-weight-strong);      /* 700 */
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+.mds-select--disabled .mds-select__label {
+  color: var(--color-text-disabled);
+}
+
+/* --- Field --- */
+
+.mds-select__field {
+  display:          flex;
+  flex-direction:   row;
+  align-items:      center;
+  justify-content:  space-between;
+  width:            100%;
+  height:           48px;
+  padding:          0 var(--space-component-lg);   /* 0 16px */
+  gap:              var(--space-component-md);      /* 12px */
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-interactive-default-base);
+  border-radius:    var(--radius-input);
+  cursor:           pointer;
+  text-align:       left;
+  transition:       border-color 0.15s ease, border-width 0.15s ease;
+  box-sizing:       border-box;
+}
+
+/* --- States --- */
+
+.mds-select--base .mds-select__field:hover {
+  border-color: var(--color-interactive-brand-hover);
+}
+
+.mds-select--active .mds-select__field {
+  border-color: var(--color-interactive-brand-active);
+  border-width:  var(--border-strong);
+}
+
+.mds-select--error .mds-select__field {
+  border-color: var(--color-interactive-danger-base);
+  border-width:  var(--border-strong);
+}
+
+.mds-select--disabled .mds-select__field {
+  border-color: var(--color-interactive-default-disabled);
+  cursor:       not-allowed;
+}
+
+/* --- Selected value --- */
+
+.mds-select__value {
+  flex:        1;
+  min-width:   0;
+  font-size:   var(--font-size-body);          /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow:    hidden;
+  text-overflow: ellipsis;
+}
+
+.mds-select--disabled .mds-select__value {
+  color: var(--color-text-disabled);
+}
+
+/* --- Chevron --- */
+
+.mds-select__chevron {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-icon-default);
+  transition:  transform 0.2s ease;
+}
+
+.mds-select__chevron--open {
+  transform: rotate(180deg);
+}
+
+.mds-select--disabled .mds-select__chevron {
+  color: var(--color-icon-disabled);
+}
+
+/* --- Menu --- */
+
+.mds-select__menu {
+  position: absolute;
+  top:      100%;
+  left:     0;
+  right:    0;
+  z-index:  50;
+  margin-top: -1px;
+}
+
+/* Override Menu width to match Select width */
+.mds-select__menu .mds-menu {
+  width: 100%;
+}
+
+/* --- Helper text --- */
+
+.mds-select__helper {
+  display:     block;
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+/* --- Error text --- */
+
+.mds-select__error {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-component-xs);      /* 4px */
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-danger);
+  line-height: 1.5;
+}
+
+.mds-select__error-icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-text-danger);
+  width:       16px;
+  height:      16px;
+}
+
+/* --- Focus ring --- */
+
+.mds-select__field:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
