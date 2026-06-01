@@ -1,0 +1,97 @@
+/* ============================================================
+   MinimalDS — Sidebar
+   ============================================================ */
+
+.mds-sidebar {
+  display:          flex;
+  flex-direction:   column;
+  width:            200px;
+  min-width:        200px;
+  height:           100%;
+  background-color: var(--color-surface-default);
+  border-right:     var(--border-default) solid var(--color-border-default);
+  overflow-y:       auto;
+  box-sizing:       border-box;
+  flex-shrink:      0;
+}
+
+/* --- Logo --- */
+
+.mds-sidebar__logo {
+  display:     flex;
+  align-items: center;
+  padding:     var(--space-layout-sm) var(--space-layout-xs);  /* 24px 16px */
+  color:       var(--color-text-default);
+  flex-shrink: 0;
+}
+
+/* --- Nav --- */
+
+.mds-sidebar__nav {
+  display:        flex;
+  flex-direction: column;
+  flex:           1;
+  padding:        0 0 var(--space-layout-sm);
+}
+
+/* --- Section labels --- */
+
+.mds-sidebar__section-label {
+  display:     block;
+  padding:     var(--space-layout-sm) var(--space-layout-xs) var(--space-component-sm); /* 24px 16px 8px */
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-helper);        /* 12px */
+  font-weight: var(--font-weight-strong);
+  color:       var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Nav items --- */
+
+.mds-sidebar__nav-item {
+  display:         block;
+  padding:         var(--space-component-sm) var(--space-layout-xs);  /* 8px 16px */
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-body);      /* 14px */
+  font-weight:     var(--font-weight-regular);
+  color:           var(--color-text-default);
+  text-decoration: none;
+  transition:      background-color 0.15s ease, color 0.15s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-sidebar__nav-item:hover {
+  background-color: var(--color-interactive-pale-hover);
+}
+
+.mds-sidebar__nav-item--active {
+  background-color: var(--color-interactive-pale-active);
+  font-weight:      var(--font-weight-strong);
+}
+
+.mds-sidebar__nav-item--active:hover {
+  background-color: var(--color-interactive-pale-active);
+}
+
+/* --- Footer --- */
+
+.mds-sidebar__footer {
+  padding:     var(--space-layout-sm) var(--space-layout-xs);
+  flex-shrink: 0;
+  border-top:  var(--border-default) solid var(--color-border-default);
+}
+
+.mds-sidebar__built-by {
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-helper);    /* 12px */
+  font-weight:     var(--font-weight-regular);
+  color:           var(--color-text-muted);
+  text-decoration: none;
+  transition:      color 0.15s ease;
+}
+
+.mds-sidebar__built-by:hover {
+  color: var(--color-text-subtle);
+}
