@@ -1,0 +1,25 @@
+/* ============================================================
+   MinimalDS — Layout
+   ============================================================ */
+
+.mds-layout {
+  display:        flex;
+  flex-direction: column;
+  min-height:     100vh;
+  background-color: var(--color-surface-page);
+}
+
+.mds-layout__body {
+  display:    flex;
+  flex:       1;
+  overflow:   hidden;
+  height:     calc(100vh - 48px); /* subtract navbar height */
+}
+
+.mds-layout__content {
+  flex:       1;
+  overflow-y: auto;
+  padding:    var(--space-layout-xl) var(--space-layout-2xl); /* 48px 64px */
+  box-sizing: border-box;
+  background-color: var(--color-surface-page);
+}
