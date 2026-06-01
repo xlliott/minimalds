@@ -1,0 +1,720 @@
+/* ============================================================
+   MinimalDS â€” Design Tokens
+   Generated from Figma variables export
+   Three brands: Minimal (master), Purpura, Azure
+   Two modes per brand: Light, Dark
+   ============================================================ */
+
+/* ============================================================
+   MINIMAL â€” LIGHT (default)
+   ============================================================ */
+
+:root,
+[data-brand="minimal"][data-mode="light"] {
+
+  /* --- Colour / Static / Surface --- */
+  --color-surface-default:      #FFFFFF;
+  --color-surface-page:         #F5F5F5;
+  --color-surface-subtle:       #E5E5E5;
+  --color-surface-inverse:      #141414;
+  --color-surface-brand:        #141414;
+  --color-surface-brand-subtle: #E5E5E5;
+  --color-surface-positive:     #DCFCE7;
+  --color-surface-warning:      #FEF9C3;
+  --color-surface-danger:       #FEE2E2;
+  --color-surface-info:         #DBEAFE;
+  --color-surface-overlay:      rgba(0, 0, 0, 0.70);
+
+  /* --- Colour / Static / Text --- */
+  --color-text-default:         #141414;
+  --color-text-subtle:          #4B4B4B;
+  --color-text-muted:           #919191;
+  --color-text-disabled:        #D4D4D4;
+  --color-text-inverse:         #FFFFFF;
+  --color-text-brand:           #141414;
+  --color-text-positive:        #15803D;
+  --color-text-warning:         #A16207;
+  --color-text-danger:          #B91C1C;
+  --color-text-info:            #1D4ED8;
+
+  /* --- Colour / Static / Icon --- */
+  --color-icon-default:         #141414;
+  --color-icon-subtle:          #4B4B4B;
+  --color-icon-muted:           #919191;
+  --color-icon-disabled:        #D4D4D4;
+  --color-icon-inverse:         #FFFFFF;
+  --color-icon-brand:           #141414;
+  --color-icon-positive:        #15803D;
+  --color-icon-warning:         #A16207;
+  --color-icon-danger:          #B91C1C;
+  --color-icon-info:            #1D4ED8;
+
+  /* --- Colour / Static / Border --- */
+  --color-border-default:       #D4D4D4;
+  --color-border-subtle:        #E5E5E5;
+  --color-border-muted:         #F5F5F5;
+  --color-border-disabled:      #D4D4D4;
+  --color-border-inverse:       #2E2E2E;
+  --color-border-brand:         #141414;
+  --color-border-positive:      #86EFAC;
+  --color-border-warning:       #FDE047;
+  --color-border-danger:        #FCA5A5;
+  --color-border-info:          #93C5FD;
+  --color-border-focus:         #141414;
+
+  /* --- Colour / Interactive / Default --- */
+  --color-interactive-default-base:     #141414;
+  --color-interactive-default-hover:    #2E2E2E;
+  --color-interactive-default-active:   #4B4B4B;
+  --color-interactive-default-disabled: #D4D4D4;
+
+  /* --- Colour / Interactive / Pale --- */
+  --color-interactive-pale-base:        #FFFFFF;
+  --color-interactive-pale-hover:       #E5E5E5;
+  --color-interactive-pale-active:      #D4D4D4;
+  --color-interactive-pale-disabled:    #FFFFFF;
+
+  /* --- Colour / Interactive / Ghost --- */
+  --color-interactive-ghost-base:       rgba(0, 0, 0, 0);
+  --color-interactive-ghost-hover:      rgba(0, 0, 0, 0.10);
+  --color-interactive-ghost-active:     rgba(0, 0, 0, 0.20);
+  --color-interactive-ghost-disabled:   rgba(0, 0, 0, 0);
+
+  /* --- Colour / Interactive / Brand --- */
+  --color-interactive-brand-base:       #141414;
+  --color-interactive-brand-hover:      #2E2E2E;
+  --color-interactive-brand-active:     #4B4B4B;
+  --color-interactive-brand-disabled:   #D4D4D4;
+
+  /* --- Colour / Interactive / Inverse --- */
+  --color-interactive-inverse-base:     #FFFFFF;
+  --color-interactive-inverse-hover:    #E5E5E5;
+  --color-interactive-inverse-active:   #D4D4D4;
+  --color-interactive-inverse-disabled: #FFFFFF;
+
+  /* --- Colour / Interactive / Positive --- */
+  --color-interactive-positive-base:    #15803D;
+  --color-interactive-positive-hover:   #14532D;
+  --color-interactive-positive-active:  #0B3D1E;
+  --color-interactive-positive-disabled:#D4D4D4;
+
+  /* --- Colour / Interactive / Danger --- */
+  --color-interactive-danger-base:      #B91C1C;
+  --color-interactive-danger-hover:     #7F1D1D;
+  --color-interactive-danger-active:    #5D0D0D;
+  --color-interactive-danger-disabled:  #D4D4D4;
+
+  /* --- Radius --- */
+  --radius-none:    0px;
+  --radius-sm:      0px;
+  --radius-md:      4px;
+  --radius-lg:      6px;
+  --radius-full:    9999px;
+  --radius-button:  0px;
+  --radius-input:   0px;
+  --radius-card:    0px;
+
+  /* --- Border width --- */
+  --border-default: 1px;
+  --border-strong:  2px;
+
+  /* --- Spacing / Component --- */
+  --space-component-minus: -1px;
+  --space-component-none:  0px;
+  --space-component-xs:    4px;
+  --space-component-sm:    8px;
+  --space-component-md:    12px;
+  --space-component-lg:    16px;
+  --space-component-xl:    20px;
+  --space-component-2xl:   24px;
+  --space-component-3xl:   28px;
+  --space-component-4xl:   32px;
+  --space-component-5xl:   40px;
+
+  /* --- Spacing / Layout --- */
+  --space-layout-minus: -1px;
+  --space-layout-none:  0px;
+  --space-layout-xs:    8px;
+  --space-layout-sm:    16px;
+  --space-layout-md:    24px;
+  --space-layout-lg:    32px;
+  --space-layout-xl:    48px;
+  --space-layout-2xl:   64px;
+  --space-layout-3xl:   80px;
+  --space-layout-4xl:   96px;
+
+  /* --- Typography / Family --- */
+  --font-family-global:   'Inter', sans-serif;
+  --font-family-heading:  'Inter', sans-serif;
+  --font-family-display:  'Roboto Mono', monospace;
+
+  /* --- Typography / Size / Desktop --- */
+  --font-size-desktop-display: 48px;
+  --font-size-desktop-h1:      40px;
+  --font-size-desktop-h2:      32px;
+  --font-size-desktop-h3:      24px;
+  --font-size-desktop-h4:      18px;
+
+  /* --- Typography / Size / Mobile --- */
+  --font-size-mobile-display:  32px;
+  --font-size-mobile-h1:       28px;
+  --font-size-mobile-h2:       24px;
+  --font-size-mobile-h3:       20px;
+  --font-size-mobile-h4:       16px;
+
+  /* --- Typography / Size / Global --- */
+  --font-size-body:    14px;
+  --font-size-helper:  12px;
+
+  /* --- Typography / Weight --- */
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-strong:  700;
+}
+
+/* ============================================================
+   MINIMAL â€” DARK
+   ============================================================ */
+
+[data-brand="minimal"][data-mode="dark"] {
+
+  /* --- Colour / Static / Surface --- */
+  --color-surface-default:      #141414;
+  --color-surface-page:         #0A0A0A;
+  --color-surface-subtle:       #1F1F1F;
+  --color-surface-inverse:      #F5F5F5;
+  --color-surface-brand:        #F5F5F5;
+  --color-surface-brand-subtle: #1F1F1F;
+  --color-surface-positive:     #14532D;
+  --color-surface-warning:      #713F12;
+  --color-surface-danger:       #7F1D1D;
+  --color-surface-info:         #1E3A8A;
+  --color-surface-overlay:      rgba(0, 0, 0, 0.70);
+
+  /* --- Colour / Static / Text --- */
+  --color-text-default:         #F5F5F5;
+  --color-text-subtle:          #919191;
+  --color-text-muted:           #4B4B4B;
+  --color-text-disabled:        #2E2E2E;
+  --color-text-inverse:         #141414;
+  --color-text-brand:           #F5F5F5;
+  --color-text-positive:        #86EFAC;
+  --color-text-warning:         #FDE047;
+  --color-text-danger:          #FCA5A5;
+  --color-text-info:            #93C5FD;
+
+  /* --- Colour / Static / Icon --- */
+  --color-icon-default:         #F5F5F5;
+  --color-icon-subtle:          #919191;
+  --color-icon-muted:           #4B4B4B;
+  --color-icon-disabled:        #2E2E2E;
+  --color-icon-inverse:         #141414;
+  --color-icon-brand:           #F5F5F5;
+  --color-icon-positive:        #86EFAC;
+  --color-icon-warning:         #FDE047;
+  --color-icon-danger:          #FCA5A5;
+  --color-icon-info:            #93C5FD;
+
+  /* --- Colour / Static / Border --- */
+  --color-border-default:       #2E2E2E;
+  --color-border-subtle:        #1F1F1F;
+  --color-border-muted:         #141414;
+  --color-border-disabled:      #1F1F1F;
+  --color-border-inverse:       #D4D4D4;
+  --color-border-brand:         #F5F5F5;
+  --color-border-positive:      #15803D;
+  --color-border-warning:       #A16207;
+  --color-border-danger:        #B91C1C;
+  --color-border-info:          #1D4ED8;
+  --color-border-focus:         #F5F5F5;
+
+  /* --- Colour / Interactive / Default --- */
+  --color-interactive-default-base:     #F5F5F5;
+  --color-interactive-default-hover:    #D4D4D4;
+  --color-interactive-default-active:   #B5B5B5;
+  --color-interactive-default-disabled: #2E2E2E;
+
+  /* --- Colour / Interactive / Pale --- */
+  --color-interactive-pale-base:        #141414;
+  --color-interactive-pale-hover:       #1F1F1F;
+  --color-interactive-pale-active:      #2E2E2E;
+  --color-interactive-pale-disabled:    #141414;
+
+  /* --- Colour / Interactive / Ghost --- */
+  --color-interactive-ghost-base:       rgba(255, 255, 255, 0);
+  --color-interactive-ghost-hover:      rgba(255, 255, 255, 0.10);
+  --color-interactive-ghost-active:     rgba(255, 255, 255, 0.20);
+  --color-interactive-ghost-disabled:   rgba(255, 255, 255, 0);
+
+  /* --- Colour / Interactive / Brand --- */
+  --color-interactive-brand-base:       #F5F5F5;
+  --color-interactive-brand-hover:      #D4D4D4;
+  --color-interactive-brand-active:     #B5B5B5;
+  --color-interactive-brand-disabled:   #2E2E2E;
+
+  /* --- Colour / Interactive / Inverse --- */
+  --color-interactive-inverse-base:     #141414;
+  --color-interactive-inverse-hover:    #1F1F1F;
+  --color-interactive-inverse-active:   #2E2E2E;
+  --color-interactive-inverse-disabled: #141414;
+
+  /* --- Colour / Interactive / Positive --- */
+  --color-interactive-positive-base:    #86EFAC;
+  --color-interactive-positive-hover:   #BBF7D0;
+  --color-interactive-positive-active:  #DCFCE7;
+  --color-interactive-positive-disabled:#2E2E2E;
+
+  /* --- Colour / Interactive / Danger --- */
+  --color-interactive-danger-base:      #FCA5A5;
+  --color-interactive-danger-hover:     #FECACA;
+  --color-interactive-danger-active:    #FEE2E2;
+  --color-interactive-danger-disabled:  #2E2E2E;
+}
+
+/* ============================================================
+   PURPURA â€” LIGHT
+   ============================================================ */
+
+[data-brand="purpura"][data-mode="light"] {
+
+  /* --- Colour / Static / Surface --- */
+  --color-surface-default:      #FFFFFF;
+  --color-surface-page:         #FAF5FF;
+  --color-surface-subtle:       #E5E5E5;
+  --color-surface-inverse:      #141414;
+  --color-surface-brand:        #6B21A8;
+  --color-surface-brand-subtle: #F3E8FF;
+  --color-surface-positive:     #DCFCE7;
+  --color-surface-warning:      #FEF9C3;
+  --color-surface-danger:       #FEE2E2;
+  --color-surface-info:         #DBEAFE;
+  --color-surface-overlay:      rgba(0, 0, 0, 0.70);
+
+  /* --- Colour / Static / Text --- */
+  --color-text-default:         #141414;
+  --color-text-subtle:          #4B4B4B;
+  --color-text-muted:           #919191;
+  --color-text-disabled:        #D4D4D4;
+  --color-text-inverse:         #FFFFFF;
+  --color-text-brand:           #7E22CE;
+  --color-text-positive:        #15803D;
+  --color-text-warning:         #A16207;
+  --color-text-danger:          #B91C1C;
+  --color-text-info:            #1D4ED8;
+
+  /* --- Colour / Static / Icon --- */
+  --color-icon-default:         #141414;
+  --color-icon-subtle:          #4B4B4B;
+  --color-icon-muted:           #919191;
+  --color-icon-disabled:        #D4D4D4;
+  --color-icon-inverse:         #FFFFFF;
+  --color-icon-brand:           #7E22CE;
+  --color-icon-positive:        #15803D;
+  --color-icon-warning:         #A16207;
+  --color-icon-danger:          #B91C1C;
+  --color-icon-info:            #1D4ED8;
+
+  /* --- Colour / Static / Border --- */
+  --color-border-default:       #D4D4D4;
+  --color-border-subtle:        #E5E5E5;
+  --color-border-muted:         #F5F5F5;
+  --color-border-disabled:      #D4D4D4;
+  --color-border-inverse:       #2E2E2E;
+  --color-border-brand:         #A855F7;
+  --color-border-positive:      #86EFAC;
+  --color-border-warning:       #FDE047;
+  --color-border-danger:        #FCA5A5;
+  --color-border-info:          #93C5FD;
+  --color-border-focus:         #A855F7;
+
+  /* --- Colour / Interactive / Default --- */
+  --color-interactive-default-base:     #141414;
+  --color-interactive-default-hover:    #2E2E2E;
+  --color-interactive-default-active:   #4B4B4B;
+  --color-interactive-default-disabled: #D4D4D4;
+
+  /* --- Colour / Interactive / Pale --- */
+  --color-interactive-pale-base:        #FFFFFF;
+  --color-interactive-pale-hover:       #E5E5E5;
+  --color-interactive-pale-active:      #D4D4D4;
+  --color-interactive-pale-disabled:    #FFFFFF;
+
+  /* --- Colour / Interactive / Ghost --- */
+  --color-interactive-ghost-base:       rgba(0, 0, 0, 0);
+  --color-interactive-ghost-hover:      rgba(0, 0, 0, 0.10);
+  --color-interactive-ghost-active:     rgba(0, 0, 0, 0.20);
+  --color-interactive-ghost-disabled:   rgba(0, 0, 0, 0);
+
+  /* --- Colour / Interactive / Brand --- */
+  --color-interactive-brand-base:       #7E22CE;
+  --color-interactive-brand-hover:      #6B21A8;
+  --color-interactive-brand-active:     #581C87;
+  --color-interactive-brand-disabled:   #D4D4D4;
+
+  /* --- Colour / Interactive / Inverse --- */
+  --color-interactive-inverse-base:     #FFFFFF;
+  --color-interactive-inverse-hover:    #E5E5E5;
+  --color-interactive-inverse-active:   #D4D4D4;
+  --color-interactive-inverse-disabled: #FFFFFF;
+
+  /* --- Colour / Interactive / Positive --- */
+  --color-interactive-positive-base:    #15803D;
+  --color-interactive-positive-hover:   #14532D;
+  --color-interactive-positive-active:  #0B3D1E;
+  --color-interactive-positive-disabled:#D4D4D4;
+
+  /* --- Colour / Interactive / Danger --- */
+  --color-interactive-danger-base:      #B91C1C;
+  --color-interactive-danger-hover:     #7F1D1D;
+  --color-interactive-danger-active:    #5D0D0D;
+  --color-interactive-danger-disabled:  #D4D4D4;
+
+  /* --- Radius overrides --- */
+  --radius-sm:      4px;
+  --radius-md:      6px;
+  --radius-lg:      12px;
+  --radius-button:  9999px;
+  --radius-input:   9999px;
+  --radius-card:    12px;
+
+  /* --- Typography / Family --- */
+  --font-family-global:   'Montserrat', sans-serif;
+  --font-family-heading:  'Montserrat', sans-serif;
+  --font-family-display:  'Montserrat', sans-serif;
+}
+
+/* ============================================================
+   PURPURA â€” DARK
+   ============================================================ */
+
+[data-brand="purpura"][data-mode="dark"] {
+
+  /* --- Colour / Static / Surface --- */
+  --color-surface-default:      #141414;
+  --color-surface-page:         #0A0A0A;
+  --color-surface-subtle:       #1F1F1F;
+  --color-surface-inverse:      #F5F5F5;
+  --color-surface-brand:        #A855F7;
+  --color-surface-brand-subtle: #581C87;
+  --color-surface-positive:     #14532D;
+  --color-surface-warning:      #713F12;
+  --color-surface-danger:       #7F1D1D;
+  --color-surface-info:         #1E3A8A;
+  --color-surface-overlay:      rgba(0, 0, 0, 0.70);
+
+  /* --- Colour / Static / Text --- */
+  --color-text-default:         #F5F5F5;
+  --color-text-subtle:          #919191;
+  --color-text-muted:           #4B4B4B;
+  --color-text-disabled:        #2E2E2E;
+  --color-text-inverse:         #141414;
+  --color-text-brand:           #C084FC;
+  --color-text-positive:        #86EFAC;
+  --color-text-warning:         #FDE047;
+  --color-text-danger:          #FCA5A5;
+  --color-text-info:            #93C5FD;
+
+  /* --- Colour / Static / Icon --- */
+  --color-icon-default:         #F5F5F5;
+  --color-icon-subtle:          #919191;
+  --color-icon-muted:           #4B4B4B;
+  --color-icon-disabled:        #2E2E2E;
+  --color-icon-inverse:         #141414;
+  --color-icon-brand:           #C084FC;
+  --color-icon-positive:        #86EFAC;
+  --color-icon-warning:         #FDE047;
+  --color-icon-danger:          #FCA5A5;
+  --color-icon-info:            #93C5FD;
+
+  /* --- Colour / Static / Border --- */
+  --color-border-default:       #2E2E2E;
+  --color-border-subtle:        #1F1F1F;
+  --color-border-muted:         #141414;
+  --color-border-disabled:      #1F1F1F;
+  --color-border-inverse:       #D4D4D4;
+  --color-border-brand:         #C084FC;
+  --color-border-positive:      #15803D;
+  --color-border-warning:       #A16207;
+  --color-border-danger:        #B91C1C;
+  --color-border-info:          #1D4ED8;
+  --color-border-focus:         #C084FC;
+
+  /* --- Colour / Interactive / Default --- */
+  --color-interactive-default-base:     #F5F5F5;
+  --color-interactive-default-hover:    #D4D4D4;
+  --color-interactive-default-active:   #B5B5B5;
+  --color-interactive-default-disabled: #2E2E2E;
+
+  /* --- Colour / Interactive / Pale --- */
+  --color-interactive-pale-base:        #141414;
+  --color-interactive-pale-hover:       #1F1F1F;
+  --color-interactive-pale-active:      #2E2E2E;
+  --color-interactive-pale-disabled:    #141414;
+
+  /* --- Colour / Interactive / Ghost --- */
+  --color-interactive-ghost-base:       rgba(255, 255, 255, 0);
+  --color-interactive-ghost-hover:      rgba(255, 255, 255, 0.10);
+  --color-interactive-ghost-active:     rgba(255, 255, 255, 0.20);
+  --color-interactive-ghost-disabled:   rgba(255, 255, 255, 0);
+
+  /* --- Colour / Interactive / Brand --- */
+  --color-interactive-brand-base:       #C084FC;
+  --color-interactive-brand-hover:      #D8B4FE;
+  --color-interactive-brand-active:     #E9D5FF;
+  --color-interactive-brand-disabled:   #2E2E2E;
+
+  /* --- Colour / Interactive / Inverse --- */
+  --color-interactive-inverse-base:     #141414;
+  --color-interactive-inverse-hover:    #1F1F1F;
+  --color-interactive-inverse-active:   #2E2E2E;
+  --color-interactive-inverse-disabled: #141414;
+
+  /* --- Colour / Interactive / Positive --- */
+  --color-interactive-positive-base:    #86EFAC;
+  --color-interactive-positive-hover:   #BBF7D0;
+  --color-interactive-positive-active:  #DCFCE7;
+  --color-interactive-positive-disabled:#2E2E2E;
+
+  /* --- Colour / Interactive / Danger --- */
+  --color-interactive-danger-base:      #FCA5A5;
+  --color-interactive-danger-hover:     #FECACA;
+  --color-interactive-danger-active:    #FEE2E2;
+  --color-interactive-danger-disabled:  #2E2E2E;
+
+  /* --- Radius overrides --- */
+  --radius-sm:      4px;
+  --radius-md:      6px;
+  --radius-lg:      12px;
+  --radius-button:  9999px;
+  --radius-input:   9999px;
+  --radius-card:    12px;
+
+  /* --- Typography / Family --- */
+  --font-family-global:   'Montserrat', sans-serif;
+  --font-family-heading:  'Montserrat', sans-serif;
+  --font-family-display:  'Montserrat', sans-serif;
+}
+
+/* ============================================================
+   AZURE â€” LIGHT
+   ============================================================ */
+
+[data-brand="azure"][data-mode="light"] {
+
+  /* --- Colour / Static / Surface --- */
+  --color-surface-default:      #FFFFFF;
+  --color-surface-page:         #F0F9FF;
+  --color-surface-subtle:       #E5E5E5;
+  --color-surface-inverse:      #141414;
+  --color-surface-brand:        #075985;
+  --color-surface-brand-subtle: #E0F2FE;
+  --color-surface-positive:     #DCFCE7;
+  --color-surface-warning:      #FEF9C3;
+  --color-surface-danger:       #FEE2E2;
+  --color-surface-info:         #DBEAFE;
+  --color-surface-overlay:      rgba(0, 0, 0, 0.70);
+
+  /* --- Colour / Static / Text --- */
+  --color-text-default:         #141414;
+  --color-text-subtle:          #4B4B4B;
+  --color-text-muted:           #919191;
+  --color-text-disabled:        #D4D4D4;
+  --color-text-inverse:         #FFFFFF;
+  --color-text-brand:           #0369A1;
+  --color-text-positive:        #15803D;
+  --color-text-warning:         #A16207;
+  --color-text-danger:          #B91C1C;
+  --color-text-info:            #1D4ED8;
+
+  /* --- Colour / Static / Icon --- */
+  --color-icon-default:         #141414;
+  --color-icon-subtle:          #4B4B4B;
+  --color-icon-muted:           #919191;
+  --color-icon-disabled:        #D4D4D4;
+  --color-icon-inverse:         #FFFFFF;
+  --color-icon-brand:           #0369A1;
+  --color-icon-positive:        #15803D;
+  --color-icon-warning:         #A16207;
+  --color-icon-danger:          #B91C1C;
+  --color-icon-info:            #1D4ED8;
+
+  /* --- Colour / Static / Border --- */
+  --color-border-default:       #D4D4D4;
+  --color-border-subtle:        #E5E5E5;
+  --color-border-muted:         #F5F5F5;
+  --color-border-disabled:      #D4D4D4;
+  --color-border-inverse:       #2E2E2E;
+  --color-border-brand:         #0EA5E9;
+  --color-border-positive:      #86EFAC;
+  --color-border-warning:       #FDE047;
+  --color-border-danger:        #FCA5A5;
+  --color-border-info:          #93C5FD;
+  --color-border-focus:         #0EA5E9;
+
+  /* --- Colour / Interactive / Default --- */
+  --color-interactive-default-base:     #141414;
+  --color-interactive-default-hover:    #2E2E2E;
+  --color-interactive-default-active:   #4B4B4B;
+  --color-interactive-default-disabled: #D4D4D4;
+
+  /* --- Colour / Interactive / Pale --- */
+  --color-interactive-pale-base:        #FFFFFF;
+  --color-interactive-pale-hover:       #E5E5E5;
+  --color-interactive-pale-active:      #D4D4D4;
+  --color-interactive-pale-disabled:    #FFFFFF;
+
+  /* --- Colour / Interactive / Ghost --- */
+  --color-interactive-ghost-base:       rgba(0, 0, 0, 0);
+  --color-interactive-ghost-hover:      rgba(0, 0, 0, 0.10);
+  --color-interactive-ghost-active:     rgba(0, 0, 0, 0.20);
+  --color-interactive-ghost-disabled:   rgba(0, 0, 0, 0);
+
+  /* --- Colour / Interactive / Brand --- */
+  --color-interactive-brand-base:       #0369A1;
+  --color-interactive-brand-hover:      #075985;
+  --color-interactive-brand-active:     #0C4A6E;
+  --color-interactive-brand-disabled:   #D4D4D4;
+
+  /* --- Colour / Interactive / Inverse --- */
+  --color-interactive-inverse-base:     #FFFFFF;
+  --color-interactive-inverse-hover:    #E5E5E5;
+  --color-interactive-inverse-active:   #D4D4D4;
+  --color-interactive-inverse-disabled: #FFFFFF;
+
+  /* --- Colour / Interactive / Positive --- */
+  --color-interactive-positive-base:    #15803D;
+  --color-interactive-positive-hover:   #14532D;
+  --color-interactive-positive-active:  #0B3D1E;
+  --color-interactive-positive-disabled:#D4D4D4;
+
+  /* --- Colour / Interactive / Danger --- */
+  --color-interactive-danger-base:      #B91C1C;
+  --color-interactive-danger-hover:     #7F1D1D;
+  --color-interactive-danger-active:    #5D0D0D;
+  --color-interactive-danger-disabled:  #D4D4D4;
+
+  /* --- Radius overrides --- */
+  --radius-sm:      2px;
+  --radius-md:      4px;
+  --radius-lg:      6px;
+  --radius-button:  8px;
+  --radius-input:   8px;
+  --radius-card:    6px;
+
+  /* --- Typography / Family --- */
+  --font-family-global:   'Source Sans Pro', sans-serif;
+  --font-family-heading:  'Source Sans Pro', sans-serif;
+  --font-family-display:  'Playfair Display', serif;
+}
+
+/* ============================================================
+   AZURE â€” DARK
+   ============================================================ */
+
+[data-brand="azure"][data-mode="dark"] {
+
+  /* --- Colour / Static / Surface --- */
+  --color-surface-default:      #141414;
+  --color-surface-page:         #0A0A0A;
+  --color-surface-subtle:       #1F1F1F;
+  --color-surface-inverse:      #F5F5F5;
+  --color-surface-brand:        #0EA5E9;
+  --color-surface-brand-subtle: #0C4A6E;
+  --color-surface-positive:     #14532D;
+  --color-surface-warning:      #713F12;
+  --color-surface-danger:       #7F1D1D;
+  --color-surface-info:         #1E3A8A;
+  --color-surface-overlay:      rgba(0, 0, 0, 0.70);
+
+  /* --- Colour / Static / Text --- */
+  --color-text-default:         #F5F5F5;
+  --color-text-subtle:          #919191;
+  --color-text-muted:           #4B4B4B;
+  --color-text-disabled:        #2E2E2E;
+  --color-text-inverse:         #141414;
+  --color-text-brand:           #38BDF8;
+  --color-text-positive:        #86EFAC;
+  --color-text-warning:         #FDE047;
+  --color-text-danger:          #FCA5A5;
+  --color-text-info:            #93C5FD;
+
+  /* --- Colour / Static / Icon --- */
+  --color-icon-default:         #F5F5F5;
+  --color-icon-subtle:          #919191;
+  --color-icon-muted:           #4B4B4B;
+  --color-icon-disabled:        #2E2E2E;
+  --color-icon-inverse:         #141414;
+  --color-icon-brand:           #38BDF8;
+  --color-icon-positive:        #86EFAC;
+  --color-icon-warning:         #FDE047;
+  --color-icon-danger:          #FCA5A5;
+  --color-icon-info:            #93C5FD;
+
+  /* --- Colour / Static / Border --- */
+  --color-border-default:       #2E2E2E;
+  --color-border-subtle:        #1F1F1F;
+  --color-border-muted:         #141414;
+  --color-border-disabled:      #1F1F1F;
+  --color-border-inverse:       #D4D4D4;
+  --color-border-brand:         #38BDF8;
+  --color-border-positive:      #15803D;
+  --color-border-warning:       #A16207;
+  --color-border-danger:        #B91C1C;
+  --color-border-info:          #1D4ED8;
+  --color-border-focus:         #38BDF8;
+
+  /* --- Colour / Interactive / Default --- */
+  --color-interactive-default-base:     #F5F5F5;
+  --color-interactive-default-hover:    #D4D4D4;
+  --color-interactive-default-active:   #B5B5B5;
+  --color-interactive-default-disabled: #2E2E2E;
+
+  /* --- Colour / Interactive / Pale --- */
+  --color-interactive-pale-base:        #141414;
+  --color-interactive-pale-hover:       #1F1F1F;
+  --color-interactive-pale-active:      #2E2E2E;
+  --color-interactive-pale-disabled:    #141414;
+
+  /* --- Colour / Interactive / Ghost --- */
+  --color-interactive-ghost-base:       rgba(255, 255, 255, 0);
+  --color-interactive-ghost-hover:      rgba(255, 255, 255, 0.10);
+  --color-interactive-ghost-active:     rgba(255, 255, 255, 0.20);
+  --color-interactive-ghost-disabled:   rgba(255, 255, 255, 0);
+
+  /* --- Colour / Interactive / Brand --- */
+  --color-interactive-brand-base:       #0EA5E9;
+  --color-interactive-brand-hover:      #38BDF8;
+  --color-interactive-brand-active:     #7DD3FC;
+  --color-interactive-brand-disabled:   #2E2E2E;
+
+  /* --- Colour / Interactive / Inverse --- */
+  --color-interactive-inverse-base:     #141414;
+  --color-interactive-inverse-hover:    #1F1F1F;
+  --color-interactive-inverse-active:   #2E2E2E;
+  --color-interactive-inverse-disabled: #141414;
+
+  /* --- Colour / Interactive / Positive --- */
+  --color-interactive-positive-base:    #86EFAC;
+  --color-interactive-positive-hover:   #BBF7D0;
+  --color-interactive-positive-active:  #DCFCE7;
+  --color-interactive-positive-disabled:#2E2E2E;
+
+  /* --- Colour / Interactive / Danger --- */
+  --color-interactive-danger-base:      #FCA5A5;
+  --color-interactive-danger-hover:     #FECACA;
+  --color-interactive-danger-active:    #FEE2E2;
+  --color-interactive-danger-disabled:  #2E2E2E;
+
+  /* --- Radius overrides --- */
+  --radius-sm:      2px;
+  --radius-md:      4px;
+  --radius-lg:      6px;
+  --radius-button:  8px;
+  --radius-input:   8px;
+  --radius-card:    6px;
+
+  /* --- Typography / Family --- */
+  --font-family-global:   'Source Sans Pro', sans-serif;
+  --font-family-heading:  'Source Sans Pro', sans-serif;
+  --font-family-display:  'Playfair Display', serif;
+}
