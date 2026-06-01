@@ -1,0 +1,146 @@
+/* ============================================================
+   MinimalDS — Menu Item
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-menu-item {
+  display:          flex;
+  flex-direction:   row;
+  align-items:      flex-start;
+  gap:              var(--space-component-md);   /* 12px */
+  width:            100%;
+  background-color: var(--color-interactive-pale-base);
+  border:           none;
+  border-radius:    var(--radius-none);
+  cursor:           pointer;
+  text-align:       left;
+  transition:       background-color 0.15s ease;
+  font-family:      var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+  box-sizing:       border-box;
+}
+
+/* --- Basic style --- */
+
+.mds-menu-item--basic {
+  padding:     var(--space-component-lg) var(--space-component-md) var(--space-component-lg) var(--space-component-2xl); /* 16px 12px 16px 32px */
+  align-items: center;
+  min-height:  53px;
+}
+
+/* --- Detailed style --- */
+
+.mds-menu-item--detailed {
+  padding:    var(--space-component-md);         /* 12px */
+  align-items: flex-start;
+  min-height: 68px;
+}
+
+/* --- States --- */
+
+.mds-menu-item:hover:not(:disabled):not(.mds-menu-item--selected) {
+  background-color: var(--color-interactive-pale-hover);
+}
+
+.mds-menu-item:active:not(:disabled):not(.mds-menu-item--selected) {
+  background-color: var(--color-interactive-pale-active);
+}
+
+/* --- Selected --- */
+
+.mds-menu-item--selected {
+  background-color: var(--color-interactive-default-base);
+}
+
+.mds-menu-item--selected .mds-menu-item__label {
+  color:       var(--color-text-inverse);
+  font-weight: var(--font-weight-strong);
+}
+
+.mds-menu-item--selected .mds-menu-item__description {
+  color: var(--color-text-inverse);
+}
+
+.mds-menu-item--selected .mds-menu-item__shortcut {
+  color: var(--color-text-inverse);
+}
+
+.mds-menu-item--selected .mds-menu-item__icon {
+  color: var(--color-icon-inverse);
+}
+
+/* --- Disabled --- */
+
+.mds-menu-item--disabled {
+  cursor:  not-allowed;
+  opacity: 0.5;
+}
+
+/* --- Icon --- */
+
+.mds-menu-item__icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--color-icon-default);
+  width:       16px;
+  height:      16px;
+  margin-top:  2px;
+}
+
+/* --- Content --- */
+
+.mds-menu-item__content {
+  flex:      1;
+  min-width: 0;
+}
+
+/* --- Title and description block --- */
+
+.mds-menu-item__title-description {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);    /* 8px */
+}
+
+/* --- Label --- */
+
+.mds-menu-item__label {
+  display:     block;
+  font-size:   var(--font-size-body);           /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+/* --- Description --- */
+
+.mds-menu-item__description {
+  display:     block;
+  font-size:   var(--font-size-helper);         /* 12px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+/* --- Shortcut --- */
+
+.mds-menu-item__shortcut {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size:   var(--font-size-body);           /* 14px */
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  margin-left: auto;
+}
+
+/* --- Focus ring --- */
+
+.mds-menu-item:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: -2px;
+}
