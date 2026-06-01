@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import ReleaseNotes from './pages/ReleaseNotes';
-import '../../src/theme/tokens.css';
+import './theme/tokens.css';
 import './App.css';
 
 function Router() {
