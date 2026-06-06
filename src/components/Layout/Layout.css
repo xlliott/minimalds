@@ -22,7 +22,7 @@
 .mds-layout__content {
   flex:             1;
   overflow-y:       auto;
-  padding:          var(--space-layout-xl) var(--space-layout-2xl);
+  padding:          100px 100px 100px 100px;
   box-sizing:       border-box;
   background-color: var(--color-surface-page);
 }
