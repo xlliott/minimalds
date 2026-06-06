@@ -7,7 +7,7 @@ const navItems = [
   { label: 'Icons', href: '#/icons' },
   { label: 'Spacing', href: '#/spacing' },
   { label: 'Radius', href: '#/radius' },
-  { label: 'Design Tokens', href: '#/tokens' },
+  { label: 'Design Tokens', href: '#/tokens', dividerAfter: true },
   { label: 'COMPONENTS', section: true },
   { label: 'Accordion', href: '#/accordion' },
   { label: 'Alert', href: '#/alert' },
@@ -36,16 +36,20 @@ export default function Sidebar({ currentPath }) {
               {item.label}
             </span>
           ) : (
-            <a
-              key={index}
-              href={item.href}
-              className={[
-                'mds-sidebar__nav-item',
-                currentPath === item.href ? 'mds-sidebar__nav-item--active' : '',
-              ].join(' ').trim()}
-            >
-              {item.label}
-            </a>
+            <div key={index}>
+              <a
+                href={item.href}
+                className={[
+                  'mds-sidebar__nav-item',
+                  currentPath === item.href ? 'mds-sidebar__nav-item--active' : '',
+                ].join(' ').trim()}
+              >
+                {item.label}
+              </a>
+              {item.dividerAfter && (
+                <div className="mds-sidebar__divider" aria-hidden="true" />
+              )}
+            </div>
           )
         )}
       </nav>
