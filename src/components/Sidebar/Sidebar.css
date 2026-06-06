@@ -68,6 +68,14 @@
   background-color: var(--color-interactive-default-base);
 }
 
+/* --- Divider --- */
+
+.mds-sidebar__divider {
+  height:           1px;
+  background-color: var(--color-border-default);
+  margin:           var(--space-component-sm) 0;
+}
+
 /* --- Footer (pinned to bottom) --- */
 
 .mds-sidebar__footer {
