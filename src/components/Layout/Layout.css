@@ -3,23 +3,25 @@
    ============================================================ */
 
 .mds-layout {
-  display:        flex;
-  flex-direction: column;
-  min-height:     100vh;
+  display:          flex;
+  flex-direction:   column;
+  min-height:       100vh;
   background-color: var(--color-surface-page);
+  color:            var(--color-text-default);
+  font-family:      var(--font-family-global);
 }
 
 .mds-layout__body {
-  display:    flex;
-  flex:       1;
-  overflow:   hidden;
-  height:     calc(100vh - 48px); /* subtract navbar height */
+  display:  flex;
+  flex:     1;
+  overflow: hidden;
+  height:   calc(100vh - 48px);
 }
 
 .mds-layout__content {
-  flex:       1;
-  overflow-y: auto;
-  padding:    var(--space-layout-xl) var(--space-layout-2xl); /* 48px 64px */
-  box-sizing: border-box;
+  flex:             1;
+  overflow-y:       auto;
+  padding:          var(--space-layout-xl) var(--space-layout-2xl);
+  box-sizing:       border-box;
   background-color: var(--color-surface-page);
 }
