@@ -7,14 +7,15 @@
   flex-direction:   row;
   align-items:      center;
   justify-content:  space-between;
-  height:           48px;
-  padding:          0 var(--space-layout-md);
+  height:           64px;
+  padding:          0 var(--space-layout-lg);   /* 0 32px */
   background-color: var(--color-surface-default);
   border-bottom:    var(--border-default) solid var(--color-border-default);
   position:         sticky;
   top:              0;
   z-index:          10;
   box-sizing:       border-box;
+  flex-shrink:      0;
 }
 
 .mds-navbar__logo {
@@ -27,22 +28,23 @@
 .mds-navbar__right {
   display:     flex;
   align-items: center;
-  gap:         var(--space-layout-sm);          /* 24px */
+  gap:         var(--space-layout-md);          /* 32px */
 }
 
 .mds-navbar__links {
   display:     flex;
   align-items: center;
-  gap:         var(--space-layout-sm);          /* 24px */
+  gap:         var(--space-layout-md);          /* 32px */
 }
 
 .mds-navbar__link {
   font-family:     var(--font-family-global);
-  font-size:       var(--font-size-body);         /* 14px */
+  font-size:       var(--font-size-body);
   font-weight:     var(--font-weight-regular);
   color:           var(--color-text-default);
   text-decoration: none;
   transition:      color 0.15s ease;
+  white-space:     nowrap;
 }
 
 .mds-navbar__link:hover {
@@ -50,18 +52,19 @@
 }
 
 .mds-navbar__mode-toggle {
-  display:          flex;
-  align-items:      center;
-  justify-content:  center;
-  width:            32px;
-  height:           32px;
-  background:       transparent;
-  border:           none;
-  cursor:           pointer;
-  color:            var(--color-icon-default);
-  border-radius:    var(--radius-none);
-  transition:       color 0.15s ease;
-  padding:          0;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           32px;
+  height:          32px;
+  background:      transparent;
+  border:          none;
+  cursor:          pointer;
+  color:           var(--color-icon-default);
+  border-radius:   var(--radius-none);
+  transition:      color 0.15s ease;
+  padding:         0;
+  flex-shrink:     0;
 }
 
 .mds-navbar__mode-toggle:hover {
