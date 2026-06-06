@@ -11,7 +11,7 @@
 }
 
 .mds-page-home__title {
-  font-family:    var(--font-family-heading);
+  font-family:    var(--font-family-display);
   font-size:      var(--font-size-desktop-h1);  /* 40px */
   font-weight:    var(--font-weight-strong);
   color:          var(--color-text-default);
