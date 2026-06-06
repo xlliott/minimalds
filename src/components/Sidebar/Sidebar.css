@@ -29,7 +29,7 @@
 
 .mds-sidebar__section-label {
   display:        block;
-  padding:        var(--space-layout-sm) var(--space-layout-sm) var(--space-component-sm);
+  padding:        var(--space-layout-sm) var(--space-layout-lg) var(--space-component-sm);
   font-family:    var(--font-family-global);
   font-size:      var(--font-size-helper);
   font-weight:    var(--font-weight-strong);
@@ -42,15 +42,15 @@
 /* --- Nav items — styled like MenuItem --- */
 
 .mds-sidebar__nav-item {
-  display:         block;
-  padding:         var(--space-component-lg) var(--space-layout-sm);  /* 16px 24px */
-  font-family:     var(--font-family-global);
-  font-size:       var(--font-size-body);
-  font-weight:     var(--font-weight-regular);
-  color:           var(--color-text-default);
-  text-decoration: none;
+  display:          block;
+  padding:          var(--space-component-lg) var(--space-layout-lg);  /* 16px 32px */
+  font-family:      var(--font-family-global);
+  font-size:        var(--font-size-body);
+  font-weight:      var(--font-weight-regular);
+  color:            var(--color-text-default);
+  text-decoration:  none;
   background-color: var(--color-interactive-pale-base);
-  transition:      background-color 0.15s ease;
+  transition:       background-color 0.15s ease;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -80,7 +80,7 @@
 
 .mds-sidebar__footer {
   flex-shrink:      0;
-  padding:          var(--space-layout-sm) var(--space-layout-sm);
+  padding:          var(--space-layout-sm) var(--space-layout-lg);
   border-top:       var(--border-default) solid var(--color-border-default);
   background-color: var(--color-surface-default);
 }
