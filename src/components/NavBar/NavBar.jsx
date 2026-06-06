@@ -1,6 +1,14 @@
 import './NavBar.css';
 import { useTheme } from '../../context/ThemeContext';
 
+const logo = (
+  <svg width="24" height="15" viewBox="0 0 300 187" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M60.4317 0L0 62.6316V187L120 62.6316V0H60.4317Z" fill="currentColor"/>
+    <path d="M180.432 0L120 62.6316V187L240 62.6316V0H180.432Z" fill="currentColor"/>
+    <path d="M270 31.1667L240 62.3333V154.943L270 186.11L300 154.943V62.3333L270 31.1667Z" fill="currentColor"/>
+  </svg>
+);
+
 const moonIcon = (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M11.0992 1.80469C11.5702 1.76117 12.0228 1.99908 12.255 2.41114C12.4872 2.82319 12.4556 3.33303 12.1744 3.71338C11.3488 4.83046 10.952 6.20708 11.0553 7.59229C11.1586 8.97759 11.7561 10.2794 12.7384 11.2617C13.7207 12.244 15.0225 12.8415 16.4078 12.9448C17.793 13.0481 19.1696 12.6513 20.2867 11.8257C20.6671 11.5445 21.1769 11.5129 21.589 11.7451C22.001 11.9774 22.2389 12.4299 22.1954 12.9009C22.0171 14.8298 21.2928 16.6681 20.108 18.2007C18.9231 19.7332 17.3259 20.897 15.504 21.5552C13.682 22.2133 11.7097 22.3385 9.81894 21.917C7.92802 21.4954 6.19522 20.5447 4.82529 19.1748C3.45535 17.8049 2.50474 16.0721 2.0831 14.1812C1.66157 12.2903 1.78679 10.3181 2.44492 8.4961C3.10313 6.67415 4.26685 5.07701 5.79941 3.89209C7.33197 2.70726 9.17029 1.98301 11.0992 1.80469Z" fill="currentColor"/>
@@ -18,17 +26,22 @@ export default function NavBar() {
 
   return (
     <nav className="mds-navbar">
-      <div className="mds-navbar__links">
-        <a href="#/about" className="mds-navbar__link">About</a>
-        <a href="#/release-notes" className="mds-navbar__link">Release notes</a>
+      <a href="#/" className="mds-navbar__logo" aria-label="MinimalDS home">
+        {logo}
+      </a>
+      <div className="mds-navbar__right">
+        <div className="mds-navbar__links">
+          <a href="#/about" className="mds-navbar__link">About</a>
+          <a href="#/release-notes" className="mds-navbar__link">Release notes</a>
+        </div>
+        <button
+          className="mds-navbar__mode-toggle"
+          onClick={toggleMode}
+          aria-label={mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+        >
+          {mode === 'light' ? moonIcon : sunIcon}
+        </button>
       </div>
-      <button
-        className="mds-navbar__mode-toggle"
-        onClick={toggleMode}
-        aria-label={mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-      >
-        {mode === 'light' ? moonIcon : sunIcon}
-      </button>
     </nav>
   );
 }
