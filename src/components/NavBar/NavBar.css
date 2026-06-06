@@ -27,7 +27,13 @@
 .mds-navbar__right {
   display:     flex;
   align-items: center;
-  gap:         var(--space-layout-sm);
+  gap:         var(--space-layout-sm);          /* 24px */
+}
+
+.mds-navbar__links {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-layout-sm);          /* 24px */
 }
 
 .mds-navbar__link {
