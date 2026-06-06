@@ -8,7 +8,7 @@
   align-items:      center;
   justify-content:  space-between;
   height:           64px;
-  padding:          0 var(--space-layout-lg);   /* 0 32px */
+  padding:          0 var(--space-layout-lg);
   background-color: var(--color-surface-default);
   border-bottom:    var(--border-default) solid var(--color-border-default);
   position:         sticky;
@@ -23,18 +23,19 @@
   align-items: center;
   color:       var(--color-text-default);
   flex-shrink: 0;
+  width:       192px; /* matches sidebar width minus padding so content aligns */
 }
 
 .mds-navbar__right {
   display:     flex;
   align-items: center;
-  gap:         var(--space-layout-md);          /* 32px */
+  gap:         var(--space-layout-md);
 }
 
 .mds-navbar__links {
   display:     flex;
   align-items: center;
-  gap:         var(--space-layout-md);          /* 32px */
+  gap:         var(--space-layout-md);
 }
 
 .mds-navbar__link {
