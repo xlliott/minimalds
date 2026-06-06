@@ -23,7 +23,7 @@
   align-items: center;
   color:       var(--color-text-default);
   flex-shrink: 0;
-  width:       192px; /* matches sidebar width minus padding so content aligns */
+  width:       268px; /* matches sidebar width minus padding so content aligns */
 }
 
 .mds-navbar__right {
