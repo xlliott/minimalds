@@ -1,15 +1,7 @@
 import './Sidebar.css';
 
-const logo = (
-  <svg width="24" height="15" viewBox="0 0 300 187" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M60.4317 0L0 62.6316V187L120 62.6316V0H60.4317Z" fill="currentColor"/>
-    <path d="M180.432 0L120 62.6316V187L240 62.6316V0H180.432Z" fill="currentColor"/>
-    <path d="M270 31.1667L240 62.3333V154.943L270 186.11L300 154.943V62.3333L270 31.1667Z" fill="currentColor"/>
-  </svg>
-);
-
 const navItems = [
-  { label: 'Foundations', href: '#/foundations', section: true },
+  { label: 'Foundations', section: true },
   { label: 'Design Tokens', href: '#/tokens' },
   { label: 'Components', section: true },
   { label: 'Accordion', href: '#/accordion' },
@@ -33,10 +25,6 @@ const navItems = [
 export default function Sidebar({ currentPath }) {
   return (
     <aside className="mds-sidebar">
-      <a href="#/" className="mds-sidebar__logo" aria-label="MinimalDS home">
-        {logo}
-      </a>
-
       <nav className="mds-sidebar__nav">
         {navItems.map((item, index) =>
           item.section ? (
