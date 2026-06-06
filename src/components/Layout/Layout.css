@@ -5,17 +5,18 @@
 .mds-layout {
   display:          flex;
   flex-direction:   column;
-  min-height:       100vh;
+  height:           100vh;
   background-color: var(--color-surface-page);
   color:            var(--color-text-default);
   font-family:      var(--font-family-global);
+  overflow:         hidden;
 }
 
 .mds-layout__body {
   display:  flex;
   flex:     1;
   overflow: hidden;
-  height:   calc(100vh - 48px);
+  min-height: 0;
 }
 
 .mds-layout__content {
