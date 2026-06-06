@@ -1,9 +1,14 @@
 import './Sidebar.css';
 
 const navItems = [
-  { label: 'Foundations', section: true },
+  { label: 'FOUNDATIONS', section: true },
+  { label: 'Colour', href: '#/colour' },
+  { label: 'Typography', href: '#/typography' },
+  { label: 'Icons', href: '#/icons' },
+  { label: 'Spacing', href: '#/spacing' },
+  { label: 'Radius', href: '#/radius' },
   { label: 'Design Tokens', href: '#/tokens' },
-  { label: 'Components', section: true },
+  { label: 'COMPONENTS', section: true },
   { label: 'Accordion', href: '#/accordion' },
   { label: 'Alert', href: '#/alert' },
   { label: 'Button', href: '#/button' },
@@ -14,8 +19,7 @@ const navItems = [
   { label: 'Dropdown', href: '#/dropdown' },
   { label: 'Input', href: '#/input' },
   { label: 'Link', href: '#/link' },
-  { label: 'Menu', href: '#/menu' },
-  { label: 'Radio', href: '#/radio' },
+  { label: 'Radio Button', href: '#/radio' },
   { label: 'Select', href: '#/select' },
   { label: 'Switch', href: '#/switch' },
   { label: 'Tabs', href: '#/tabs' },
