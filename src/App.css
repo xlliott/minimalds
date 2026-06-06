@@ -10,13 +10,20 @@ html, body {
   margin:  0;
   padding: 0;
   height:  100%;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Once tokens load, use token values */
+[data-brand][data-mode] {
   font-family: var(--font-family-global);
   background-color: var(--color-surface-page);
   color: var(--color-text-default);
-  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 #root {
