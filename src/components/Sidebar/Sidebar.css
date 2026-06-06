@@ -52,7 +52,6 @@
   background-color: var(--color-interactive-pale-base);
   transition:      background-color 0.15s ease;
   -webkit-font-smoothing: antialiased;
-  border-bottom:   var(--border-default) solid var(--color-border-subtle);
 }
 
 .mds-sidebar__nav-item:hover {
