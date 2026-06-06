@@ -5,8 +5,8 @@
 .mds-sidebar {
   display:          flex;
   flex-direction:   column;
-  width:            240px;
-  min-width:        240px;
+  width:            300px;
+  min-width:        300px;
   height:           100%;
   background-color: var(--color-surface-default);
   border-right:     var(--border-default) solid var(--color-border-default);
