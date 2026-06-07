@@ -198,38 +198,44 @@ export default function Colour() {
         </div>
       </Section>
 
-      <Section tag="Global" title="Red">
-        <div className="mds-colour__two-col">
+      <div className="mds-colour__two-col mds-colour__section">
+        <div>
+          <span className="mds-colour__tag">Global</span>
+          <h2 className="mds-colour__section-title">Red</h2>
           <SwatchTable colours={red} />
-          <div>
-            <span className="mds-colour__tag">Global</span>
-            <h2 className="mds-colour__section-title">Yellow</h2>
-            <SwatchTable colours={yellow} />
-          </div>
         </div>
-      </Section>
+        <div>
+          <span className="mds-colour__tag">Global</span>
+          <h2 className="mds-colour__section-title">Yellow</h2>
+          <SwatchTable colours={yellow} />
+        </div>
+      </div>
 
-      <Section tag="Global" title="Green">
-        <div className="mds-colour__two-col">
+      <div className="mds-colour__two-col mds-colour__section">
+        <div>
+          <span className="mds-colour__tag">Global</span>
+          <h2 className="mds-colour__section-title">Green</h2>
           <SwatchTable colours={green} />
-          <div>
-            <span className="mds-colour__tag">Global</span>
-            <h2 className="mds-colour__section-title">Blue</h2>
-            <SwatchTable colours={blue} />
-          </div>
         </div>
-      </Section>
+        <div>
+          <span className="mds-colour__tag">Global</span>
+          <h2 className="mds-colour__section-title">Blue</h2>
+          <SwatchTable colours={blue} />
+        </div>
+      </div>
 
-      <Section tag="Brand" title="Purpura">
-        <div className="mds-colour__two-col">
+      <div className="mds-colour__two-col mds-colour__section">
+        <div>
+          <span className="mds-colour__tag">Brand</span>
+          <h2 className="mds-colour__section-title">Purpura</h2>
           <SwatchTable colours={purpura} />
-          <div>
-            <span className="mds-colour__tag">Brand</span>
-            <h2 className="mds-colour__section-title">Azure</h2>
-            <SwatchTable colours={azure} />
-          </div>
         </div>
-      </Section>
+        <div>
+          <span className="mds-colour__tag">Brand</span>
+          <h2 className="mds-colour__section-title">Azure</h2>
+          <SwatchTable colours={azure} />
+        </div>
+      </div>
     </div>
   );
 }
