@@ -28,7 +28,7 @@
 /* --- Section --- */
 
 .mds-colour__section {
-  margin-bottom: var(--space-layout-2xl);
+  margin-bottom: 64px;
 }
 
 .mds-colour__tag {
@@ -65,8 +65,8 @@
   flex-direction:  row;
   align-items:     center;
   justify-content: space-between;
-  padding:         var(--space-component-md) var(--space-component-lg);
-  min-height:      40px;
+  padding:         11px var(--space-component-lg);
+  min-height:      56px;
 }
 
 .mds-colour__swatch-name,
@@ -83,7 +83,8 @@
 .mds-colour__two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:     var(--space-layout-sm);
+  gap:     64px;
+  align-items: start;
 }
 
 .mds-colour__two-col .mds-colour__section {
