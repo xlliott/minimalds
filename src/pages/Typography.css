@@ -1,0 +1,97 @@
+/* ============================================================
+   MinimalDS — Typography Page
+   ============================================================ */
+
+.mds-page-typography {
+  max-width: 800px;
+}
+
+.mds-page-typography__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-typography__subtitle {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-2xl);
+}
+
+/* --- Controls --- */
+
+.mds-page-typography__controls {
+  display:       flex;
+  flex-direction: row;
+  gap:           var(--space-layout-sm);
+  margin-bottom: var(--space-layout-2xl);
+}
+
+/* --- Table --- */
+
+.mds-page-typography__table {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+}
+
+.mds-page-typography__row {
+  display:        grid;
+  grid-template-columns: 160px 1fr;
+  align-items:    center;
+  gap:            var(--space-layout-md);
+  padding:        var(--space-layout-md) var(--space-component-lg);
+  min-height:     72px;
+  border-bottom:  var(--border-default) solid var(--color-border-default);
+}
+
+.mds-page-typography__row:last-child {
+  border-bottom: none;
+}
+
+/* --- Meta column --- */
+
+.mds-page-typography__meta {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-xs);
+}
+
+.mds-page-typography__style-name {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-medium);
+  color:        var(--color-text-default);
+  line-height:  1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-typography__style-detail {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-helper);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-muted);
+  line-height:  1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Sample column --- */
+
+.mds-page-typography__sample {
+  color:                  var(--color-text-default);
+  -webkit-font-smoothing: antialiased;
+  word-break:             break-word;
+}
+
+.mds-page-typography__sample--link {
+  color:           var(--color-interactive-default-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
