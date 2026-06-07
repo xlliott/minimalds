@@ -42,6 +42,12 @@
   margin:       0;
 }
 
+.mds-page-home__divider {
+  height:           1px;
+  background-color: var(--color-border-default);
+  margin:           var(--space-layout-2xl) 0;
+}
+
 /* --- Cards --- */
 
 .mds-page-home__cards {
