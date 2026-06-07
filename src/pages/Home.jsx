@@ -1,6 +1,7 @@
 import './Home.css';
+import Button from '../components/Button/Button';
 
-export default function Home({ navigate }) {
+export default function Home() {
   return (
     <div className="mds-page-home">
       <div className="mds-page-home__hero">
@@ -11,39 +12,62 @@ export default function Home({ navigate }) {
           It's not intended to be flashy or complex. Check out the design file on the Figma Community, and give
           it a like or save if you find it useful.
         </p>
-        <a
-          href="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mds-page-home__figma-link"
+        <Button
+          role="secondary"
+          size="default"
+          onClick={() => window.open('https://www.figma.com/community/file/1643197568772735915/minimal-design-system', '_blank')}
         >
           View on Figma
-        </a>
+        </Button>
       </div>
 
       <div className="mds-page-home__cards">
         <div className="mds-page-home__card">
-          <h2 className="mds-page-home__card-title">Foundations</h2>
-          <p className="mds-page-home__card-body">
-            The core principles that define the overall look and feel of the product.
-          </p>
-          <a href="#/foundations" className="mds-page-home__card-link">View Foundations</a>
+          <div className="mds-page-home__card-text">
+            <h2 className="mds-page-home__card-title">Foundations</h2>
+            <p className="mds-page-home__card-body">
+              The core principles that define the overall look and feel of the product.
+            </p>
+          </div>
+          <Button
+            role="secondary"
+            size="default"
+            onClick={() => window.location.hash = '#/foundations'}
+          >
+            View Foundations
+          </Button>
         </div>
 
         <div className="mds-page-home__card">
-          <h2 className="mds-page-home__card-title">Design Tokens</h2>
-          <p className="mds-page-home__card-body">
-            Named, reusable values that ensure consistency across design and code.
-          </p>
-          <a href="#/tokens" className="mds-page-home__card-link">View Design Tokens</a>
+          <div className="mds-page-home__card-text">
+            <h2 className="mds-page-home__card-title">Design Tokens</h2>
+            <p className="mds-page-home__card-body">
+              Named, reusable values that ensure consistency across design and code.
+            </p>
+          </div>
+          <Button
+            role="secondary"
+            size="default"
+            onClick={() => window.location.hash = '#/tokens'}
+          >
+            View Design Tokens
+          </Button>
         </div>
 
         <div className="mds-page-home__card">
-          <h2 className="mds-page-home__card-title">Components</h2>
-          <p className="mds-page-home__card-body">
-            Reusable UI building blocks used to construct user interfaces.
-          </p>
-          <a href="#/accordion" className="mds-page-home__card-link">View Components</a>
+          <div className="mds-page-home__card-text">
+            <h2 className="mds-page-home__card-title">Components</h2>
+            <p className="mds-page-home__card-body">
+              Reusable UI building blocks used to construct user interfaces.
+            </p>
+          </div>
+          <Button
+            role="secondary"
+            size="default"
+            onClick={() => window.location.hash = '#/accordion'}
+          >
+            View Components
+          </Button>
         </div>
       </div>
     </div>
