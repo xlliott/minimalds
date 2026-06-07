@@ -129,13 +129,20 @@ function isLight(hex) {
   return (r * 299 + g * 587 + b * 114) / 1000 > 128;
 }
 
-function SwatchRow({ name, hex, opacity }) {
-  const light = isLight(hex);
-  const textColor = light ? '#141414' : '#FFFFFF';
-  const bgColor = opacity
+function SwatchRow({ name, hex, opacity, forceLight, forceDark }) {
+  let textColor;
+  if (forceLight) {
+    textColor = '#FFFFFF';
+  } else if (forceDark) {
+    textColor = '#141414';
+  } else {
+    textColor = isLight(hex) ? '#141414' : '#FFFFFF';
+  }
+
+  const bgColor = opacity !== undefined
     ? `rgba(${parseInt(hex.slice(1,3),16)}, ${parseInt(hex.slice(3,5),16)}, ${parseInt(hex.slice(5,7),16)}, ${parseInt(opacity)/100})`
     : hex;
-  const label = opacity ? `${hex} @${opacity}` : hex;
+  const label = opacity !== undefined ? `${hex} @${opacity}` : hex;
 
   return (
     <div className="mds-colour__swatch-row" style={{ backgroundColor: bgColor }}>
@@ -145,11 +152,18 @@ function SwatchRow({ name, hex, opacity }) {
   );
 }
 
-function SwatchTable({ colours, transparent }) {
+function SwatchTable({ colours, transparentDark, transparentLight }) {
   return (
     <div className="mds-colour__table">
       {colours.map((c, i) => (
-        <SwatchRow key={i} name={c.name} hex={c.hex} opacity={transparent ? c.opacity : null} />
+        <SwatchRow
+          key={i}
+          name={c.name}
+          hex={c.hex}
+          opacity={c.opacity}
+          forceLight={transparentDark && parseInt(c.opacity) >= 50}
+          forceDark={transparentLight}
+        />
       ))}
     </div>
   );
@@ -179,8 +193,8 @@ export default function Colour() {
 
       <Section tag="Global" title="Transparent">
         <div className="mds-colour__two-col">
-          <SwatchTable colours={transparentBlack} transparent />
-          <SwatchTable colours={transparentWhite} transparent />
+          <SwatchTable colours={transparentBlack} transparentDark />
+          <SwatchTable colours={transparentWhite} transparentLight />
         </div>
       </Section>
 
