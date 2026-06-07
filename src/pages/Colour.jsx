@@ -129,11 +129,11 @@ function isLight(hex) {
   return (r * 299 + g * 587 + b * 114) / 1000 > 128;
 }
 
-function SwatchRow({ name, hex, opacity, forceLight, forceDark }) {
+function SwatchRow({ name, hex, opacity, transparentDark, transparentLight }) {
   let textColor;
-  if (forceLight) {
-    textColor = '#FFFFFF';
-  } else if (forceDark) {
+  if (transparentDark) {
+    textColor = parseInt(opacity) >= 50 ? '#FFFFFF' : '#141414';
+  } else if (transparentLight) {
     textColor = '#141414';
   } else {
     textColor = isLight(hex) ? '#141414' : '#FFFFFF';
@@ -161,8 +161,8 @@ function SwatchTable({ colours, transparentDark, transparentLight }) {
           name={c.name}
           hex={c.hex}
           opacity={c.opacity}
-          forceLight={transparentDark && parseInt(c.opacity) >= 40}
-          forceDark={transparentLight}
+          transparentDark={transparentDark}
+          transparentLight={transparentLight}
         />
       ))}
     </div>
