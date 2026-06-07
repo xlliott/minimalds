@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ReleaseNotes from './pages/ReleaseNotes';
 import Colour from './pages/Colour';
+import Typography from './pages/Typography';
 import './theme/tokens.css';
 import './App.css';
 
@@ -22,6 +23,7 @@ function Router() {
       case '#/about':         return <About />;
       case '#/release-notes': return <ReleaseNotes />;
       case '#/colour':        return <Colour />;
+      case '#/typography':    return <Typography />;
       default:                return <Home />;
     }
   };
