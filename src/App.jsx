@@ -6,6 +6,7 @@ import About from './pages/About';
 import ReleaseNotes from './pages/ReleaseNotes';
 import Colour from './pages/Colour';
 import Typography from './pages/Typography';
+import AccordionPage from './pages/AccordionPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -24,6 +25,7 @@ function Router() {
       case '#/release-notes': return <ReleaseNotes />;
       case '#/colour':        return <Colour />;
       case '#/typography':    return <Typography />;
+      case '#/accordion':     return <AccordionPage />;
       default:                return <Home />;
     }
   };
