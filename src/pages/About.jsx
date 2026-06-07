@@ -1,4 +1,5 @@
 import './About.css';
+import Button from '../components/Button/Button';
 
 export default function About() {
   return (
@@ -25,9 +26,8 @@ export default function About() {
             href="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
             target="_blank"
             rel="noopener noreferrer"
-            className="mds-page-about__card-link"
           >
-            View on Figma
+            <Button role="secondary">View on Figma</Button>
           </a>
         </div>
 
@@ -41,9 +41,8 @@ export default function About() {
             href="https://uk.linkedin.com/in/ellliottt"
             target="_blank"
             rel="noopener noreferrer"
-            className="mds-page-about__card-link"
           >
-            Connect on LinkedIn
+            <Button role="secondary">Connect on LinkedIn</Button>
           </a>
         </div>
       </div>
