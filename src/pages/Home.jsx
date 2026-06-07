@@ -32,6 +32,8 @@ export default function Home() {
         </Button>
       </div>
 
+      <div className="mds-page-home__divider" />
+
       <div className="mds-page-home__cards">
         <div className="mds-page-home__card">
           <div className="mds-page-home__card-text">
