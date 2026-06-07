@@ -4,6 +4,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import ReleaseNotes from './pages/ReleaseNotes';
+import Colour from './pages/Colour';
 import './theme/tokens.css';
 import './App.css';
 
@@ -18,9 +19,10 @@ function Router() {
 
   const renderPage = () => {
     switch (path) {
-      case '#/about':        return <About />;
+      case '#/about':         return <About />;
       case '#/release-notes': return <ReleaseNotes />;
-      default:               return <Home />;
+      case '#/colour':        return <Colour />;
+      default:                return <Home />;
     }
   };
 
