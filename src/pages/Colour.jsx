@@ -201,27 +201,33 @@ export default function Colour() {
       <Section tag="Global" title="Red">
         <div className="mds-colour__two-col">
           <SwatchTable colours={red} />
-          <Section tag="Global" title="Yellow">
+          <div>
+            <span className="mds-colour__tag">Global</span>
+            <h2 className="mds-colour__section-title">Yellow</h2>
             <SwatchTable colours={yellow} />
-          </Section>
+          </div>
         </div>
       </Section>
 
       <Section tag="Global" title="Green">
         <div className="mds-colour__two-col">
           <SwatchTable colours={green} />
-          <Section tag="Global" title="Blue">
+          <div>
+            <span className="mds-colour__tag">Global</span>
+            <h2 className="mds-colour__section-title">Blue</h2>
             <SwatchTable colours={blue} />
-          </Section>
+          </div>
         </div>
       </Section>
 
       <Section tag="Brand" title="Purpura">
         <div className="mds-colour__two-col">
           <SwatchTable colours={purpura} />
-          <Section tag="Brand" title="Azure">
+          <div>
+            <span className="mds-colour__tag">Brand</span>
+            <h2 className="mds-colour__section-title">Azure</h2>
             <SwatchTable colours={azure} />
-          </Section>
+          </div>
         </div>
       </Section>
     </div>
