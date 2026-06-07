@@ -62,7 +62,7 @@
   align-items:      center;
   justify-content:  space-between;
   gap:              var(--space-layout-md);
-  padding:          var(--space-layout-md);
+  padding:          28px;
   background-color: var(--color-surface-default);
   border:           var(--border-default) solid var(--color-border-default);
   border-radius:    var(--radius-card);
