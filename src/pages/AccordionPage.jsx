@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Accordion from '../components/Accordion/Accordion';
+import Alert from '../components/Alert/Alert';
 import Dropdown from '../components/Dropdown/Dropdown';
 import Divider from '../components/Divider/Divider';
 import './AccordionPage.css';
@@ -16,7 +17,6 @@ export default function AccordionPage() {
   return (
     <div className="mds-page-accordion">
 
-      {/* Page header */}
       <h1 className="mds-page-accordion__title">Accordion</h1>
       <p className="mds-page-accordion__subtitle">
         Accordions are a vertically stacked list of headers that reveal or hide associated sections of content.
@@ -32,7 +32,6 @@ export default function AccordionPage() {
 
       <Divider />
 
-      {/* Overview */}
       <section className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">Overview</h2>
         <p className="mds-page-accordion__body">
@@ -49,32 +48,24 @@ export default function AccordionPage() {
 
       <Divider />
 
-      {/* Usage guidelines */}
       <section className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">Usage guidelines</h2>
         <div className="mds-page-accordion__usage">
-          <div className="mds-page-accordion__usage-col">
-            <h3 className="mds-page-accordion__usage-heading mds-page-accordion__usage-heading--when">When to use</h3>
-            <ul className="mds-page-accordion__usage-list">
-              <li>Providing users more content for information within the same layout.</li>
-              <li>Displaying content that is directly related to the main subject of the page.</li>
-              <li>When vertical space is limited and there is enough content to condense.</li>
-            </ul>
-          </div>
-          <div className="mds-page-accordion__usage-col">
-            <h3 className="mds-page-accordion__usage-heading mds-page-accordion__usage-heading--when-not">When not to use</h3>
-            <ul className="mds-page-accordion__usage-list">
-              <li>Linking a title to another page. Instead, use Link.</li>
-              <li>Designing with sparse content.</li>
-              <li>When content is lengthy. Instead, use Tabs.</li>
-            </ul>
-          </div>
+          <Alert
+            role="success"
+            title="When to use"
+            description="Providing users more content for information within the same layout. Displaying content that is directly related to the main subject of the page. When vertical space is limited and there is enough content to condense."
+          />
+          <Alert
+            role="danger"
+            title="When not to use"
+            description="Linking a title to another page. Instead, use Link. Designing with sparse content. When content is lengthy. Instead, use Tabs."
+          />
         </div>
       </section>
 
       <Divider />
 
-      {/* Interactive preview */}
       <section className="mds-page-accordion__section">
         <div className="mds-page-accordion__panel">
           <div className="mds-page-accordion__controls">
@@ -93,7 +84,6 @@ export default function AccordionPage() {
 
       <Divider />
 
-      {/* States */}
       <section className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">States</h2>
         <p className="mds-page-accordion__body">
