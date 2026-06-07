@@ -118,28 +118,29 @@ export default function Typography() {
         A system of fonts and text styles which enhance communication and reinforce a brand.
       </p>
 
-      <div className="mds-page-typography__controls">
-        <Dropdown
-          options={brandOptions}
-          value={brand}
-          innerLabel="Brand"
-          onChange={setBrand}
-        />
-        <Dropdown
-          options={resolutionOptions}
-          value={resolution}
-          innerLabel="Resolution"
-          onChange={setResolution}
-        />
-        <Dropdown
-          options={weightOptions}
-          value={weight}
-          innerLabel="Weight"
-          onChange={setWeight}
-        />
-      </div>
+      <div className="mds-page-typography__panel">
+        <div className="mds-page-typography__controls">
+          <Dropdown
+            options={brandOptions}
+            value={brand}
+            innerLabel="Brand"
+            onChange={setBrand}
+          />
+          <Dropdown
+            options={resolutionOptions}
+            value={resolution}
+            innerLabel="Resolution"
+            onChange={setResolution}
+          />
+          <Dropdown
+            options={weightOptions}
+            value={weight}
+            innerLabel="Weight"
+            onChange={setWeight}
+          />
+        </div>
 
-      <div className="mds-page-typography__table">
+        <div className="mds-page-typography__table">
         {typeStyles.map((style) => {
           const family   = fonts[style.role];
           const fontSize = style.sizes[resolution];
@@ -169,6 +170,7 @@ export default function Typography() {
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );
