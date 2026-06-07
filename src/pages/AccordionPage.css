@@ -1,0 +1,171 @@
+/* ============================================================
+   MinimalDS — Accordion Page
+   ============================================================ */
+
+.mds-page-accordion {
+  max-width: 800px;
+}
+
+/* --- Page header --- */
+
+.mds-page-accordion__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-accordion__subtitle {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-sm);
+}
+
+.mds-page-accordion__figma-link {
+  display:         inline-block;
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-body);
+  font-weight:     var(--font-weight-regular);
+  color:           var(--color-interactive-default-base);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-bottom:   var(--space-layout-2xl);
+}
+
+/* --- Sections --- */
+
+.mds-page-accordion__section {
+  padding: var(--space-layout-2xl) 0;
+}
+
+.mds-page-accordion__section-title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-accordion__body {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-component-lg);
+}
+
+.mds-page-accordion__body:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Usage guidelines --- */
+
+.mds-page-accordion__usage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-layout-2xl);
+}
+
+.mds-page-accordion__usage-heading {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-strong);
+  line-height:  1.5;
+  margin:       0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-accordion__usage-heading--when {
+  color: var(--color-text-positive);
+}
+
+.mds-page-accordion__usage-heading--when-not {
+  color: var(--color-text-danger);
+}
+
+.mds-page-accordion__usage-list {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.6;
+  margin:       0;
+  padding-left: var(--space-layout-md);
+}
+
+.mds-page-accordion__usage-list li {
+  margin-bottom: var(--space-component-sm);
+}
+
+.mds-page-accordion__usage-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Interactive preview panel --- */
+
+.mds-page-accordion__panel {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+}
+
+.mds-page-accordion__controls {
+  display:        flex;
+  flex-direction: row;
+  border-bottom:  var(--border-default) solid var(--color-border-default);
+}
+
+.mds-page-accordion__controls .mds-dropdown {
+  flex:          1;
+  width:         auto;
+  border-radius: 0;
+}
+
+.mds-page-accordion__controls .mds-dropdown__field {
+  border:        none;
+  border-radius: 0;
+  width:         100%;
+}
+
+.mds-page-accordion__controls .mds-dropdown:not(:last-child) {
+  border-right: var(--border-default) solid var(--color-border-default);
+}
+
+.mds-page-accordion__preview {
+  background-color: var(--color-surface-default);
+  padding:          var(--space-layout-2xl);
+  display:          flex;
+  justify-content:  center;
+}
+
+.mds-page-accordion__preview > * {
+  width: 400px;
+}
+
+/* --- States --- */
+
+.mds-page-accordion__states {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:     var(--space-layout-2xl);
+  margin-top: var(--space-layout-md);
+}
+
+.mds-page-accordion__state-label {
+  display:      block;
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-helper);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-muted);
+  margin-bottom: var(--space-component-sm);
+  -webkit-font-smoothing: antialiased;
+}
