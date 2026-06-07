@@ -1,0 +1,91 @@
+/* ============================================================
+   MinimalDS — Colour Page
+   ============================================================ */
+
+.mds-page-colour {
+  max-width: 800px;
+}
+
+.mds-page-colour__title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-colour__subtitle {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-2xl);
+}
+
+/* --- Section --- */
+
+.mds-colour__section {
+  margin-bottom: var(--space-layout-2xl);
+}
+
+.mds-colour__tag {
+  display:      block;
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-helper);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-muted);
+  margin-bottom: var(--space-component-xs);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-colour__section-title {
+  font-family:   var(--font-family-heading);
+  font-size:     var(--font-size-desktop-h4);
+  font-weight:   var(--font-weight-strong);
+  color:         var(--color-text-default);
+  line-height:   1.2;
+  margin:        0 0 var(--space-component-lg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Swatch table --- */
+
+.mds-colour__table {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+  width:         100%;
+}
+
+.mds-colour__swatch-row {
+  display:         flex;
+  flex-direction:  row;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         var(--space-component-md) var(--space-component-lg);
+  min-height:      40px;
+}
+
+.mds-colour__swatch-name,
+.mds-colour__swatch-hex {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Two column layout --- */
+
+.mds-colour__two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:     var(--space-layout-sm);
+}
+
+.mds-colour__two-col .mds-colour__section {
+  margin-bottom: 0;
+}
