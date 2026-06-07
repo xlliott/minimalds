@@ -69,7 +69,7 @@
   font-weight:  var(--font-weight-regular);
   color:        var(--color-text-subtle);
   line-height:  1.5;
-  margin:       0 0 var(--space-layout-xs);
+  margin:       0 0 var(--space-layout-md);
 }
 
 .mds-page-about__card-link {
