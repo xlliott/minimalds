@@ -161,7 +161,7 @@ function SwatchTable({ colours, transparentDark, transparentLight }) {
           name={c.name}
           hex={c.hex}
           opacity={c.opacity}
-          forceLight={transparentDark && parseInt(c.opacity) >= 50}
+          forceLight={transparentDark && parseInt(c.opacity) >= 40}
           forceDark={transparentLight}
         />
       ))}
