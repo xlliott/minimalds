@@ -59,9 +59,7 @@
   display:        flex;
   flex-direction: row;
   position:       relative;
-  z-index:        2;
-  border-radius:  var(--radius-card) var(--radius-card) 0 0;
-  overflow:       hidden;
+  z-index:        10;
   border-bottom:  1px solid var(--color-border-default);
 }
 
@@ -77,6 +75,20 @@
   border:        none;
   border-radius: 0;
   width:         100%;
+}
+
+/* Round top corners of first and last field to match panel */
+.mds-component-page__controls .mds-dropdown:first-child .mds-dropdown__field {
+  border-radius: var(--radius-card) 0 0 0;
+}
+
+.mds-component-page__controls .mds-dropdown:last-child .mds-dropdown__field {
+  border-radius: 0 var(--radius-card) 0 0;
+}
+
+/* Single dropdown — both top corners rounded */
+.mds-component-page__controls .mds-dropdown:only-child .mds-dropdown__field {
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
 }
 
 /* Divider between adjacent dropdowns */
