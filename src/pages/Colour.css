@@ -78,27 +78,13 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Always dark text (light swatches in light mode) */
+/* Always dark text */
 .mds-colour__swatch-text--dark {
   color: #141414;
 }
 
-/* In dark mode, transparent-black low-opacity swatches are invisible — use light text */
-[data-mode="dark"] .mds-colour__swatch-text--dark {
-  color: #ffffff;
-}
-
-/* Always light text (dark swatches) */
+/* Always light text */
 .mds-colour__swatch-text--light {
-  color: #ffffff;
-}
-
-/* Adaptive: dark text in light mode, light text in dark mode */
-.mds-colour__swatch-text--adaptive {
-  color: #141414;
-}
-
-[data-mode="dark"] .mds-colour__swatch-text--adaptive {
   color: #ffffff;
 }
 /* --- Two column layout --- */

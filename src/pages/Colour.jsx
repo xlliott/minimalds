@@ -1,4 +1,5 @@
 import './Colour.css';
+import { useTheme } from '../context/ThemeContext';
 
 const neutrals = [
   { name: 'Neutral 0', hex: '#FFFFFF' },
@@ -130,18 +131,27 @@ function isLight(hex) {
 }
 
 function SwatchRow({ name, hex, opacity, transparentDark, transparentLight }) {
+  const { mode } = useTheme();
+  const isDark = mode === 'dark';
+  const pct = parseInt(opacity) || 0;
+
   let textClass;
   if (transparentDark) {
-    // In dark mode the background is dark, so transparent black swatches are nearly invisible
-    // — always use light text. In light mode, use dark text for low opacity, light for high.
-    textClass = parseInt(opacity) >= 50
-      ? 'mds-colour__swatch-text--light'
-      : 'mds-colour__swatch-text--dark';
+    if (isDark) {
+      // On dark bg, all transparent black swatches are near-invisible — always white text
+      textClass = 'mds-colour__swatch-text--light';
+    } else {
+      // On light bg: low opacity = light swatch = dark text; high opacity = dark swatch = white text
+      textClass = pct >= 50 ? 'mds-colour__swatch-text--light' : 'mds-colour__swatch-text--dark';
+    }
   } else if (transparentLight) {
-    // Transparent white: high opacity swatches are light, need dark text regardless of mode
-    textClass = parseInt(opacity) >= 60
-      ? 'mds-colour__swatch-text--dark'
-      : 'mds-colour__swatch-text--light';
+    if (isDark) {
+      // On dark bg: low opacity white = near-invisible = white text; high opacity = light = dark text
+      textClass = pct >= 60 ? 'mds-colour__swatch-text--dark' : 'mds-colour__swatch-text--light';
+    } else {
+      // On light bg: all transparent white swatches are near-invisible — always dark text
+      textClass = 'mds-colour__swatch-text--dark';
+    }
   } else {
     textClass = isLight(hex) ? 'mds-colour__swatch-text--dark' : 'mds-colour__swatch-text--light';
   }
