@@ -50,7 +50,7 @@ export default function CheckboxPage() {
   };
 
   return (
-    <div className="mds-component-page">
+    <div className="mds-component-page mds-checkbox-page">
 
       <ComponentPageHeader
         title="Checkbox"

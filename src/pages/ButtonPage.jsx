@@ -76,7 +76,7 @@ export default function ButtonPage() {
   const trailingIcon = modifier === 'trailing-icon' ? <ArrowIcon /> : undefined;
 
   return (
-    <div className="mds-component-page">
+    <div className="mds-component-page mds-button-page">
 
       <ComponentPageHeader
         title="Button"

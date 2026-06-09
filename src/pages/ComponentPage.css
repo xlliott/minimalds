@@ -123,6 +123,17 @@
   width: 100%;
 }
 
+/* Pages where the component should hug its natural width */
+.mds-checkbox-page .mds-component-page__preview-scope,
+.mds-button-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-checkbox-page .mds-component-page__preview-scope > *,
+.mds-button-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
+
 /* --- Sections --- */
 
 .mds-component-page__section {
