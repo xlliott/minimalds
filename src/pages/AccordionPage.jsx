@@ -17,22 +17,41 @@ export default function AccordionPage() {
   return (
     <div className="mds-page-accordion">
 
-      <h1 className="mds-page-accordion__title">Accordion</h1>
-      <p className="mds-page-accordion__subtitle">
-        Accordions are a vertically stacked list of headers that reveal or hide associated sections of content.
-      </p>
-      <a
-        href="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mds-page-accordion__figma-link"
-      >
-        View in Figma ↗
-      </a>
+      {/* Page header */}
+      <div className="mds-page-accordion__header">
+        <h1 className="mds-page-accordion__title">Accordion</h1>
+        <p className="mds-page-accordion__subtitle">
+          Accordions are a vertically stacked list of headers that reveal or hide associated sections of content.
+        </p>
+        <a
+          href="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mds-page-accordion__figma-link"
+        >
+          View in Figma ↗
+        </a>
+      </div>
 
-      <Divider />
+      {/* Interactive preview */}
+      <div className="mds-page-accordion__panel">
+        <div className="mds-page-accordion__controls">
+          <Dropdown
+            options={brandOptions}
+            value={brand}
+            innerLabel="Brand"
+            onChange={setBrand}
+          />
+          <div className="mds-page-accordion__controls-spacer" />
+          <div className="mds-page-accordion__controls-spacer" />
+        </div>
+        <div className="mds-page-accordion__preview" data-brand={brand} data-mode="light">
+          <Accordion title="Title" description="Description" />
+        </div>
+      </div>
 
-      <section className="mds-page-accordion__section">
+      {/* Overview */}
+      <div className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">Overview</h2>
         <p className="mds-page-accordion__body">
           The accordion component delivers large amounts of content in a small space through
@@ -44,11 +63,12 @@ export default function AccordionPage() {
           does hide content from users and it's important to account for a user not noticing or
           reading all of the included content.
         </p>
-      </section>
+      </div>
 
       <Divider />
 
-      <section className="mds-page-accordion__section">
+      {/* Usage guidelines */}
+      <div className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">Usage guidelines</h2>
         <div className="mds-page-accordion__usage">
           <Alert
@@ -62,29 +82,12 @@ export default function AccordionPage() {
             description="Linking a title to another page. Instead, use Link. Designing with sparse content. When content is lengthy. Instead, use Tabs."
           />
         </div>
-      </section>
+      </div>
 
       <Divider />
 
-      <section className="mds-page-accordion__section">
-        <div className="mds-page-accordion__panel">
-          <div className="mds-page-accordion__controls">
-            <Dropdown
-              options={brandOptions}
-              value={brand}
-              innerLabel="Brand"
-              onChange={setBrand}
-            />
-          </div>
-          <div className="mds-page-accordion__preview" data-brand={brand} data-mode="light">
-            <Accordion title="Title" description="Description" />
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
-      <section className="mds-page-accordion__section">
+      {/* States */}
+      <div className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">States</h2>
         <p className="mds-page-accordion__body">
           The accordion component has two main states: collapsed and expanded. The chevron icon
@@ -96,17 +99,13 @@ export default function AccordionPage() {
           Starting in a collapsed state gives the user a high level overview of the available
           information.
         </p>
-        <div className="mds-page-accordion__states">
-          <div className="mds-page-accordion__state">
-            <span className="mds-page-accordion__state-label">Collapsed</span>
-            <Accordion title="Title" />
-          </div>
-          <div className="mds-page-accordion__state">
-            <span className="mds-page-accordion__state-label">Expanded</span>
-            <Accordion title="Title" description="Description" defaultOpen />
-          </div>
+        <div className="mds-page-accordion__state-panel">
+          <Accordion title="Title" />
         </div>
-      </section>
+        <div className="mds-page-accordion__state-panel">
+          <Accordion title="Title" description="Description" defaultOpen />
+        </div>
+      </div>
 
     </div>
   );
