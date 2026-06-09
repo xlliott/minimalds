@@ -56,7 +56,7 @@
   text-underline-offset: 2px;
 }
 
-.mds-tokens__section:first-of-type {
+.mds-tokens__section--first {
   border-top: none;
   padding-top: 0;
 }
