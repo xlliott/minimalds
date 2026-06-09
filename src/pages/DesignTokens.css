@@ -70,8 +70,8 @@
 /* --- Sections --- */
 
 .mds-tokens__section {
-  margin-bottom: var(--space-layout-2xl);
-  padding-top:   var(--space-layout-2xl);
+  margin-bottom: 64px;
+  padding-top:   64px;
   border-top:    var(--border-default) solid var(--color-border-default);
 }
 
@@ -81,7 +81,7 @@
   font-weight:  var(--font-weight-strong);
   color:        var(--color-text-default);
   line-height:  1;
-  margin:       0 0 var(--space-layout-sm);
+  margin:       0 0 32px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -101,7 +101,7 @@
   font-weight:  var(--font-weight-strong);
   color:        var(--color-text-default);
   line-height:  1.5;
-  margin:       0 0 var(--space-component-sm);
+  margin:       0 0 16px;
   -webkit-font-smoothing: antialiased;
 }
 
