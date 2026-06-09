@@ -1,0 +1,11 @@
+/* ============================================================
+   MinimalDS — Checkbox Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Variants state panel — two groups side by side */
+.mds-checkbox-page__variants {
+  display:     flex;
+  gap:         var(--space-layout-2xl);
+  align-items: flex-start;
+}
