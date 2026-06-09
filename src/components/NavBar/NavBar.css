@@ -76,3 +76,44 @@
   outline:        var(--border-strong) solid var(--color-border-focus);
   outline-offset: 2px;
 }
+
+/* --- Hamburger (mobile only) --- */
+
+.mds-navbar__left {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-layout-sm);
+}
+
+.mds-navbar__hamburger {
+  display:         none;
+  align-items:     center;
+  justify-content: center;
+  width:           32px;
+  height:          32px;
+  background:      transparent;
+  border:          none;
+  cursor:          pointer;
+  color:           var(--color-icon-default);
+  padding:         0;
+  flex-shrink:     0;
+}
+
+.mds-navbar__hamburger:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .mds-navbar__hamburger {
+    display: flex;
+  }
+
+  .mds-navbar__logo {
+    width: auto;
+  }
+
+  .mds-navbar__links {
+    display: none;
+  }
+}
