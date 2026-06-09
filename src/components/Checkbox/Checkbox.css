@@ -68,6 +68,7 @@
 .mds-checkbox--checked .mds-checkbox__control {
   background-color: var(--color-interactive-brand-base);
   border-color:     transparent;
+  color:            var(--color-text-inverse);
 }
 
 /* --- Disabled --- */
