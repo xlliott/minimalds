@@ -7,7 +7,6 @@ import {
   ComponentPageSection,
   ComponentPageBody,
   ComponentPageUsage,
-  ComponentPageStatePanel,
 } from './ComponentPage';
 import './ButtonPage.css';
 
@@ -155,35 +154,6 @@ export default function ButtonPage() {
               <span className="mds-button-page__variant-body">{v.body}</span>
             </div>
           ))}
-        </div>
-      </ComponentPageSection>
-
-      <ComponentPageSection title="States">
-        <ComponentPageBody>
-          Each variant has its own visual style to communicate its level of emphasis and intended action.
-        </ComponentPageBody>
-        <div className="mds-button-page__states">
-          <div className="mds-button-page__states-row">
-            <ComponentPageStatePanel>
-              <Button role="primary">Primary</Button>
-            </ComponentPageStatePanel>
-            <ComponentPageStatePanel>
-              <Button role="secondary">Secondary</Button>
-            </ComponentPageStatePanel>
-          </div>
-          <div className="mds-button-page__states-row">
-            <ComponentPageStatePanel>
-              <Button role="ghost">Ghost</Button>
-            </ComponentPageStatePanel>
-            <ComponentPageStatePanel>
-              <Button role="danger">Danger</Button>
-            </ComponentPageStatePanel>
-          </div>
-          <div className="mds-button-page__states-row mds-button-page__states-row--single">
-            <ComponentPageStatePanel>
-              <Button role="success">Positive</Button>
-            </ComponentPageStatePanel>
-          </div>
         </div>
       </ComponentPageSection>
 
