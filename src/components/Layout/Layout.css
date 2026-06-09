@@ -26,3 +26,18 @@
   box-sizing:       border-box;
   background-color: var(--color-surface-page);
 }
+
+/* --- Mobile --- */
+
+@media (max-width: 768px) {
+  .mds-layout__content {
+    padding: 48px 20px 64px;
+  }
+
+  .mds-layout__backdrop {
+    position:   fixed;
+    inset:      0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index:    20;
+  }
+}
