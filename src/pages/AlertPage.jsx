@@ -55,13 +55,11 @@ export default function AlertPage() {
           </>
         }
       >
-        <div data-brand={brand} data-mode="light" style={{ width: 400 }}>
-          <Alert
-            role={role}
-            title="Title"
-            description="Description"
-          />
-        </div>
+        <Alert
+          role={role}
+          title="Title"
+          description="Description"
+        />
       </ComponentPagePreview>
 
       <ComponentPageSection title="Overview">

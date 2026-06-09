@@ -1,23 +1,7 @@
 /* ============================================================
    MinimalDS — Alert Page
+   Uses shared ComponentPage styles
    ============================================================ */
-
-/* Two dropdowns side by side in the controls row */
-.mds-component-page__controls .mds-dropdown {
-  flex:          1;
-  width:         auto;
-  border-radius: 0;
-}
-
-.mds-component-page__controls .mds-dropdown__field {
-  border:        none;
-  border-radius: 0;
-  width:         100%;
-}
-
-.mds-component-page__controls .mds-dropdown:not(:last-child) {
-  border-right: var(--border-default) solid var(--color-border-default);
-}
 
 /* --- 2×2 states grid --- */
 
@@ -30,7 +14,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-/* Override state panel to remove margin-top and add negative margin for grid borders */
+/* Remove margin-top and radius so panels sit flush in the grid */
 .mds-alert-page__states-row .mds-component-page__state-panel {
   margin-top:    0;
   border-radius: 0;
