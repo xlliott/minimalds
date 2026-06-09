@@ -78,6 +78,15 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* Swatch text colours — set by SwatchRow logic in Colour.jsx */
+.mds-colour__swatch-text--dark {
+  color: #141414;
+}
+
+.mds-colour__swatch-text--light {
+  color: #ffffff;
+}
+
 /* --- Two column layout --- */
 
 .mds-colour__two-col {
