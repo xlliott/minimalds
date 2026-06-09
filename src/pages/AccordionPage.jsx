@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Accordion from '../components/Accordion/Accordion';
 import Alert from '../components/Alert/Alert';
 import Dropdown from '../components/Dropdown/Dropdown';
-import Divider from '../components/Divider/Divider';
 import './AccordionPage.css';
 
 const brandOptions = [
@@ -34,7 +33,7 @@ export default function AccordionPage() {
       </div>
 
       {/* Interactive preview */}
-      <div className="mds-page-accordion__panel">
+      <div className="mds-page-accordion__preview-panel">
         <div className="mds-page-accordion__controls">
           <Dropdown
             options={brandOptions}
@@ -42,10 +41,10 @@ export default function AccordionPage() {
             innerLabel="Brand"
             onChange={setBrand}
           />
-          <div className="mds-page-accordion__controls-spacer" />
-          <div className="mds-page-accordion__controls-spacer" />
+          <div className="mds-page-accordion__controls-ghost" />
+          <div className="mds-page-accordion__controls-ghost" />
         </div>
-        <div className="mds-page-accordion__preview" data-brand={brand} data-mode="light">
+        <div className="mds-page-accordion__preview-area" data-brand={brand} data-mode="light">
           <Accordion title="Title" description="Description" />
         </div>
       </div>
@@ -65,8 +64,6 @@ export default function AccordionPage() {
         </p>
       </div>
 
-      <Divider />
-
       {/* Usage guidelines */}
       <div className="mds-page-accordion__section">
         <h2 className="mds-page-accordion__section-title">Usage guidelines</h2>
@@ -83,8 +80,6 @@ export default function AccordionPage() {
           />
         </div>
       </div>
-
-      <Divider />
 
       {/* States */}
       <div className="mds-page-accordion__section">
