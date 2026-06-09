@@ -39,9 +39,7 @@ export default function AccordionPage() {
           />
         }
       >
-        <div data-brand={brand} data-mode="light">
-          <Accordion title="Title" description="Description" />
-        </div>
+        <Accordion title="Title" description="Description" />
       </ComponentPagePreview>
 
       <ComponentPageSection title="Overview">
@@ -76,10 +74,14 @@ export default function AccordionPage() {
           information.
         </ComponentPageBody>
         <ComponentPageStatePanel>
-          <Accordion title="Title" />
+          <div className="mds-component-page__state-static">
+            <Accordion title="Title" />
+          </div>
         </ComponentPageStatePanel>
         <ComponentPageStatePanel>
-          <Accordion title="Title" description="Description" defaultOpen />
+          <div className="mds-component-page__state-static">
+            <Accordion title="Title" description="Description" defaultOpen />
+          </div>
         </ComponentPageStatePanel>
       </ComponentPageSection>
 
