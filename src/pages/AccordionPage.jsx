@@ -30,6 +30,7 @@ export default function AccordionPage() {
       />
 
       <ComponentPagePreview
+        brand={brand}
         controls={
           <Dropdown
             options={brandOptions}

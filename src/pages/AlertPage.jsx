@@ -38,6 +38,7 @@ export default function AlertPage() {
       />
 
       <ComponentPagePreview
+        brand={brand}
         controls={
           <>
             <Dropdown

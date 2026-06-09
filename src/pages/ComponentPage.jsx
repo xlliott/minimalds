@@ -1,6 +1,7 @@
 import './ComponentPage.css';
 import Alert from '../components/Alert/Alert';
 import Divider from '../components/Divider/Divider';
+import { useTheme } from '../context/ThemeContext';
 
 export function ComponentPageHeader({ title, description, figmaUrl }) {
   return (
@@ -19,7 +20,8 @@ export function ComponentPageHeader({ title, description, figmaUrl }) {
   );
 }
 
-export function ComponentPagePreview({ controls, children }) {
+export function ComponentPagePreview({ controls, children, brand }) {
+  const { mode } = useTheme();
   return (
     <div className="mds-component-page__preview-panel">
       {controls && (
@@ -27,7 +29,11 @@ export function ComponentPagePreview({ controls, children }) {
           {controls}
         </div>
       )}
-      <div className="mds-component-page__preview-area">
+      <div
+        className="mds-component-page__preview-area"
+        data-brand={brand || 'minimal'}
+        data-mode={mode}
+      >
         {children}
       </div>
     </div>
