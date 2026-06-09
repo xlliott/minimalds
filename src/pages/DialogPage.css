@@ -12,8 +12,17 @@
   width: auto;
 }
 
-/* The dialog in both the preview and slots panel is static — not interactive */
-.mds-dialog-page .mds-component-page__preview-scope .mds-dialog,
+/* Taller preview area to give the dialog breathing room */
+.mds-dialog-page .mds-component-page__preview-area {
+  height:     360px;
+  min-height: 360px;
+  max-height: 360px;
+}
+
+/* Block interaction on the dialog chrome (title, close, body)
+   but leave buttons fully interactive */
+.mds-dialog-page .mds-component-page__preview-scope .mds-dialog__header,
+.mds-dialog-page .mds-component-page__preview-scope .mds-dialog__slot,
 .mds-dialog-page__slots-panel .mds-dialog {
   pointer-events: none;
   user-select:    none;
