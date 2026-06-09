@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import Accordion from '../components/Accordion/Accordion';
-import Alert from '../components/Alert/Alert';
 import Dropdown from '../components/Dropdown/Dropdown';
+import {
+  ComponentPageHeader,
+  ComponentPagePreview,
+  ComponentPageSection,
+  ComponentPageBody,
+  ComponentPageUsage,
+  ComponentPageStatePanel,
+} from './ComponentPage';
 import './AccordionPage.css';
 
 const brandOptions = [
@@ -14,91 +21,67 @@ export default function AccordionPage() {
   const [brand, setBrand] = useState('minimal');
 
   return (
-    <div className="mds-page-accordion">
+    <div className="mds-component-page">
 
-      {/* Page header */}
-      <div className="mds-page-accordion__header">
-        <h1 className="mds-page-accordion__title">Accordion</h1>
-        <p className="mds-page-accordion__subtitle">
-          Accordions are a vertically stacked list of headers that reveal or hide associated sections of content.
-        </p>
-        <a
-          href="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mds-page-accordion__figma-link"
-        >
-          View in Figma ↗
-        </a>
-      </div>
+      <ComponentPageHeader
+        title="Accordion"
+        description="Accordions are a vertically stacked list of headers that reveal or hide associated sections of content."
+        figmaUrl="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
+      />
 
-      {/* Interactive preview */}
-      <div className="mds-page-accordion__preview-panel">
-        <div className="mds-page-accordion__controls">
+      <ComponentPagePreview
+        controls={
           <Dropdown
             options={brandOptions}
             value={brand}
             innerLabel="Brand"
             onChange={setBrand}
           />
-        </div>
-        <div className="mds-page-accordion__preview-area" data-brand={brand} data-mode="light">
+        }
+      >
+        <div data-brand={brand} data-mode="light">
           <Accordion title="Title" description="Description" />
         </div>
-      </div>
+      </ComponentPagePreview>
 
-      {/* Overview */}
-      <div className="mds-page-accordion__section">
-        <h2 className="mds-page-accordion__section-title">Overview</h2>
-        <p className="mds-page-accordion__body">
+      <ComponentPageSection title="Overview">
+        <ComponentPageBody>
           The accordion component delivers large amounts of content in a small space through
           progressive disclosure. The header title gives the user a high level overview of the
           content allowing the user to decide which sections to read.
-        </p>
-        <p className="mds-page-accordion__body">
+        </ComponentPageBody>
+        <ComponentPageBody>
           Accordions can make information processing and discovering more effective. However, it
           does hide content from users and it's important to account for a user not noticing or
           reading all of the included content.
-        </p>
-      </div>
+        </ComponentPageBody>
+      </ComponentPageSection>
 
-      {/* Usage guidelines */}
-      <div className="mds-page-accordion__section">
-        <h2 className="mds-page-accordion__section-title">Usage guidelines</h2>
-        <div className="mds-page-accordion__usage">
-          <Alert
-            role="success"
-            title="When to use"
-            description="Providing users more content for information within the same layout. Displaying content that is directly related to the main subject of the page. When vertical space is limited and there is enough content to condense."
-          />
-          <Alert
-            role="danger"
-            title="When not to use"
-            description="Linking a title to another page. Instead, use Link. Designing with sparse content. When content is lengthy. Instead, use Tabs."
-          />
-        </div>
-      </div>
+      <ComponentPageSection title="Usage guidelines">
+        <ComponentPageUsage
+          whenToUse="Providing users more content for information within the same layout. Displaying content that is directly related to the main subject of the page. When vertical space is limited and there is enough content to condense."
+          whenNotToUse="Linking a title to another page. Instead, use Link. Designing with sparse content. When content is lengthy. Instead, use Tabs."
+        />
+      </ComponentPageSection>
 
-      {/* States */}
-      <div className="mds-page-accordion__section">
-        <h2 className="mds-page-accordion__section-title">States</h2>
-        <p className="mds-page-accordion__body">
+      <ComponentPageSection title="States">
+        <ComponentPageBody>
           The accordion component has two main states: collapsed and expanded. The chevron icon
           at the end of the accordion indicates which state the accordion is in. The chevron
           points down to indicate collapsed and up to indicate expanded.
-        </p>
-        <p className="mds-page-accordion__body">
+        </ComponentPageBody>
+        <ComponentPageBody>
           Accordions begin by default in the collapsed state with all content panels closed.
           Starting in a collapsed state gives the user a high level overview of the available
           information.
-        </p>
-        <div className="mds-page-accordion__state-panel">
+        </ComponentPageBody>
+        <ComponentPageStatePanel>
           <Accordion title="Title" />
-        </div>
-        <div className="mds-page-accordion__state-panel">
+        </ComponentPageStatePanel>
+        <ComponentPageStatePanel>
           <Accordion title="Title" description="Description" defaultOpen />
-        </div>
-      </div>
+        </ComponentPageStatePanel>
+      </ComponentPageSection>
 
     </div>
   );

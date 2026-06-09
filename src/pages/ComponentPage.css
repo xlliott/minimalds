@@ -1,0 +1,157 @@
+/* ============================================================
+   MinimalDS — Component Page Template
+   Shared styles for all component documentation pages
+   ============================================================ */
+
+.mds-component-page {
+  max-width: 800px;
+  width:     100%;
+}
+
+/* --- Header --- */
+
+.mds-component-page__header {
+  margin-bottom: 48px;
+}
+
+.mds-component-page__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-component-page__subtitle {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-component-page__figma-link {
+  display:               inline-flex;
+  align-items:           center;
+  gap:                   var(--space-component-sm);
+  font-family:           var(--font-family-global);
+  font-size:             var(--font-size-body);
+  font-weight:           var(--font-weight-strong);
+  color:                 var(--color-text-default);
+  text-decoration:       underline;
+  text-underline-offset: 2px;
+}
+
+/* --- Preview panel --- */
+
+.mds-component-page__preview-panel {
+  margin-bottom: 48px;
+}
+
+.mds-component-page__controls {
+  display:     block;
+  margin-bottom: -1px;
+  position:    relative;
+  z-index:     2;
+}
+
+/* Force dropdown to full width inside controls */
+.mds-component-page__controls .mds-dropdown {
+  display:    block;
+  width:      100%;
+  border-radius: 0;
+}
+
+.mds-component-page__controls .mds-dropdown__field {
+  border-radius: 0;
+  width:         100%;
+}
+
+.mds-component-page__preview-area {
+  position:         relative;
+  z-index:          1;
+  background-color: #ffffff;
+  border:           1px solid var(--color-border-default);
+  height:           278px;
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  padding:          0 64px;
+  box-sizing:       border-box;
+  overflow:         hidden;
+}
+
+.mds-component-page__preview-area > * {
+  width:     400px;
+  max-width: 100%;
+}
+
+/* --- Sections --- */
+
+.mds-component-page__section {
+  margin-bottom: 48px;
+}
+
+.mds-component-page__section:last-child {
+  margin-bottom: 0;
+}
+
+.mds-component-page__section-title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h3);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 12px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-component-page__body {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 12px;
+}
+
+.mds-component-page__body:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Usage guidelines --- */
+
+.mds-component-page__usage {
+  display:    flex;
+  gap:        var(--space-layout-md);
+  margin-top: 12px;
+}
+
+.mds-component-page__usage > * {
+  flex:      1;
+  min-width: 0;
+}
+
+/* --- State panels --- */
+
+.mds-component-page__state-panel {
+  background-color: #ffffff;
+  border:           1px solid var(--color-border-default);
+  height:           278px;
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  padding:          0 64px;
+  box-sizing:       border-box;
+  overflow:         hidden;
+  margin-top:       var(--space-layout-lg);
+}
+
+.mds-component-page__state-inner {
+  width:     400px;
+  max-width: 100%;
+}
