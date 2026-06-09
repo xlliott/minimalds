@@ -404,9 +404,9 @@ function TokenTable({ children }) {
   return <div className="mds-tokens__table">{children}</div>;
 }
 
-function Section({ id, title, children }) {
+function Section({ id, title, children, first }) {
   return (
-    <div id={id} className="mds-tokens__section">
+    <div id={id} className={`mds-tokens__section${first ? ' mds-tokens__section--first' : ''}`}>
       <h2 className="mds-tokens__section-title">{title}</h2>
       {children}
     </div>
@@ -472,7 +472,7 @@ export default function DesignTokens() {
       </div>
 
       {/* Colour */}
-      <Section id="tokens-colour" title="Colour">
+      <Section id="tokens-colour" title="Colour" first>
         <SubSection title="Surface">
           <TokenTable>
             {surfaceTokens.map(t => <ColourRow key={t.name} {...t} brand={brand} mode={mode} />)}
