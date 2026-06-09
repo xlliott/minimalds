@@ -1,0 +1,88 @@
+/* ============================================================
+   MinimalDS — Spacing Page
+   ============================================================ */
+
+.mds-page-spacing {
+  max-width: 800px;
+  width:     100%;
+}
+
+.mds-page-spacing__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-spacing__subtitle {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-2xl);
+}
+
+/* --- Two column layout --- */
+
+.mds-spacing__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:     var(--space-layout-2xl);
+  align-items: start;
+}
+
+.mds-spacing__col-title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Table --- */
+
+.mds-spacing__table {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+}
+
+.mds-spacing__row {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         var(--space-component-lg);
+  min-height:      53px;
+  border-bottom:   var(--border-default) solid var(--color-border-default);
+  background-color: var(--color-surface-default);
+  box-sizing:      border-box;
+}
+
+.mds-spacing__row:last-child {
+  border-bottom: none;
+}
+
+.mds-spacing__name {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-spacing__value {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  white-space:  nowrap;
+  -webkit-font-smoothing: antialiased;
+}
