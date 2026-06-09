@@ -11,6 +11,7 @@ import Spacing from './pages/Spacing';
 import Radius from './pages/Radius';
 import DesignTokens from './pages/DesignTokens';
 import AccordionPage from './pages/AccordionPage';
+import AlertPage from './pages/AlertPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -34,6 +35,7 @@ function Router() {
       case '#/radius':        return <Radius />;
       case '#/tokens':        return <DesignTokens />;
       case '#/accordion':     return <AccordionPage />;
+      case '#/alert':         return <AlertPage />;
       default:                return <Home />;
     }
   };
