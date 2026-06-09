@@ -73,7 +73,6 @@
 .mds-accordion__body {
   padding:          var(--space-component-xs) var(--space-component-lg) var(--space-component-md); /* 4px 16px 12px */
   background-color: var(--color-interactive-pale-base);
-  border-top:       var(--border-default) solid var(--color-border-default);
 }
 
 /* --- Description text --- */
