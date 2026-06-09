@@ -97,7 +97,7 @@
 }
 
 .mds-component-page__preview-area {
-  background-color: #ffffff;
+  background-color: var(--color-surface-default);
   height:           278px;
   min-height:       278px;
   max-height:       278px;
@@ -191,7 +191,7 @@
 /* --- State panels --- */
 
 .mds-component-page__state-panel {
-  background-color: #ffffff;
+  background-color: var(--color-surface-default);
   border:           1px solid var(--color-border-default);
   height:           278px;
   min-height:       278px;
