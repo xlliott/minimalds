@@ -57,8 +57,16 @@ export default function AccordionPage() {
 
       <ComponentPageSection title="Usage guidelines">
         <ComponentPageUsage
-          whenToUse="Providing users more content for information within the same layout. Displaying content that is directly related to the main subject of the page. When vertical space is limited and there is enough content to condense."
-          whenNotToUse="Linking a title to another page. Instead, use Link. Designing with sparse content. When content is lengthy. Instead, use Tabs."
+          whenToUse={[
+            'Providing users more content for information within the same layout.',
+            'Displaying content that is directly related to the main subject of the page.',
+            'When vertical space is limited and there is enough content to condense.',
+          ]}
+          whenNotToUse={[
+            'Linking a title to another page. Instead, use Link.',
+            'Designing with sparse content.',
+            'When content is lengthy. Instead, use Tabs.',
+          ]}
         />
       </ComponentPageSection>
 
