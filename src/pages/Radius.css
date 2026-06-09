@@ -1,0 +1,99 @@
+/* ============================================================
+   MinimalDS — Radius Page
+   ============================================================ */
+
+.mds-page-radius {
+  max-width: 800px;
+  width:     100%;
+}
+
+.mds-page-radius__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-radius__subtitle {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-2xl);
+}
+
+/* --- Panel --- */
+
+.mds-page-radius__panel {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+}
+
+/* --- Controls --- */
+
+.mds-page-radius__controls {
+  display:        flex;
+  flex-direction: row;
+  border-bottom:  var(--border-default) solid var(--color-border-default);
+  position:       relative;
+  z-index:        2;
+  margin-bottom:  -1px;
+}
+
+.mds-page-radius__controls .mds-dropdown {
+  flex:          1;
+  width:         auto;
+  border-radius: 0;
+}
+
+.mds-page-radius__controls .mds-dropdown__field {
+  border:        none;
+  border-radius: 0;
+  width:         100%;
+}
+
+.mds-page-radius__controls .mds-dropdown:not(:last-child) {
+  border-right: var(--border-default) solid var(--color-border-default);
+}
+
+/* --- Preview area --- */
+
+.mds-page-radius__preview-area {
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-border-default);
+  height:           278px;
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  justify-content:  center;
+  gap:              var(--space-layout-md);
+  position:         relative;
+  z-index:          1;
+  overflow:         hidden;
+}
+
+/* --- Shape --- */
+
+.mds-page-radius__shape {
+  width:            132px;
+  height:           132px;
+  background-color: var(--color-text-default);
+  transition:       border-radius 0.2s ease;
+  flex-shrink:      0;
+}
+
+/* --- Value label --- */
+
+.mds-page-radius__value {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-helper);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-muted);
+  line-height:  1.4;
+  -webkit-font-smoothing: antialiased;
+}
