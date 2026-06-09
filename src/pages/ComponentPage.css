@@ -74,7 +74,7 @@
 .mds-component-page__preview-area {
   position:         relative;
   z-index:          1;
-  background-color: #ffffff;
+  background-color: var(--color-surface-default);
   border:           1px solid var(--color-border-default);
   height:           278px;
   display:          flex;
@@ -88,6 +88,7 @@
 .mds-component-page__preview-area > * {
   width:     400px;
   max-width: 100%;
+  flex-shrink: 0;
 }
 
 /* --- Sections --- */
@@ -139,7 +140,7 @@
 /* --- State panels --- */
 
 .mds-component-page__state-panel {
-  background-color: #ffffff;
+  background-color: var(--color-surface-default);
   border:           1px solid var(--color-border-default);
   height:           278px;
   display:          flex;
@@ -154,4 +155,11 @@
 .mds-component-page__state-inner {
   width:     400px;
   max-width: 100%;
+}
+
+.mds-component-page__state-static {
+  width:          400px;
+  max-width:      100%;
+  pointer-events: none;
+  user-select:    none;
 }
