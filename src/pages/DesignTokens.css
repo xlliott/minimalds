@@ -38,16 +38,21 @@
 }
 
 .mds-tokens__anchor-link {
-  font-family:  var(--font-family-global);
-  font-size:    var(--font-size-desktop-h4);
-  font-weight:  var(--font-weight-regular);
-  color:        var(--color-text-default);
+  font-family:     var(--font-family-global);
+  font-size:       var(--font-size-desktop-h4);
+  font-weight:     var(--font-weight-regular);
+  color:           var(--color-text-default);
   text-decoration: none;
-  line-height:  1.5;
+  line-height:     1.5;
+  background:      none;
+  border:          none;
+  padding:         0;
+  cursor:          pointer;
+  text-align:      left;
 }
 
 .mds-tokens__anchor-link:hover {
-  text-decoration: underline;
+  text-decoration:       underline;
   text-underline-offset: 2px;
 }
 
