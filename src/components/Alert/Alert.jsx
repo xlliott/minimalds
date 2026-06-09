@@ -52,7 +52,7 @@ const closeIcon = (
 
 export default function Alert({
   role = 'info',
-  size = 'default',
+  size = 'large',
   title,
   description,
   dismissible = false,
