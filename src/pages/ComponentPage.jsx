@@ -29,12 +29,14 @@ export function ComponentPagePreview({ controls, children, brand }) {
           {controls}
         </div>
       )}
-      <div
-        className="mds-component-page__preview-area"
-        data-brand={brand || 'minimal'}
-        data-mode={mode}
-      >
-        {children}
+      <div className="mds-component-page__preview-area">
+        <div
+          className="mds-component-page__preview-scope"
+          data-brand={brand || 'minimal'}
+          data-mode={mode}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

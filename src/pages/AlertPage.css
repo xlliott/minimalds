@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* Narrower preview for alert component */
-.mds-alert-page .mds-component-page__preview-area > * {
+.mds-alert-page .mds-component-page__preview-scope {
   width: 320px;
 }
 
