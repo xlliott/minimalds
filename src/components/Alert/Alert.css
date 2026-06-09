@@ -63,7 +63,7 @@
   padding-top: 2px;
   width:       16px;
   height:      16px;
-  color:       inherit;
+  color:       var(--color-text-default);
 }
 
 /* --- Content --- */
