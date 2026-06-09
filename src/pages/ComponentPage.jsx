@@ -12,7 +12,7 @@ export function ComponentPageHeader({ title, description, figmaUrl }) {
         rel="noopener noreferrer"
         className="mds-component-page__figma-link"
       >
-        View in Figma ↗
+        View in Figma
       </a>
     </div>
   );
@@ -47,10 +47,24 @@ export function ComponentPageBody({ children }) {
 }
 
 export function ComponentPageUsage({ whenToUse, whenNotToUse }) {
+  const toList = (items) => (
+    <ul className="mds-component-page__usage-list">
+      {items.map((item, i) => <li key={i}>{item}</li>)}
+    </ul>
+  );
+
   return (
     <div className="mds-component-page__usage">
-      <Alert role="success" title="When to use" description={whenToUse} />
-      <Alert role="danger" title="When not to use" description={whenNotToUse} />
+      <Alert
+        role="success"
+        title="When to use"
+        description={toList(whenToUse)}
+      />
+      <Alert
+        role="danger"
+        title="When not to use"
+        description={toList(whenNotToUse)}
+      />
     </div>
   );
 }
