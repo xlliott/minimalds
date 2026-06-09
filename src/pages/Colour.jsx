@@ -138,8 +138,10 @@ function SwatchRow({ name, hex, opacity, transparentDark, transparentLight }) {
       ? 'mds-colour__swatch-text--light'
       : 'mds-colour__swatch-text--dark';
   } else if (transparentLight) {
-    // Transparent white: in light mode always dark text; in dark mode always light text
-    textClass = 'mds-colour__swatch-text--adaptive';
+    // Transparent white: high opacity swatches are light, need dark text regardless of mode
+    textClass = parseInt(opacity) >= 60
+      ? 'mds-colour__swatch-text--dark'
+      : 'mds-colour__swatch-text--light';
   } else {
     textClass = isLight(hex) ? 'mds-colour__swatch-text--dark' : 'mds-colour__swatch-text--light';
   }
