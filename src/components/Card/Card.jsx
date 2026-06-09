@@ -34,12 +34,12 @@ export default function Card({
   const buttons = hasButtons && (
     <div className="mds-card__buttons">
       {secondaryLabel && (
-        <Button role="secondary" size="small" onClick={onSecondary}>
+        <Button role="secondary" size="default" onClick={onSecondary}>
           {secondaryLabel}
         </Button>
       )}
       {primaryLabel && (
-        <Button role="primary" size="small" onClick={onPrimary}>
+        <Button role="secondary" size="default" onClick={onPrimary}>
           {primaryLabel}
         </Button>
       )}
