@@ -7,6 +7,7 @@ import ReleaseNotes from './pages/ReleaseNotes';
 import Colour from './pages/Colour';
 import Typography from './pages/Typography';
 import Icons from './pages/Icons';
+import Spacing from './pages/Spacing';
 import AccordionPage from './pages/AccordionPage';
 import './theme/tokens.css';
 import './App.css';
@@ -27,6 +28,7 @@ function Router() {
       case '#/colour':        return <Colour />;
       case '#/typography':    return <Typography />;
       case '#/icons':         return <Icons />;
+      case '#/spacing':       return <Spacing />;
       case '#/accordion':     return <AccordionPage />;
       default:                return <Home />;
     }
