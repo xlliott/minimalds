@@ -3,13 +3,18 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
-/* Preview scope — match dialog's natural width */
+/* Preview scope — wider to give dialog more room */
 .mds-dialog-page .mds-component-page__preview-scope {
-  width: 480px;
+  width: 560px;
 }
 
 .mds-dialog-page .mds-component-page__preview-scope > * {
-  width: auto;
+  width: 100%;
+}
+
+/* Let the dialog fill the scope width */
+.mds-dialog-page .mds-component-page__preview-scope .mds-dialog {
+  width: 100%;
 }
 
 /* Taller preview area to give the dialog breathing room */
