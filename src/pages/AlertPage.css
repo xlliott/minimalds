@@ -1,0 +1,72 @@
+/* ============================================================
+   MinimalDS — Alert Page
+   ============================================================ */
+
+/* Two dropdowns side by side in the controls row */
+.mds-component-page__controls .mds-dropdown {
+  flex:          1;
+  width:         auto;
+  border-radius: 0;
+}
+
+.mds-component-page__controls .mds-dropdown__field {
+  border:        none;
+  border-radius: 0;
+  width:         100%;
+}
+
+.mds-component-page__controls .mds-dropdown:not(:last-child) {
+  border-right: var(--border-default) solid var(--color-border-default);
+}
+
+/* --- 2×2 states grid --- */
+
+.mds-alert-page__states {
+  margin-top: var(--space-layout-md);
+}
+
+.mds-alert-page__states-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Override state panel to remove margin-top and add negative margin for grid borders */
+.mds-alert-page__states-row .mds-component-page__state-panel {
+  margin-top:    0;
+  border-radius: 0;
+  margin-right:  -1px;
+  margin-bottom: -1px;
+}
+
+/* --- Status descriptions --- */
+
+.mds-alert-page__descriptions {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-layout-md);
+  margin-top:     var(--space-layout-2xl);
+}
+
+.mds-alert-page__description {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);
+}
+
+.mds-alert-page__description-title {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-alert-page__description-body {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  -webkit-font-smoothing: antialiased;
+}
