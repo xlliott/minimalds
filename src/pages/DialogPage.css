@@ -3,9 +3,9 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
-/* Preview scope — wider to give dialog more room */
+/* Preview scope — sized to match dialog */
 .mds-dialog-page .mds-component-page__preview-scope {
-  width: 560px;
+  width: 400px;
 }
 
 .mds-dialog-page .mds-component-page__preview-scope > * {
