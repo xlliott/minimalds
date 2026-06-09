@@ -19,13 +19,13 @@
 /* --- Group label --- */
 
 .mds-checkbox-group__label {
-  display:     block;
-  font-size:   var(--font-size-body);          /* 14px */
-  font-weight: var(--font-weight-strong);      /* 700 */
-  color:       var(--color-text-default);
-  line-height: 1.5;
-  padding:     0;
-  margin:      0;
+  display:      block;
+  font-size:    var(--font-size-body);          /* 14px */
+  font-weight:  var(--font-weight-strong);      /* 700 */
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  padding:      0;
+  margin:       0 0 var(--space-component-sm);  /* 8px extra below label */
 }
 
 .mds-checkbox-group--disabled .mds-checkbox-group__label {
