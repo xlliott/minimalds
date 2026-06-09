@@ -1,112 +1,151 @@
-import { useState } from 'react';
-import Accordion from '../components/Accordion/Accordion';
-import Alert from '../components/Alert/Alert';
-import Dropdown from '../components/Dropdown/Dropdown';
-import Divider from '../components/Divider/Divider';
-import './AccordionPage.css';
+/* ============================================================
+   MinimalDS — Accordion Page
+   ============================================================ */
 
-const brandOptions = [
-  { value: 'minimal', label: 'Minimal' },
-  { value: 'purpura', label: 'Purpura' },
-  { value: 'azure',   label: 'Azure' },
-];
+.mds-page-accordion {
+  max-width: 800px;
+}
 
-export default function AccordionPage() {
-  const [brand, setBrand] = useState('minimal');
+/* --- Header --- */
 
-  return (
-    <div className="mds-page-accordion">
+.mds-page-accordion__header {
+  margin-bottom: var(--space-layout-2xl);
+}
 
-      {/* Page header */}
-      <div className="mds-page-accordion__header">
-        <h1 className="mds-page-accordion__title">Accordion</h1>
-        <p className="mds-page-accordion__subtitle">
-          Accordions are a vertically stacked list of headers that reveal or hide associated sections of content.
-        </p>
-        <a
-          href="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mds-page-accordion__figma-link"
-        >
-          View in Figma ↗
-        </a>
-      </div>
+.mds-page-accordion__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
 
-      {/* Interactive preview */}
-      <div className="mds-page-accordion__panel">
-        <div className="mds-page-accordion__controls">
-          <Dropdown
-            options={brandOptions}
-            value={brand}
-            innerLabel="Brand"
-            onChange={setBrand}
-          />
-          <div className="mds-page-accordion__controls-spacer" />
-          <div className="mds-page-accordion__controls-spacer" />
-        </div>
-        <div className="mds-page-accordion__preview" data-brand={brand} data-mode="light">
-          <Accordion title="Title" description="Description" />
-        </div>
-      </div>
+.mds-page-accordion__subtitle {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-sm);
+}
 
-      {/* Overview */}
-      <div className="mds-page-accordion__section">
-        <h2 className="mds-page-accordion__section-title">Overview</h2>
-        <p className="mds-page-accordion__body">
-          The accordion component delivers large amounts of content in a small space through
-          progressive disclosure. The header title gives the user a high level overview of the
-          content allowing the user to decide which sections to read.
-        </p>
-        <p className="mds-page-accordion__body">
-          Accordions can make information processing and discovering more effective. However, it
-          does hide content from users and it's important to account for a user not noticing or
-          reading all of the included content.
-        </p>
-      </div>
+.mds-page-accordion__figma-link {
+  display:               inline-block;
+  font-family:           var(--font-family-global);
+  font-size:             var(--font-size-body);
+  font-weight:           var(--font-weight-strong);
+  color:                 var(--color-text-default);
+  text-decoration:       underline;
+  text-underline-offset: 2px;
+}
 
-      <Divider />
+/* --- Interactive preview panel --- */
 
-      {/* Usage guidelines */}
-      <div className="mds-page-accordion__section">
-        <h2 className="mds-page-accordion__section-title">Usage guidelines</h2>
-        <div className="mds-page-accordion__usage">
-          <Alert
-            role="success"
-            title="When to use"
-            description="Providing users more content for information within the same layout. Displaying content that is directly related to the main subject of the page. When vertical space is limited and there is enough content to condense."
-          />
-          <Alert
-            role="danger"
-            title="When not to use"
-            description="Linking a title to another page. Instead, use Link. Designing with sparse content. When content is lengthy. Instead, use Tabs."
-          />
-        </div>
-      </div>
+.mds-page-accordion__panel {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+  margin-bottom: var(--space-layout-2xl);
+}
 
-      <Divider />
+.mds-page-accordion__controls {
+  display:       flex;
+  flex-direction: row;
+  border-bottom: var(--border-default) solid var(--color-border-default);
+}
 
-      {/* States */}
-      <div className="mds-page-accordion__section">
-        <h2 className="mds-page-accordion__section-title">States</h2>
-        <p className="mds-page-accordion__body">
-          The accordion component has two main states: collapsed and expanded. The chevron icon
-          at the end of the accordion indicates which state the accordion is in. The chevron
-          points down to indicate collapsed and up to indicate expanded.
-        </p>
-        <p className="mds-page-accordion__body">
-          Accordions begin by default in the collapsed state with all content panels closed.
-          Starting in a collapsed state gives the user a high level overview of the available
-          information.
-        </p>
-        <div className="mds-page-accordion__state-panel">
-          <Accordion title="Title" />
-        </div>
-        <div className="mds-page-accordion__state-panel">
-          <Accordion title="Title" description="Description" defaultOpen />
-        </div>
-      </div>
+.mds-page-accordion__controls .mds-dropdown {
+  flex:          1;
+  width:         auto;
+  border-radius: 0;
+}
 
-    </div>
-  );
+.mds-page-accordion__controls .mds-dropdown__field {
+  border:        none;
+  border-radius: 0;
+  width:         100%;
+}
+
+.mds-page-accordion__controls .mds-dropdown:not(:last-child) {
+  border-right: var(--border-default) solid var(--color-border-default);
+}
+
+.mds-page-accordion__controls-spacer {
+  flex:         1;
+  border-right: var(--border-default) solid var(--color-border-default);
+}
+
+.mds-page-accordion__controls-spacer:last-child {
+  border-right: none;
+}
+
+.mds-page-accordion__preview {
+  background-color: var(--color-surface-default);
+  padding:          85px var(--space-layout-2xl);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+}
+
+.mds-page-accordion__preview > * {
+  width: 400px;
+}
+
+/* --- Sections --- */
+
+.mds-page-accordion__section {
+  padding: var(--space-layout-2xl) 0;
+}
+
+.mds-page-accordion__section-title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h3);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.2;
+  margin:       0 0 var(--space-component-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-accordion__body {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-component-lg);
+}
+
+.mds-page-accordion__body:last-of-type {
+  margin-bottom: 0;
+}
+
+/* --- Usage guidelines --- */
+
+.mds-page-accordion__usage {
+  display:    flex;
+  gap:        var(--space-layout-md);
+  margin-top: var(--space-layout-md);
+}
+
+.mds-page-accordion__usage > * {
+  flex: 1;
+}
+
+/* --- State panels --- */
+
+.mds-page-accordion__state-panel {
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-border-default);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  padding:          85px var(--space-layout-2xl);
+  margin-top:       var(--space-layout-lg);
+}
+
+.mds-page-accordion__state-panel > * {
+  width: 400px;
 }
