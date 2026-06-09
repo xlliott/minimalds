@@ -59,21 +59,25 @@
 }
 
 .mds-page-accordion__controls .mds-dropdown {
-  width:         auto;
-  min-width:     260px;
+  flex:          1;
+  width:         100%;
+  max-width:     100%;
+  min-width:     0;
   border-radius: 0;
-  border-right:  var(--border-default) solid var(--color-border-default);
 }
 
 .mds-page-accordion__controls .mds-dropdown__field {
-  border:        none;
-  border-radius: 0;
-  width:         100%;
+  border:           none;
+  border-radius:    0;
+  width:            100%;
+  background-color: #ffffff;
 }
 
 .mds-page-accordion__preview-area {
-  background:       var(--color-surface-default);
+  background-color: #ffffff;
   height:           278px;
+  min-height:       278px;
+  max-height:       278px;
   display:          flex;
   align-items:      center;
   justify-content:  center;
@@ -128,9 +132,11 @@
 /* --- State panels --- */
 
 .mds-page-accordion__state-panel {
-  background-color: var(--color-surface-default);
+  background-color: #ffffff;
   border:           var(--border-default) solid var(--color-border-default);
   height:           278px;
+  min-height:       278px;
+  max-height:       278px;
   display:          flex;
   align-items:      center;
   justify-content:  center;
