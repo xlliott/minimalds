@@ -55,47 +55,30 @@
 .mds-page-accordion__controls {
   display:        flex;
   flex-direction: row;
-  position:       relative;
-  z-index:        2;
-  margin-bottom:  -1px;
+  border-bottom:  var(--border-default) solid var(--color-border-default);
 }
 
 .mds-page-accordion__controls .mds-dropdown {
-  flex:          1;
   width:         auto;
+  min-width:     260px;
   border-radius: 0;
-  margin-right:  -1px;
+  border-right:  var(--border-default) solid var(--color-border-default);
 }
 
 .mds-page-accordion__controls .mds-dropdown__field {
   border:        none;
   border-radius: 0;
   width:         100%;
-  border-right:  var(--border-default) solid var(--color-border-default);
-  border-bottom: var(--border-default) solid var(--color-border-default);
-}
-
-.mds-page-accordion__controls-ghost {
-  flex:          1;
-  border-bottom: var(--border-default) solid var(--color-border-default);
-  border-right:  var(--border-default) solid var(--color-border-default);
-}
-
-.mds-page-accordion__controls-ghost:last-child {
-  border-right: none;
 }
 
 .mds-page-accordion__preview-area {
-  background-color: var(--color-surface-default);
-  border:           var(--border-default) solid var(--color-border-default);
+  background:       var(--color-surface-default);
   height:           278px;
   display:          flex;
   align-items:      center;
   justify-content:  center;
-  position:         relative;
-  z-index:          1;
-  overflow:         hidden;
   padding:          0 64px;
+  overflow:         hidden;
 }
 
 .mds-page-accordion__preview-area > * {
