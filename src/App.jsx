@@ -14,6 +14,7 @@ import AccordionPage from './pages/AccordionPage';
 import AlertPage from './pages/AlertPage';
 import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
+import CheckboxPage from './pages/CheckboxPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -40,6 +41,7 @@ function Router() {
       case '#/alert':         return <AlertPage />;
       case '#/button':        return <ButtonPage />;
       case '#/card':          return <CardPage />;
+      case '#/checkbox':      return <CheckboxPage />;
       default:                return <Home />;
     }
   };
