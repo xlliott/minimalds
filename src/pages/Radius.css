@@ -43,8 +43,6 @@
   border-bottom:  var(--border-default) solid var(--color-border-default);
   position:       relative;
   z-index:        10;
-  border-radius:  var(--radius-card) var(--radius-card) 0 0;
-  overflow:       hidden;
 }
 
 .mds-page-radius__controls .mds-dropdown {
@@ -53,9 +51,16 @@
   border-radius: 0;
 }
 
+.mds-page-radius__controls .mds-dropdown:first-child .mds-dropdown__field {
+  border-radius: var(--radius-card) 0 0 0;
+}
+
+.mds-page-radius__controls .mds-dropdown:last-child .mds-dropdown__field {
+  border-radius: 0 var(--radius-card) 0 0;
+}
+
 .mds-page-radius__controls .mds-dropdown__field {
   border:        none;
-  border-radius: 0;
   width:         100%;
 }
 
