@@ -1,0 +1,88 @@
+/* ============================================================
+   MinimalDS — Icons Page
+   ============================================================ */
+
+.mds-page-icons {
+  max-width: 800px;
+  width:     100%;
+}
+
+.mds-page-icons__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-icons__subtitle {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-subtle);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-2xl);
+}
+
+/* --- Grid --- */
+
+.mds-page-icons__grid {
+  display:               grid;
+  grid-template-columns: repeat(5, 1fr);
+  border:                var(--border-default) solid var(--color-border-default);
+  border-radius:         var(--radius-card);
+  overflow:              hidden;
+}
+
+.mds-page-icons__item {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-component-md);
+  padding:         var(--space-layout-md);
+  border-right:    var(--border-default) solid var(--color-border-default);
+  border-bottom:   var(--border-default) solid var(--color-border-default);
+  background-color: var(--color-surface-default);
+  min-height:      96px;
+}
+
+/* Remove right border on last column */
+.mds-page-icons__item:nth-child(5n) {
+  border-right: none;
+}
+
+/* Remove bottom border on last row items */
+.mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+1),
+.mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+2),
+.mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+3),
+.mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+4),
+.mds-page-icons__item:nth-last-child(-n+5):nth-child(5n) {
+  border-bottom: none;
+}
+
+.mds-page-icons__icon {
+  display:     flex;
+  align-items: center;
+  color:       var(--color-icon-default);
+  width:       24px;
+  height:      24px;
+  flex-shrink: 0;
+}
+
+.mds-page-icons__icon svg {
+  width:  24px;
+  height: 24px;
+}
+
+.mds-page-icons__name {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-helper);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-muted);
+  line-height:  1.4;
+  text-align:   center;
+  -webkit-font-smoothing: antialiased;
+}
