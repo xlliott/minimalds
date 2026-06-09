@@ -37,10 +37,13 @@
 .mds-card-page__card-row {
   display: flex;
   gap:     var(--space-layout-md);
+  width:   100%;
 }
 
 .mds-card-page__card-row > * {
-  width: 240px;
+  flex:      1;
+  width:     auto;
+  min-width: 0;
 }
 
 /* Single side-button card */
