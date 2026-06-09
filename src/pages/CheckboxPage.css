@@ -3,7 +3,14 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
-/* Variants state panel — two groups side by side */
+/* Override state panel to align content to top, centred horizontally */
+.mds-checkbox-page .mds-component-page__state-panel {
+  align-items:     center;
+  justify-content: center;
+  padding:         var(--space-layout-2xl);
+}
+
+/* Variants wrapper aligns its own children to the top */
 .mds-checkbox-page__variants {
   display:     flex;
   gap:         var(--space-layout-2xl);
@@ -14,11 +21,4 @@
 .mds-checkbox-page__variants .mds-checkbox {
   pointer-events: none;
   user-select:    none;
-}
-
-/* Override state panel to align content to top-left */
-.mds-checkbox-page .mds-component-page__state-panel {
-  align-items:     flex-start;
-  justify-content: flex-start;
-  padding:         var(--space-layout-2xl);
 }
