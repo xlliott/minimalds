@@ -1,0 +1,37 @@
+/* ============================================================
+   MinimalDS — Card Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* --- Button position state panels --- */
+
+.mds-card-page__state-panel {
+  background-color: var(--color-surface-default);
+  border:           1px solid var(--color-border-default);
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  padding:          var(--space-layout-2xl);
+  box-sizing:       border-box;
+  overflow:         hidden;
+  margin-top:       -1px;
+}
+
+.mds-card-page__state-panel--tall {
+  padding: var(--space-layout-2xl) var(--space-layout-2xl);
+}
+
+/* Two cards side by side */
+.mds-card-page__card-row {
+  display: flex;
+  gap:     var(--space-layout-md);
+}
+
+.mds-card-page__card-row > * {
+  width: 240px;
+}
+
+/* Single side-button card */
+.mds-card-page__state-panel:not(.mds-card-page__state-panel--tall) > * {
+  width: 480px;
+}
