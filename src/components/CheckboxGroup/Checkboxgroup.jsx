@@ -1,4 +1,4 @@
-import './CheckboxGroup.css';
+import './Checkboxgroup.css';
 import Checkbox from '../Checkbox/Checkbox';
 
 /**
