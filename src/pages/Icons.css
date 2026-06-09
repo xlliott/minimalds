@@ -37,15 +37,14 @@
 }
 
 .mds-page-icons__item {
-  aspect-ratio:    1 / 1;
-  display:         flex;
-  flex-direction:  column;
-  align-items:     center;
-  justify-content: center;
-  gap:             var(--space-component-sm);
-  border-right:    var(--border-default) solid var(--color-border-default);
-  border-bottom:   var(--border-default) solid var(--color-border-default);
+  aspect-ratio:     1 / 1;
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  border-right:     var(--border-default) solid var(--color-border-default);
+  border-bottom:    var(--border-default) solid var(--color-border-default);
   background-color: var(--color-surface-default);
+  position:         relative;
 }
 
 .mds-page-icons__item:nth-child(5n) {
@@ -75,6 +74,10 @@
 }
 
 .mds-page-icons__name {
+  position:     absolute;
+  bottom:       12px;
+  left:         0;
+  right:        0;
   font-family:  var(--font-family-global);
   font-size:    var(--font-size-helper);
   font-weight:  var(--font-weight-regular);
