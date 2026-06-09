@@ -83,14 +83,14 @@ export default function Dialog({
 
       {(primaryLabel || secondaryLabel) && (
         <div className="mds-dialog__buttons">
-          {secondaryLabel && (
-            <Button role="secondary" size="default" onClick={onSecondary}>
-              {secondaryLabel}
-            </Button>
-          )}
           {primaryLabel && (
             <Button role="primary" size="default" onClick={onPrimary}>
               {primaryLabel}
+            </Button>
+          )}
+          {secondaryLabel && (
+            <Button role="secondary" size="default" onClick={onSecondary}>
+              {secondaryLabel}
             </Button>
           )}
         </div>
