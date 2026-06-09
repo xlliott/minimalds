@@ -1,111 +1,113 @@
+import { useState } from 'react';
+import TabGroup from '../components/TabGroup/Tabgroup';
+import { useTheme } from '../context/ThemeContext';
 import './DesignTokens.css';
 
-// ─── Colour tokens ────────────────────────────────────────────────────────────
+// ─── Token definitions ────────────────────────────────────────────────────────
+// colour values use CSS custom properties so they respond to brand + dark mode
 
-const surface = [
-  { name: 'colour.static.surface.default',      label: 'Neutral 0',              color: '#ffffff' },
-  { name: 'colour.static.surface.page',         label: 'Neutral 50',             color: '#f5f5f5' },
-  { name: 'colour.static.surface.subtle',       label: 'Neutral 100',            color: '#e5e5e5' },
-  { name: 'colour.static.surface.inverse',      label: 'Neutral 900',            color: '#141414' },
-  { name: 'colour.static.surface.brand',        label: 'Neutral 900',            color: '#141414' },
-  { name: 'colour.static.surface.brand-subtle', label: 'Neutral 100',            color: '#e5e5e5' },
-  { name: 'colour.static.surface.positive',     label: 'Green 100',              color: '#dcfce7' },
-  { name: 'colour.static.surface.warning',      label: 'Yellow 100',             color: '#fef9c3' },
-  { name: 'colour.static.surface.danger',       label: 'Red 100',                color: '#fee2e2' },
-  { name: 'colour.static.surface.info',         label: 'Blue 100',               color: '#dbeafe' },
-  { name: 'colour.static.surface.overlay',      label: 'Transparent Black 700',  color: 'rgba(0,0,0,0.7)' },
+const surfaceTokens = [
+  { name: 'colour.static.surface.default',      label: 'Neutral 0',             cssVar: '--color-surface-default'      },
+  { name: 'colour.static.surface.page',         label: 'Neutral 50',            cssVar: '--color-surface-page'         },
+  { name: 'colour.static.surface.subtle',       label: 'Neutral 100',           cssVar: '--color-surface-subtle'       },
+  { name: 'colour.static.surface.inverse',      label: 'Neutral 900',           cssVar: '--color-surface-inverse'      },
+  { name: 'colour.static.surface.brand',        label: 'Brand',                 cssVar: '--color-surface-brand'        },
+  { name: 'colour.static.surface.brand-subtle', label: 'Brand subtle',          cssVar: '--color-surface-brand-subtle' },
+  { name: 'colour.static.surface.positive',     label: 'Green 100',             cssVar: '--color-surface-positive'     },
+  { name: 'colour.static.surface.warning',      label: 'Yellow 100',            cssVar: '--color-surface-warning'      },
+  { name: 'colour.static.surface.danger',       label: 'Red 100',               cssVar: '--color-surface-danger'       },
+  { name: 'colour.static.surface.info',         label: 'Blue 100',              cssVar: '--color-surface-info'         },
+  { name: 'colour.static.surface.overlay',      label: 'Transparent Black 700', cssVar: '--color-surface-overlay'      },
 ];
 
-const text = [
-  { name: 'colour.static.text.default',  label: 'Neutral 900',  color: '#141414' },
-  { name: 'colour.static.text.subtle',   label: 'Neutral 600',  color: '#4b4b4b' },
-  { name: 'colour.static.text.muted',    label: 'Neutral 400',  color: '#919191' },
-  { name: 'colour.static.text.disabled', label: 'Neutral 200',  color: '#d4d4d4' },
-  { name: 'colour.static.text.inverse',  label: 'Neutral 0',    color: '#ffffff' },
-  { name: 'colour.static.text.brand',    label: 'Neutral 900',  color: '#141414' },
-  { name: 'colour.static.text.positive', label: 'Green 700',    color: '#15803d' },
-  { name: 'colour.static.text.warning',  label: 'Yellow 700',   color: '#a16207' },
-  { name: 'colour.static.text.danger',   label: 'Red 700',      color: '#b91c1c' },
-  { name: 'colour.static.text.info',     label: 'Blue 700',     color: '#1d4ed8' },
+const textTokens = [
+  { name: 'colour.static.text.default',  label: 'Neutral 900', cssVar: '--color-text-default'  },
+  { name: 'colour.static.text.subtle',   label: 'Neutral 600', cssVar: '--color-text-subtle'   },
+  { name: 'colour.static.text.muted',    label: 'Neutral 400', cssVar: '--color-text-muted'    },
+  { name: 'colour.static.text.disabled', label: 'Neutral 200', cssVar: '--color-text-disabled' },
+  { name: 'colour.static.text.inverse',  label: 'Neutral 0',   cssVar: '--color-text-inverse'  },
+  { name: 'colour.static.text.brand',    label: 'Brand',       cssVar: '--color-text-brand'    },
+  { name: 'colour.static.text.positive', label: 'Green 700',   cssVar: '--color-text-positive' },
+  { name: 'colour.static.text.warning',  label: 'Yellow 700',  cssVar: '--color-text-warning'  },
+  { name: 'colour.static.text.danger',   label: 'Red 700',     cssVar: '--color-text-danger'   },
+  { name: 'colour.static.text.info',     label: 'Blue 700',    cssVar: '--color-text-info'     },
 ];
 
-const icon = [
-  { name: 'colour.static.icon.default',  label: 'Neutral 900',  color: '#141414' },
-  { name: 'colour.static.icon.subtle',   label: 'Neutral 600',  color: '#4b4b4b' },
-  { name: 'colour.static.icon.muted',    label: 'Neutral 400',  color: '#919191' },
-  { name: 'colour.static.icon.disabled', label: 'Neutral 200',  color: '#d4d4d4' },
-  { name: 'colour.static.icon.inverse',  label: 'Neutral 0',    color: '#ffffff' },
-  { name: 'colour.static.icon.brand',    label: 'Neutral 900',  color: '#141414' },
-  { name: 'colour.static.icon.positive', label: 'Green 700',    color: '#15803d' },
-  { name: 'colour.static.icon.warning',  label: 'Yellow 700',   color: '#a16207' },
-  { name: 'colour.static.icon.danger',   label: 'Red 700',      color: '#b91c1c' },
-  { name: 'colour.static.icon.info',     label: 'Blue 700',     color: '#1d4ed8' },
+const iconTokens = [
+  { name: 'colour.static.icon.default',  label: 'Neutral 900', cssVar: '--color-icon-default'  },
+  { name: 'colour.static.icon.subtle',   label: 'Neutral 600', cssVar: '--color-icon-subtle'   },
+  { name: 'colour.static.icon.muted',    label: 'Neutral 400', cssVar: '--color-icon-muted'    },
+  { name: 'colour.static.icon.disabled', label: 'Neutral 200', cssVar: '--color-icon-disabled' },
+  { name: 'colour.static.icon.inverse',  label: 'Neutral 0',   cssVar: '--color-icon-inverse'  },
+  { name: 'colour.static.icon.brand',    label: 'Brand',       cssVar: '--color-icon-brand'    },
+  { name: 'colour.static.icon.positive', label: 'Green 700',   cssVar: '--color-icon-positive' },
+  { name: 'colour.static.icon.warning',  label: 'Yellow 700',  cssVar: '--color-icon-warning'  },
+  { name: 'colour.static.icon.danger',   label: 'Red 700',     cssVar: '--color-icon-danger'   },
+  { name: 'colour.static.icon.info',     label: 'Blue 700',    cssVar: '--color-icon-info'     },
 ];
 
-const border = [
-  { name: 'colour.static.border.default',  label: 'Neutral 200',  color: '#d4d4d4' },
-  { name: 'colour.static.border.subtle',   label: 'Neutral 100',  color: '#e5e5e5' },
-  { name: 'colour.static.border.muted',    label: 'Neutral 50',   color: '#f5f5f5' },
-  { name: 'colour.static.border.disabled', label: 'Neutral 200',  color: '#d4d4d4' },
-  { name: 'colour.static.border.inverse',  label: 'Neutral 700',  color: '#2e2e2e' },
-  { name: 'colour.static.border.brand',    label: 'Neutral 900',  color: '#141414' },
-  { name: 'colour.static.border.positive', label: 'Green 300',    color: '#86efac' },
-  { name: 'colour.static.border.warning',  label: 'Yellow 300',   color: '#fde047' },
-  { name: 'colour.static.border.danger',   label: 'Red 300',      color: '#fca5a5' },
-  { name: 'colour.static.border.info',     label: 'Blue 300',     color: '#93c5fd' },
-  { name: 'colour.static.border.focus',    label: 'Neutral 900',  color: '#141414' },
+const borderTokens = [
+  { name: 'colour.static.border.default',  label: 'Neutral 200', cssVar: '--color-border-default'  },
+  { name: 'colour.static.border.subtle',   label: 'Neutral 100', cssVar: '--color-border-subtle'   },
+  { name: 'colour.static.border.muted',    label: 'Neutral 50',  cssVar: '--color-border-muted'    },
+  { name: 'colour.static.border.disabled', label: 'Neutral 200', cssVar: '--color-border-disabled' },
+  { name: 'colour.static.border.inverse',  label: 'Neutral 700', cssVar: '--color-border-inverse'  },
+  { name: 'colour.static.border.brand',    label: 'Brand',       cssVar: '--color-border-brand'    },
+  { name: 'colour.static.border.positive', label: 'Green 300',   cssVar: '--color-border-positive' },
+  { name: 'colour.static.border.warning',  label: 'Yellow 300',  cssVar: '--color-border-warning'  },
+  { name: 'colour.static.border.danger',   label: 'Red 300',     cssVar: '--color-border-danger'   },
+  { name: 'colour.static.border.info',     label: 'Blue 300',    cssVar: '--color-border-info'     },
+  { name: 'colour.static.border.focus',    label: 'Brand',       cssVar: '--color-border-focus'    },
 ];
 
-const interactiveDefault = [
-  { name: 'colour.interactive.default.base',     label: 'Neutral 900', color: '#141414' },
-  { name: 'colour.interactive.default.hover',    label: 'Neutral 700', color: '#2e2e2e' },
-  { name: 'colour.interactive.default.active',   label: 'Neutral 600', color: '#4b4b4b' },
-  { name: 'colour.interactive.default.disabled', label: 'Neutral 200', color: '#d4d4d4' },
+const interactiveDefaultTokens = [
+  { name: 'colour.interactive.default.base',     label: 'Neutral 900', cssVar: '--color-interactive-default-base'     },
+  { name: 'colour.interactive.default.hover',    label: 'Neutral 700', cssVar: '--color-interactive-default-hover'    },
+  { name: 'colour.interactive.default.active',   label: 'Neutral 600', cssVar: '--color-interactive-default-active'   },
+  { name: 'colour.interactive.default.disabled', label: 'Neutral 200', cssVar: '--color-interactive-default-disabled' },
 ];
 
-const interactivePale = [
-  { name: 'colour.interactive.pale.base',     label: 'Neutral 0',   color: '#ffffff' },
-  { name: 'colour.interactive.pale.hover',    label: 'Neutral 100', color: '#f5f5f5' },
-  { name: 'colour.interactive.pale.active',   label: 'Neutral 200', color: '#d4d4d4' },
-  { name: 'colour.interactive.pale.disabled', label: 'Neutral 0',   color: '#ffffff' },
+const interactivePaleTokens = [
+  { name: 'colour.interactive.pale.base',     label: 'Neutral 0',   cssVar: '--color-interactive-pale-base'     },
+  { name: 'colour.interactive.pale.hover',    label: 'Neutral 100', cssVar: '--color-interactive-pale-hover'    },
+  { name: 'colour.interactive.pale.active',   label: 'Neutral 200', cssVar: '--color-interactive-pale-active'   },
+  { name: 'colour.interactive.pale.disabled', label: 'Neutral 0',   cssVar: '--color-interactive-pale-disabled' },
 ];
 
-const interactiveGhost = [
-  { name: 'colour.interactive.ghost.base',     label: 'Transparent Black 0',   color: 'rgba(0,0,0,0)'   },
-  { name: 'colour.interactive.ghost.hover',    label: 'Transparent Black 100', color: 'rgba(0,0,0,0.1)' },
-  { name: 'colour.interactive.ghost.active',   label: 'Transparent Black 200', color: 'rgba(0,0,0,0.2)' },
-  { name: 'colour.interactive.ghost.disabled', label: 'Transparent Black 0',   color: 'rgba(0,0,0,0)'   },
+const interactiveGhostTokens = [
+  { name: 'colour.interactive.ghost.base',     label: 'Transparent 0',   cssVar: '--color-interactive-ghost-base'     },
+  { name: 'colour.interactive.ghost.hover',    label: 'Transparent 100', cssVar: '--color-interactive-ghost-hover'    },
+  { name: 'colour.interactive.ghost.active',   label: 'Transparent 200', cssVar: '--color-interactive-ghost-active'   },
+  { name: 'colour.interactive.ghost.disabled', label: 'Transparent 0',   cssVar: '--color-interactive-ghost-disabled' },
 ];
 
-const interactivePositive = [
-  { name: 'colour.interactive.positive.base',     label: 'Green 700',  color: '#15803d' },
-  { name: 'colour.interactive.positive.hover',    label: 'Green 900',  color: '#14532d' },
-  { name: 'colour.interactive.positive.active',   label: 'Green 1000', color: '#0b3d1e' },
-  { name: 'colour.interactive.positive.disabled', label: 'Neutral 200',color: '#d4d4d4' },
+const interactivePositiveTokens = [
+  { name: 'colour.interactive.positive.base',     label: 'Green 700',   cssVar: '--color-interactive-positive-base'     },
+  { name: 'colour.interactive.positive.hover',    label: 'Green 900',   cssVar: '--color-interactive-positive-hover'    },
+  { name: 'colour.interactive.positive.active',   label: 'Green 1000',  cssVar: '--color-interactive-positive-active'   },
+  { name: 'colour.interactive.positive.disabled', label: 'Neutral 200', cssVar: '--color-interactive-positive-disabled' },
 ];
 
-const interactiveDanger = [
-  { name: 'colour.interactive.danger.base',     label: 'Red 700',    color: '#b91c1c' },
-  { name: 'colour.interactive.danger.hover',    label: 'Red 900',    color: '#7f1d1d' },
-  { name: 'colour.interactive.danger.active',   label: 'Red 1000',   color: '#5d0d0d' },
-  { name: 'colour.interactive.danger.disabled', label: 'Neutral 200',color: '#d4d4d4' },
+const interactiveDangerTokens = [
+  { name: 'colour.interactive.danger.base',     label: 'Red 700',     cssVar: '--color-interactive-danger-base'     },
+  { name: 'colour.interactive.danger.hover',    label: 'Red 900',     cssVar: '--color-interactive-danger-hover'    },
+  { name: 'colour.interactive.danger.active',   label: 'Red 1000',    cssVar: '--color-interactive-danger-active'   },
+  { name: 'colour.interactive.danger.disabled', label: 'Neutral 200', cssVar: '--color-interactive-danger-disabled' },
 ];
 
-const interactiveBrand = [
-  { name: 'colour.interactive.brand.base',     label: 'Neutral 900', color: '#141414' },
-  { name: 'colour.interactive.brand.hover',    label: 'Neutral 700', color: '#2e2e2e' },
-  { name: 'colour.interactive.brand.active',   label: 'Neutral 600', color: '#4b4b4b' },
-  { name: 'colour.interactive.brand.disabled', label: 'Neutral 200', color: '#d4d4d4' },
+const interactiveBrandTokens = [
+  { name: 'colour.interactive.brand.base',     label: 'Brand',       cssVar: '--color-interactive-brand-base'     },
+  { name: 'colour.interactive.brand.hover',    label: 'Brand hover',  cssVar: '--color-interactive-brand-hover'    },
+  { name: 'colour.interactive.brand.active',   label: 'Brand active', cssVar: '--color-interactive-brand-active'   },
+  { name: 'colour.interactive.brand.disabled', label: 'Neutral 200', cssVar: '--color-interactive-brand-disabled' },
 ];
 
-const interactiveInverse = [
-  { name: 'colour.interactive.inverse.base',     label: 'Neutral 0',   color: '#ffffff' },
-  { name: 'colour.interactive.inverse.hover',    label: 'Neutral 100', color: '#e5e5e5' },
-  { name: 'colour.interactive.inverse.active',   label: 'Neutral 200', color: '#d4d4d4' },
-  { name: 'colour.interactive.inverse.disabled', label: 'Neutral 0',   color: '#ffffff' },
+const interactiveInverseTokens = [
+  { name: 'colour.interactive.inverse.base',     label: 'Neutral 0',   cssVar: '--color-interactive-inverse-base'     },
+  { name: 'colour.interactive.inverse.hover',    label: 'Neutral 100', cssVar: '--color-interactive-inverse-hover'    },
+  { name: 'colour.interactive.inverse.active',   label: 'Neutral 200', cssVar: '--color-interactive-inverse-active'   },
+  { name: 'colour.interactive.inverse.disabled', label: 'Neutral 0',   cssVar: '--color-interactive-inverse-disabled' },
 ];
-
-// ─── Radius tokens ───────────────────────────────────────────────────────────
 
 const radiusTokens = [
   { name: 'radius.none',   value: '0px'    },
@@ -118,9 +120,12 @@ const radiusTokens = [
   { name: 'radius.card',   value: '0px'    },
 ];
 
-// ─── Spacing tokens ──────────────────────────────────────────────────────────
+const borderTokens2 = [
+  { name: 'border.default', value: '1px' },
+  { name: 'border.strong',  value: '2px' },
+];
 
-const spacingComponent = [
+const spacingComponentTokens = [
   { name: 'spacing.component.minus', value: '-1px' },
   { name: 'spacing.component.none',  value: '0px'  },
   { name: 'spacing.component.xs',    value: '4px'  },
@@ -134,7 +139,7 @@ const spacingComponent = [
   { name: 'spacing.component.5xl',   value: '40px' },
 ];
 
-const spacingLayout = [
+const spacingLayoutTokens = [
   { name: 'spacing.layout.minus', value: '-1px' },
   { name: 'spacing.layout.none',  value: '0px'  },
   { name: 'spacing.layout.xs',    value: '8px'  },
@@ -149,7 +154,7 @@ const spacingLayout = [
 
 // ─── Components ──────────────────────────────────────────────────────────────
 
-function ColourRow({ name, label, color }) {
+function ColourRow({ name, label, cssVar }) {
   return (
     <div className="mds-tokens__row">
       <span className="mds-tokens__name">{name}</span>
@@ -157,7 +162,7 @@ function ColourRow({ name, label, color }) {
         <span className="mds-tokens__label">{label}</span>
         <div
           className="mds-tokens__swatch"
-          style={{ backgroundColor: color }}
+          style={{ backgroundColor: `var(${cssVar})` }}
         />
       </div>
     </div>
@@ -197,13 +202,23 @@ function SubSection({ title, children }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+const brands = ['Minimal', 'Azure', 'Purpura'];
 const anchors = [
   { href: '#tokens-colour',  label: 'Colour'  },
   { href: '#tokens-radius',  label: 'Radius'  },
   { href: '#tokens-spacing', label: 'Spacing' },
+  { href: '#tokens-border',  label: 'Border'  },
 ];
 
 export default function DesignTokens() {
+  const { setBrand, mode } = useTheme();
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  const handleTabChange = (index) => {
+    setSelectedTab(index);
+    setBrand(brands[index].toLowerCase());
+  };
+
   return (
     <div className="mds-page-tokens">
       <h1 className="mds-page-tokens__title">Design Tokens</h1>
@@ -211,69 +226,79 @@ export default function DesignTokens() {
         Design tokens are the single source of truth for all design decisions across MinimalDS.
       </p>
 
+      {/* Anchor nav — 2-column grid */}
       <div className="mds-tokens__anchors">
         {anchors.map(a => (
           <a key={a.href} href={a.href} className="mds-tokens__anchor-link">
-            {a.label}
+            ↳ {a.label}
           </a>
         ))}
+      </div>
+
+      {/* Brand tabs */}
+      <div className="mds-tokens__tabs">
+        <TabGroup
+          tabs={brands}
+          selectedIndex={selectedTab}
+          onChange={handleTabChange}
+        />
       </div>
 
       {/* Colour */}
       <Section id="tokens-colour" title="Colour">
         <SubSection title="Surface">
           <TokenTable>
-            {surface.map(t => <ColourRow key={t.name} {...t} />)}
+            {surfaceTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Text">
           <TokenTable>
-            {text.map(t => <ColourRow key={t.name} {...t} />)}
+            {textTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Icon">
           <TokenTable>
-            {icon.map(t => <ColourRow key={t.name} {...t} />)}
+            {iconTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Border">
           <TokenTable>
-            {border.map(t => <ColourRow key={t.name} {...t} />)}
+            {borderTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Default">
           <TokenTable>
-            {interactiveDefault.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactiveDefaultTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Pale">
           <TokenTable>
-            {interactivePale.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactivePaleTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Ghost">
           <TokenTable>
-            {interactiveGhost.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactiveGhostTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Positive">
           <TokenTable>
-            {interactivePositive.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactivePositiveTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Danger">
           <TokenTable>
-            {interactiveDanger.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactiveDangerTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Brand">
           <TokenTable>
-            {interactiveBrand.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactiveBrandTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Interactive Inverse">
           <TokenTable>
-            {interactiveInverse.map(t => <ColourRow key={t.name} {...t} />)}
+            {interactiveInverseTokens.map(t => <ColourRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
       </Section>
@@ -289,14 +314,21 @@ export default function DesignTokens() {
       <Section id="tokens-spacing" title="Spacing">
         <SubSection title="Component">
           <TokenTable>
-            {spacingComponent.map(t => <ValueRow key={t.name} {...t} />)}
+            {spacingComponentTokens.map(t => <ValueRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
         <SubSection title="Layout">
           <TokenTable>
-            {spacingLayout.map(t => <ValueRow key={t.name} {...t} />)}
+            {spacingLayoutTokens.map(t => <ValueRow key={t.name} {...t} />)}
           </TokenTable>
         </SubSection>
+      </Section>
+
+      {/* Border */}
+      <Section id="tokens-border" title="Border">
+        <TokenTable>
+          {borderTokens2.map(t => <ValueRow key={t.name} {...t} />)}
+        </TokenTable>
       </Section>
 
     </div>
