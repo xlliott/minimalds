@@ -15,6 +15,7 @@ import AlertPage from './pages/AlertPage';
 import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
 import CheckboxPage from './pages/CheckboxPage';
+import DialogPage from './pages/DialogPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -42,6 +43,7 @@ function Router() {
       case '#/button':        return <ButtonPage />;
       case '#/card':          return <CardPage />;
       case '#/checkbox':      return <CheckboxPage />;
+      case '#/dialog':        return <DialogPage />;
       default:                return <Home />;
     }
   };
