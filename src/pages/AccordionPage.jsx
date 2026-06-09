@@ -41,8 +41,6 @@ export default function AccordionPage() {
             innerLabel="Brand"
             onChange={setBrand}
           />
-          <div className="mds-page-accordion__controls-ghost" />
-          <div className="mds-page-accordion__controls-ghost" />
         </div>
         <div className="mds-page-accordion__preview-area" data-brand={brand} data-mode="light">
           <Accordion title="Title" description="Description" />
