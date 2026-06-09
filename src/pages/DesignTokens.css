@@ -1,0 +1,153 @@
+/* ============================================================
+   MinimalDS — Design Tokens Page
+   ============================================================ */
+
+.mds-page-tokens {
+  max-width: 800px;
+  width:     100%;
+}
+
+.mds-page-tokens__title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h1);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 var(--space-layout-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-page-tokens__subtitle {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-layout-md);
+}
+
+/* --- Anchor nav --- */
+
+.mds-tokens__anchors {
+  display:       flex;
+  gap:           var(--space-layout-md);
+  margin-bottom: var(--space-layout-2xl);
+  padding-bottom: var(--space-layout-md);
+  border-bottom: var(--border-default) solid var(--color-border-default);
+}
+
+.mds-tokens__anchor-link {
+  font-family:           var(--font-family-global);
+  font-size:             var(--font-size-body);
+  font-weight:           var(--font-weight-regular);
+  color:                 var(--color-text-default);
+  text-decoration:       underline;
+  text-underline-offset: 2px;
+}
+
+.mds-tokens__anchor-link:hover {
+  color: var(--color-text-subtle);
+}
+
+/* --- Sections --- */
+
+.mds-tokens__section {
+  margin-bottom: var(--space-layout-2xl);
+}
+
+.mds-tokens__section-title {
+  font-family:  var(--font-family-display);
+  font-size:    var(--font-size-desktop-h3);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1;
+  margin:       0 0 var(--space-layout-md);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Subsections --- */
+
+.mds-tokens__subsection {
+  margin-bottom: var(--space-layout-md);
+}
+
+.mds-tokens__subsection-title {
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
+  font-weight:  var(--font-weight-strong);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  margin:       0 0 var(--space-component-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Table --- */
+
+.mds-tokens__table {
+  border:        var(--border-default) solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      hidden;
+}
+
+.mds-tokens__row {
+  display:          flex;
+  align-items:      center;
+  justify-content:  space-between;
+  padding:          var(--space-component-lg);
+  min-height:       53px;
+  border-bottom:    var(--border-default) solid var(--color-border-default);
+  background-color: var(--color-surface-default);
+  box-sizing:       border-box;
+  gap:              var(--space-layout-sm);
+}
+
+.mds-tokens__row:last-child {
+  border-bottom: none;
+}
+
+.mds-tokens__name {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-tokens__value {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  white-space:  nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Colour row right side --- */
+
+.mds-tokens__colour-right {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-layout-sm);
+  flex-shrink: 0;
+}
+
+.mds-tokens__label {
+  font-family:  var(--font-family-global);
+  font-size:    var(--font-size-body);
+  font-weight:  var(--font-weight-regular);
+  color:        var(--color-text-default);
+  line-height:  1.5;
+  white-space:  nowrap;
+  text-align:   right;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-tokens__swatch {
+  width:         40px;
+  height:        40px;
+  border-radius: 9999px;
+  border:        var(--border-default) solid var(--color-border-default);
+  flex-shrink:   0;
+}
