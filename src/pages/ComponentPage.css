@@ -95,6 +95,7 @@
 
 .mds-component-page__section {
   margin-bottom: 48px;
+  padding-top:   32px;
 }
 
 .mds-component-page__section:last-child {
@@ -129,7 +130,7 @@
 .mds-component-page__usage {
   display:    flex;
   gap:        var(--space-layout-md);
-  margin-top: 12px;
+  margin-top: var(--space-layout-md);
 }
 
 .mds-component-page__usage > * {

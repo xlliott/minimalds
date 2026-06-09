@@ -1,5 +1,6 @@
 import './ComponentPage.css';
 import Alert from '../components/Alert/Alert';
+import Divider from '../components/Divider/Divider';
 
 export function ComponentPageHeader({ title, description, figmaUrl }) {
   return (
@@ -35,10 +36,13 @@ export function ComponentPagePreview({ controls, children }) {
 
 export function ComponentPageSection({ title, children }) {
   return (
-    <div className="mds-component-page__section">
-      {title && <h2 className="mds-component-page__section-title">{title}</h2>}
-      {children}
-    </div>
+    <>
+      <Divider />
+      <div className="mds-component-page__section">
+        {title && <h2 className="mds-component-page__section-title">{title}</h2>}
+        {children}
+      </div>
+    </>
   );
 }
 
