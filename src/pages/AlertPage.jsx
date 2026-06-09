@@ -29,7 +29,7 @@ export default function AlertPage() {
   const [role,  setRole]  = useState('danger');
 
   return (
-    <div className="mds-component-page">
+    <div className="mds-component-page mds-alert-page">
 
       <ComponentPageHeader
         title="Alert"

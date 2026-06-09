@@ -3,6 +3,11 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
+/* Narrower preview for alert component */
+.mds-alert-page .mds-component-page__preview-area > * {
+  width: 320px;
+}
+
 /* --- 2×2 states grid --- */
 
 .mds-alert-page__states {

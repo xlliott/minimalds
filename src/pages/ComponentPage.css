@@ -50,14 +50,18 @@
 
 .mds-component-page__preview-panel {
   margin-bottom: 48px;
+  border:        1px solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  overflow:      visible;
 }
 
 .mds-component-page__controls {
   display:        flex;
   flex-direction: row;
-  margin-bottom:  -1px;
   position:       relative;
   z-index:        2;
+  border-radius:  var(--radius-card) var(--radius-card) 0 0;
+  overflow:       hidden;
   border-bottom:  1px solid var(--color-border-default);
 }
 
@@ -68,7 +72,7 @@
   border-radius: 0;
 }
 
-/* Remove the field's own border — the panel border handles it */
+/* Remove the field's own border — panel border handles the outside */
 .mds-component-page__controls .mds-dropdown__field {
   border:        none;
   border-radius: 0;
@@ -84,7 +88,6 @@
   position:         relative;
   z-index:          1;
   background-color: var(--color-surface-default);
-  border:           1px solid var(--color-border-default);
   height:           278px;
   display:          flex;
   align-items:      center;
@@ -92,6 +95,7 @@
   padding:          0 64px;
   box-sizing:       border-box;
   overflow:         hidden;
+  border-radius:    0 0 var(--radius-card) var(--radius-card);
 }
 
 .mds-component-page__preview-area > * {
