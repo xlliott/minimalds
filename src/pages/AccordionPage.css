@@ -78,17 +78,18 @@
 .mds-page-accordion__preview-area {
   background-color: #ffffff;
   height:           278px;
-  min-height:       278px;
-  max-height:       278px;
   display:          flex;
   align-items:      center;
   justify-content:  center;
   padding:          0 64px;
+  box-sizing:       border-box;
   overflow:         hidden;
+  flex-shrink:      0;
 }
 
 .mds-page-accordion__preview-area > * {
-  width: 400px;
+  width:      400px;
+  flex-shrink: 0;
 }
 
 /* --- Sections --- */
@@ -137,13 +138,12 @@
   background-color: #ffffff;
   border:           var(--border-default) solid var(--color-border-default);
   height:           278px;
-  min-height:       278px;
-  max-height:       278px;
   flex-shrink:      0;
   display:          flex;
   align-items:      center;
   justify-content:  center;
   padding:          0 64px;
+  box-sizing:       border-box;
   overflow:         hidden;
 }
 
