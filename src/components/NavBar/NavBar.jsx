@@ -21,14 +21,29 @@ const sunIcon = (
   </svg>
 );
 
-export default function NavBar() {
+const hamburgerIcon = (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+export default function NavBar({ onMenuClick }) {
   const { mode, toggleMode } = useTheme();
 
   return (
     <nav className="mds-navbar">
-      <a href="#/" className="mds-navbar__logo" aria-label="MinimalDS home">
-        {logo}
-      </a>
+      <div className="mds-navbar__left">
+        <button
+          className="mds-navbar__hamburger"
+          onClick={onMenuClick}
+          aria-label="Open navigation"
+        >
+          {hamburgerIcon}
+        </button>
+        <a href="#/" className="mds-navbar__logo" aria-label="MinimalDS home">
+          {logo}
+        </a>
+      </div>
       <div className="mds-navbar__right">
         <div className="mds-navbar__links">
           <a href="#/about" className="mds-navbar__link">About</a>
