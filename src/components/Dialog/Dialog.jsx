@@ -41,61 +41,68 @@ export default function Dialog({
   onPrimary,
   onSecondary,
   onDismiss,
+  static: isStatic = false,
 }) {
-  if (!open) return null;
+  if (!open && !isStatic) return null;
 
-  return (
-    <div className="mds-dialog-overlay" onClick={onDismiss}>
-      <div
-        className={[
-          'mds-dialog',
-          `mds-dialog--${size}`,
-        ].join(' ')}
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={title ? 'mds-dialog-title' : undefined}
-      >
-        <div className="mds-dialog__header">
-          <div className="mds-dialog__title-body">
-            {title && (
-              <h4 id="mds-dialog-title" className="mds-dialog__title">{title}</h4>
-            )}
-            {body && (
-              <p className="mds-dialog__body">{body}</p>
-            )}
-          </div>
-
-          {dismissible && (
-            <button
-              className="mds-dialog__close"
-              onClick={onDismiss}
-              aria-label="Close dialog"
-            >
-              {closeIcon}
-            </button>
+  const panel = (
+    <div
+      className={[
+        'mds-dialog',
+        `mds-dialog--${size}`,
+      ].join(' ')}
+      onClick={(e) => e.stopPropagation()}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={title ? 'mds-dialog-title' : undefined}
+    >
+      <div className="mds-dialog__header">
+        <div className="mds-dialog__title-body">
+          {title && (
+            <h4 id="mds-dialog-title" className="mds-dialog__title">{title}</h4>
+          )}
+          {body && (
+            <p className="mds-dialog__body">{body}</p>
           )}
         </div>
 
-        {slot && (
-          <div className="mds-dialog__slot">{slot}</div>
-        )}
-
-        {(primaryLabel || secondaryLabel) && (
-          <div className="mds-dialog__buttons">
-            {secondaryLabel && (
-              <Button role="secondary" size="default" onClick={onSecondary}>
-                {secondaryLabel}
-              </Button>
-            )}
-            {primaryLabel && (
-              <Button role="primary" size="default" onClick={onPrimary}>
-                {primaryLabel}
-              </Button>
-            )}
-          </div>
+        {dismissible && (
+          <button
+            className="mds-dialog__close"
+            onClick={onDismiss}
+            aria-label="Close dialog"
+          >
+            {closeIcon}
+          </button>
         )}
       </div>
+
+      {slot && (
+        <div className="mds-dialog__slot">{slot}</div>
+      )}
+
+      {(primaryLabel || secondaryLabel) && (
+        <div className="mds-dialog__buttons">
+          {secondaryLabel && (
+            <Button role="secondary" size="default" onClick={onSecondary}>
+              {secondaryLabel}
+            </Button>
+          )}
+          {primaryLabel && (
+            <Button role="primary" size="default" onClick={onPrimary}>
+              {primaryLabel}
+            </Button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+
+  if (isStatic) return panel;
+
+  return (
+    <div className="mds-dialog-overlay" onClick={onDismiss}>
+      {panel}
     </div>
   );
 }
