@@ -10,11 +10,19 @@
   padding:         var(--space-layout-2xl);
 }
 
-/* Variants wrapper aligns its own children to the top */
+/* Let the inner wrapper fill the full panel width so centring works */
+.mds-checkbox-page .mds-component-page__state-inner {
+  width:   100%;
+  display: flex;
+}
+
+/* Variants wrapper — centred, children align to top */
 .mds-checkbox-page__variants {
-  display:     flex;
-  gap:         var(--space-layout-2xl);
-  align-items: flex-start;
+  display:         flex;
+  gap:             var(--space-layout-2xl);
+  align-items:     flex-start;
+  justify-content: center;
+  width:           100%;
 }
 
 /* Disable interactivity in variants panel */
