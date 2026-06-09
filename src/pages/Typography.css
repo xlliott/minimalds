@@ -17,8 +17,8 @@
 }
 
 .mds-page-typography__subtitle {
-  font-family:  var(--font-family-global);
-  font-size:    var(--font-size-body);
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
   font-weight:  var(--font-weight-regular);
   color:        var(--color-text-subtle);
   line-height:  1.5;
@@ -89,8 +89,8 @@
 }
 
 .mds-page-typography__style-name {
-  font-family:  var(--font-family-global);
-  font-size:    var(--font-size-body);
+  font-family:  var(--font-family-heading);
+  font-size:    var(--font-size-desktop-h4);
   font-weight:  var(--font-weight-medium);
   color:        var(--color-text-default);
   line-height:  1.4;
@@ -98,7 +98,7 @@
 }
 
 .mds-page-typography__style-detail {
-  font-family:  var(--font-family-global);
+  font-family:  var(--font-family-heading);
   font-size:    var(--font-size-helper);
   font-weight:  var(--font-weight-regular);
   color:        var(--color-text-muted);
