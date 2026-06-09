@@ -130,13 +130,18 @@ function isLight(hex) {
 }
 
 function SwatchRow({ name, hex, opacity, transparentDark, transparentLight }) {
-  let textColor;
+  let textClass;
   if (transparentDark) {
-    textColor = parseInt(opacity) >= 50 ? '#FFFFFF' : '#141414';
+    // In dark mode the background is dark, so transparent black swatches are nearly invisible
+    // — always use light text. In light mode, use dark text for low opacity, light for high.
+    textClass = parseInt(opacity) >= 50
+      ? 'mds-colour__swatch-text--light'
+      : 'mds-colour__swatch-text--dark';
   } else if (transparentLight) {
-    textColor = '#141414';
+    // Transparent white: in light mode always dark text; in dark mode always light text
+    textClass = 'mds-colour__swatch-text--adaptive';
   } else {
-    textColor = isLight(hex) ? '#141414' : '#FFFFFF';
+    textClass = isLight(hex) ? 'mds-colour__swatch-text--dark' : 'mds-colour__swatch-text--light';
   }
 
   const bgColor = opacity !== undefined
@@ -146,8 +151,8 @@ function SwatchRow({ name, hex, opacity, transparentDark, transparentLight }) {
 
   return (
     <div className="mds-colour__swatch-row" style={{ backgroundColor: bgColor }}>
-      <span className="mds-colour__swatch-name" style={{ color: textColor }}>{name}</span>
-      <span className="mds-colour__swatch-hex" style={{ color: textColor }}>{label}</span>
+      <span className={`mds-colour__swatch-name ${textClass}`}>{name}</span>
+      <span className={`mds-colour__swatch-hex ${textClass}`}>{label}</span>
     </div>
   );
 }

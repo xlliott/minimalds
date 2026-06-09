@@ -7,7 +7,7 @@
 }
 
 .mds-page-colour__title {
-  font-family:  var(--font-family-display);
+  font-family:  var(--font-family-heading);
   font-size:    var(--font-size-desktop-h1);
   font-weight:  var(--font-weight-strong);
   color:        var(--color-text-default);
@@ -76,6 +76,30 @@
   font-weight: var(--font-weight-regular);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Always dark text (light swatches in light mode) */
+.mds-colour__swatch-text--dark {
+  color: #141414;
+}
+
+/* In dark mode, transparent-black low-opacity swatches are invisible — use light text */
+[data-mode="dark"] .mds-colour__swatch-text--dark {
+  color: #ffffff;
+}
+
+/* Always light text (dark swatches) */
+.mds-colour__swatch-text--light {
+  color: #ffffff;
+}
+
+/* Adaptive: dark text in light mode, light text in dark mode */
+.mds-colour__swatch-text--adaptive {
+  color: #141414;
+}
+
+[data-mode="dark"] .mds-colour__swatch-text--adaptive {
+  color: #ffffff;
 }
 
 /* --- Two column layout --- */
