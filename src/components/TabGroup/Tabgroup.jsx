@@ -1,4 +1,4 @@
-import './TabGroup.css';
+import './Tabgroup.css';
 import Tab from '../Tab/Tab';
 
 /**
