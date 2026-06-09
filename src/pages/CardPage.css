@@ -26,7 +26,11 @@
   padding:          var(--space-layout-2xl);
   box-sizing:       border-box;
   overflow:         hidden;
-  margin-top:       -1px;
+  margin-top:       var(--space-layout-md);
+}
+
+.mds-card-page__state-panel + .mds-card-page__state-panel {
+  margin-top: -1px;
 }
 
 .mds-card-page__state-panel--tall {
