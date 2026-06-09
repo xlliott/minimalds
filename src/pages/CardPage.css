@@ -3,6 +3,18 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
+/* Disable card hover — only buttons should be interactive in docs */
+.mds-component-page__preview-scope .mds-card:hover,
+.mds-card-page__state-panel .mds-card:hover {
+  background-color: var(--color-surface-default);
+  cursor: default;
+}
+
+.mds-component-page__preview-scope .mds-card:active,
+.mds-card-page__state-panel .mds-card:active {
+  background-color: var(--color-surface-default);
+}
+
 /* --- Button position state panels --- */
 
 .mds-card-page__state-panel {
