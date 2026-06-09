@@ -9,3 +9,16 @@
   gap:         var(--space-layout-2xl);
   align-items: flex-start;
 }
+
+/* Disable interactivity in variants panel */
+.mds-checkbox-page__variants .mds-checkbox {
+  pointer-events: none;
+  user-select:    none;
+}
+
+/* Override state panel to align content to top-left */
+.mds-checkbox-page .mds-component-page__state-panel {
+  align-items:     flex-start;
+  justify-content: flex-start;
+  padding:         var(--space-layout-2xl);
+}
