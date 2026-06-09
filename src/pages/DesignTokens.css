@@ -56,15 +56,13 @@
   text-underline-offset: 2px;
 }
 
-/* --- Brand tabs --- */
+.mds-tokens__section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
 
 .mds-tokens__tabs {
   margin-bottom: var(--space-layout-2xl);
-}
-
-/* Remove bottom border from tab group on this page */
-.mds-tokens__tabs .mds-tab-group {
-  border-bottom: none;
 }
 
 /* --- Sections --- */
