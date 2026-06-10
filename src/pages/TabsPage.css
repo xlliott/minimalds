@@ -3,11 +3,12 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
-/* Preview scope — tab group fills the preview width naturally */
+/* Preview scope — tab group centred in the preview area */
 .mds-tabs-page .mds-component-page__preview-scope {
-  width: 100%;
+  width:           100%;
+  justify-content: center;
 }
 
 .mds-tabs-page .mds-component-page__preview-scope > * {
-  width: 100%;
+  width: auto;
 }
