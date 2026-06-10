@@ -20,6 +20,7 @@ import DropdownPage from './pages/DropdownPage';
 import InputPage from './pages/InputPage';
 import LinkPage from './pages/LinkPage';
 import RadioPage from './pages/RadioPage';
+import SelectPage from './pages/SelectPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -52,6 +53,7 @@ function Router() {
       case '#/input':         return <InputPage />;
       case '#/link':          return <LinkPage />;
       case '#/radio':         return <RadioPage />;
+      case '#/select':        return <SelectPage />;
       default:                return <Home />;
     }
   };
