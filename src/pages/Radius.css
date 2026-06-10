@@ -104,3 +104,12 @@
   line-height:  1.4;
   -webkit-font-smoothing: antialiased;
 }
+
+@media (max-width: 768px) {
+  .mds-page-radius__preview-area {
+    height:     auto !important;
+    min-height: 0    !important;
+    max-height: none !important;
+    padding:    24px;
+  }
+}

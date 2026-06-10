@@ -260,9 +260,11 @@
   }
 
   .mds-component-page__preview-scope {
-    width:     100% !important;
-    max-width: 100%;
-    overflow:  hidden;
+    width:           100% !important;
+    max-width:       100%;
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
   }
 
   .mds-component-page__preview-scope > * {
