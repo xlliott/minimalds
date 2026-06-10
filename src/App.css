@@ -41,3 +41,23 @@ a {
 button {
   font-family: inherit;
 }
+
+/* ============================================================
+   Global mobile overrides
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Kill all fixed preview heights globally */
+  .mds-component-page__preview-area,
+  .mds-dialog-page .mds-component-page__preview-area,
+  .mds-page-radius__preview-area {
+    height:     auto !important;
+    min-height: 0    !important;
+    max-height: none !important;
+  }
+
+  /* Prevent horizontal overflow globally */
+  body {
+    overflow-x: hidden;
+  }
+}
