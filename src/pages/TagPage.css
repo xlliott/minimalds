@@ -1,0 +1,13 @@
+/* ============================================================
+   MinimalDS — Tag Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — tag sits at its natural (fit-content) width */
+.mds-tag-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-tag-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
