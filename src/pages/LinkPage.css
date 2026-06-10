@@ -1,0 +1,28 @@
+/* ============================================================
+   MinimalDS — Link Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — link sits at natural (fit-content) width */
+.mds-link-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-link-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
+
+/* Static variants panel */
+.mds-link-page__panel {
+  display:          flex;
+  flex-direction:   row;
+  align-items:      center;
+  justify-content:  center;
+  gap:              var(--space-layout-lg);
+  background-color: var(--color-surface-default);
+  border:           1px solid var(--color-border-default);
+  padding:          var(--space-layout-4xl);
+  box-sizing:       border-box;
+  margin-top:       var(--space-layout-md);
+  width:            100%;
+}
