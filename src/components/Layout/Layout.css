@@ -36,7 +36,8 @@
   }
 
   .mds-layout__body {
-    overflow-x: clip;
+    overflow-x:  clip;
+    padding-top: 64px; /* offset for fixed navbar */
   }
 
   .mds-layout__content {
