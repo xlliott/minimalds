@@ -26,7 +26,7 @@ export default function SwitchPage() {
 
       <ComponentPageHeader
         title="Switch"
-        description="A switch is used to quickly change between two possible states. They are commonly used for "on/off" switches."
+        description='A switch is used to quickly change between two possible states. They are commonly used for "on/off" switches.'
         figmaUrl="https://www.figma.com/community/file/1643197568772735915/minimal-design-system"
       />
 
