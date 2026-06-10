@@ -1,0 +1,28 @@
+/* ============================================================
+   MinimalDS — Input Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — input sits at its natural (fit-content) width */
+.mds-input-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-input-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
+
+/* Static variant/leading-asset panels */
+.mds-input-page__panel {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  gap:              var(--space-layout-lg);
+  background-color: var(--color-surface-default);
+  border:           1px solid var(--color-border-default);
+  padding:          var(--space-layout-2xl);
+  box-sizing:       border-box;
+  margin-top:       var(--space-layout-md);
+  pointer-events:   none;
+  user-select:      none;
+}
