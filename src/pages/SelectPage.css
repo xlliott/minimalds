@@ -1,0 +1,47 @@
+/* ============================================================
+   MinimalDS — Select Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — select sits at its natural 320px width */
+.mds-select-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-select-page .mds-component-page__preview-scope > * {
+  width: 320px;
+}
+
+/* Select versus Dropdown comparison section */
+.mds-select-page__comparison {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-layout-md);
+  margin-top:     var(--space-layout-md);
+}
+
+.mds-select-page__comparison-item {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);
+}
+
+.mds-select-page__comparison-title {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-strong);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  margin:      0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-select-page__comparison-body {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  margin:      0;
+  -webkit-font-smoothing: antialiased;
+}
