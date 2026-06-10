@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Input from '../components/Input/Input';
 import Link from '../components/Link/Link';
 import Dropdown from '../components/Dropdown/Dropdown';
+import { useTheme } from '../context/ThemeContext';
 import {
   ComponentPageHeader,
   ComponentPagePreview,
@@ -41,6 +42,7 @@ const atSignIcon = (
 );
 
 export default function InputPage() {
+  const { mode } = useTheme();
   const [brand,    setBrand]    = useState('minimal');
   const [size,     setSize]     = useState('default');
   const [modifier, setModifier] = useState('none');
@@ -121,7 +123,11 @@ export default function InputPage() {
           input is a single line of text. Use Large when the expected user input is more than
           a few words that could span multiple lines.
         </ComponentPageBody>
-        <div className="mds-input-page__panel">
+        <div
+          className="mds-input-page__panel"
+          data-brand="minimal"
+          data-mode={mode}
+        >
           <Input
             size="default"
             label="Label text"
@@ -140,7 +146,11 @@ export default function InputPage() {
           Leading assets can be useful to provide additional context to the expected content
           of the input.
         </ComponentPageBody>
-        <div className="mds-input-page__panel">
+        <div
+          className="mds-input-page__panel"
+          data-brand="minimal"
+          data-mode={mode}
+        >
           <Input
             size="default"
             label="Instagram handle"
