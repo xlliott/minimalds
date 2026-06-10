@@ -54,3 +54,9 @@
 .mds-card-page__state-panel:not(.mds-card-page__state-panel--tall) > * {
   width: 480px;
 }
+
+@media (max-width: 768px) {
+  .mds-card-page__card-row {
+    flex-direction: column;
+  }
+}

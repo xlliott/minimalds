@@ -59,3 +59,15 @@
   line-height:  1.5;
   -webkit-font-smoothing: antialiased;
 }
+
+@media (max-width: 768px) {
+  .mds-alert-page__states-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Alert preview width should not exceed viewport */
+  .mds-alert-page .mds-component-page__preview-scope .mds-alert {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}

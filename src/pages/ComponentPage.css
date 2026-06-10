@@ -250,11 +250,13 @@
   }
 
   .mds-component-page__preview-area {
-    height:     auto;
-    min-height: 0;
-    max-height: none;
-    padding:    24px;
-    overflow:   hidden;
+    height:          auto     !important;
+    min-height:      0        !important;
+    max-height:      none     !important;
+    padding:         24px     !important;
+    overflow:        hidden;
+    align-items:     center;
+    justify-content: center;
   }
 
   .mds-component-page__preview-scope {
