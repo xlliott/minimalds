@@ -1,5 +1,5 @@
 import './Menu.css';
-import MenuItem from '../MenuItem/MenuItem';
+import MenuItem from '../MenuItem/Menuitem';
 
 /**
  * MinimalDS — Menu
