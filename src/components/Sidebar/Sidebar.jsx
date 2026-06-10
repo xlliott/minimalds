@@ -57,6 +57,7 @@ export default function Sidebar({ currentPath, isOpen, onClose }) {
                   'mds-sidebar__nav-item',
                   currentPath === item.href ? 'mds-sidebar__nav-item--active' : '',
                 ].join(' ').trim()}
+                onClick={onClose}
               >
                 {item.label}
               </a>
