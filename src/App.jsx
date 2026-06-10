@@ -16,6 +16,7 @@ import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
 import CheckboxPage from './pages/CheckboxPage';
 import DialogPage from './pages/DialogPage';
+import InputPage from './pages/InputPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -44,6 +45,7 @@ function Router() {
       case '#/card':          return <CardPage />;
       case '#/checkbox':      return <CheckboxPage />;
       case '#/dialog':        return <DialogPage />;
+      case '#/input':         return <InputPage />;
       default:                return <Home />;
     }
   };
