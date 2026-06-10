@@ -1,0 +1,30 @@
+/* ============================================================
+   MinimalDS — Radio Button Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — radio group sits at its natural (fit-content) width */
+.mds-radio-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-radio-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
+
+/* Static variants panel — two groups side by side */
+.mds-radio-page__panel {
+  display:          flex;
+  flex-direction:   row;
+  align-items:      flex-start;
+  justify-content:  center;
+  gap:              var(--space-layout-2xl);
+  background-color: var(--color-surface-default);
+  border:           1px solid var(--color-border-default);
+  padding:          var(--space-layout-4xl);
+  box-sizing:       border-box;
+  margin-top:       var(--space-layout-md);
+  width:            100%;
+  pointer-events:   none;
+  user-select:      none;
+}
