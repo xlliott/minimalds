@@ -150,3 +150,11 @@
     outline-offset: 2px;
   }
 }
+
+/* --- Hide sidebar from layout flow on mobile when closed --- */
+
+@media (max-width: 768px) {
+  .mds-sidebar:not(.mds-sidebar--open) {
+    visibility: hidden;
+  }
+}
