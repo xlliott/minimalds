@@ -1,0 +1,34 @@
+/* ============================================================
+   MinimalDS — Dropdown Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — dropdown sits at its natural width */
+.mds-dropdown-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-dropdown-page .mds-component-page__preview-scope > * {
+  width: 320px;
+}
+
+/* Static variants panel */
+.mds-dropdown-page__panel {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  gap:              var(--space-layout-lg);
+  background-color: var(--color-surface-default);
+  border:           1px solid var(--color-border-default);
+  padding:          var(--space-layout-2xl);
+  box-sizing:       border-box;
+  margin-top:       var(--space-layout-md);
+  pointer-events:   none;
+  user-select:      none;
+  width:            100%;
+}
+
+/* Variants panel dropdowns are wider than the default 320px */
+.mds-dropdown-page__panel .mds-dropdown {
+  width: 400px;
+}
