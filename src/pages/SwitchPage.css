@@ -1,0 +1,13 @@
+/* ============================================================
+   MinimalDS — Switch Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — switch sits at its natural (fit-content) width */
+.mds-switch-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-switch-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
