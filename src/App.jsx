@@ -21,6 +21,7 @@ import InputPage from './pages/InputPage';
 import LinkPage from './pages/LinkPage';
 import RadioPage from './pages/RadioPage';
 import SelectPage from './pages/SelectPage';
+import SwitchPage from './pages/SwitchPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -54,6 +55,7 @@ function Router() {
       case '#/link':          return <LinkPage />;
       case '#/radio':         return <RadioPage />;
       case '#/select':        return <SelectPage />;
+      case '#/switch':        return <SwitchPage />;
       default:                return <Home />;
     }
   };
