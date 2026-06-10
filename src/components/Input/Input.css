@@ -54,9 +54,10 @@
 /* --- Large size field (textarea) --- */
 
 .mds-input--large .mds-input__field {
-  height:  120px;
-  padding: 15.5px var(--space-component-lg);   /* 15.5px 16px */
-  align-items: flex-start;
+  height:        120px;
+  padding:       15.5px var(--space-component-lg);   /* 15.5px 16px */
+  align-items:   flex-start;
+  border-radius: var(--radius-card);
 }
 
 /* --- State: hover --- */
