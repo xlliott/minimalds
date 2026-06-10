@@ -23,6 +23,7 @@ import RadioPage from './pages/RadioPage';
 import SelectPage from './pages/SelectPage';
 import SwitchPage from './pages/SwitchPage';
 import TabsPage from './pages/TabsPage';
+import TagPage from './pages/TagPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -58,6 +59,7 @@ function Router() {
       case '#/select':        return <SelectPage />;
       case '#/switch':        return <SwitchPage />;
       case '#/tabs':          return <TabsPage />;
+      case '#/tag':           return <TagPage />;
       default:                return <Home />;
     }
   };
