@@ -227,3 +227,44 @@
   pointer-events: none;
   user-select:    none;
 }
+
+/* ============================================================
+   Mobile overrides
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .mds-component-page {
+    max-width: 100%;
+  }
+
+  .mds-component-page__preview-area {
+    height:     auto;
+    min-height: 200px;
+    max-height: none;
+    padding:    32px 24px;
+  }
+
+  .mds-component-page__preview-scope {
+    width:     100% !important;
+    max-width: 100%;
+  }
+
+  .mds-component-page__preview-scope > * {
+    max-width: 100%;
+  }
+
+  .mds-component-page__state-panel {
+    height:     auto;
+    min-height: 0;
+    max-height: none;
+    padding:    var(--space-layout-lg);
+  }
+
+  .mds-component-page__usage {
+    flex-direction: column;
+  }
+
+  .mds-component-page__controls {
+    overflow: visible;
+  }
+}
