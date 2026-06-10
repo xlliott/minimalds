@@ -18,6 +18,7 @@ import CheckboxPage from './pages/CheckboxPage';
 import DialogPage from './pages/DialogPage';
 import DropdownPage from './pages/DropdownPage';
 import InputPage from './pages/InputPage';
+import LinkPage from './pages/LinkPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -48,6 +49,7 @@ function Router() {
       case '#/dialog':        return <DialogPage />;
       case '#/dropdown':      return <DropdownPage />;
       case '#/input':         return <InputPage />;
+      case '#/link':          return <LinkPage />;
       default:                return <Home />;
     }
   };
