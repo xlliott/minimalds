@@ -3,13 +3,13 @@
    Uses shared ComponentPage styles
    ============================================================ */
 
-/* Preview scope — input sits at its natural (fit-content) width */
+/* Preview scope — input fixed at 320px */
 .mds-input-page .mds-component-page__preview-scope {
   width: auto;
 }
 
 .mds-input-page .mds-component-page__preview-scope > * {
-  width: auto;
+  width: 320px;
 }
 
 /* Static variant/leading-asset panels */
