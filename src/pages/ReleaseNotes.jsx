@@ -3,12 +3,15 @@ import './ReleaseNotes.css';
 const releases = [
   {
     version: 'v1.0.0',
-    date: '01 Jan 2026',
+    date: '10 Jun 2026',
     label: 'Major',
     notes: [
       'Initial release of MinimalDS.',
-      'Token system with Minimal, Purpura and Azure brands.',
-      'Full component library including Accordion, Alert, Button, Card, Checkbox, Dialog, Divider, Dropdown, Input, Link, Menu, Radio, Select, Switch, Tabs and Tag.',
+      'Three-brand token system — Minimal, Purpura and Azure — each with light and dark mode support.',
+      'Foundations documentation covering Colour, Typography, Icons, Spacing, Radius and Design Tokens.',
+      'Full component library: Accordion, Alert, Button, Card, Checkbox, Dialog, Dropdown, Input, Link, Radio Button, Select, Switch, Tabs and Tag.',
+      'Interactive component previews with brand and variant controls on every component page.',
+      'Figma Community file published alongside the documentation site.',
     ],
   },
 ];
