@@ -93,3 +93,14 @@
   line-height:  1.5;
   margin:       0;
 }
+
+@media (max-width: 768px) {
+  .mds-page-home__card {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+
+  .mds-page-home__card .mds-button {
+    width: 100%;
+  }
+}

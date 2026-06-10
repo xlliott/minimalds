@@ -238,12 +238,10 @@
   }
 
   .mds-component-page__preview-area {
-    height:          auto;
-    min-height:      0;
-    max-height:      none;
-    padding:         24px;
-    align-items:     flex-start;
-    justify-content: flex-start;
+    height:     auto;
+    min-height: 0;
+    max-height: none;
+    padding:    32px 24px;
   }
 
   .mds-component-page__preview-scope {

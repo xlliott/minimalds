@@ -119,3 +119,15 @@
   text-decoration:       underline;
   text-underline-offset: 2px;
 }
+
+@media (max-width: 768px) {
+  .mds-page-typography__row {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .mds-page-typography__preview {
+    font-size: clamp(14px, 4vw, var(--font-size-desktop-display)) !important;
+    overflow:  hidden;
+    word-break: break-word;
+  }
+}

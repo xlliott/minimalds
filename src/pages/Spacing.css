@@ -88,7 +88,7 @@
 }
 
 @media (max-width: 768px) {
-  .mds-page-spacing__grid {
+  .mds-spacing__cols {
     grid-template-columns: 1fr;
     gap: var(--space-layout-2xl);
   }
