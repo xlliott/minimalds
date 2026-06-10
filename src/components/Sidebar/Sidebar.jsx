@@ -15,7 +15,6 @@ const navItems = [
   { label: 'Card', href: '#/card' },
   { label: 'Checkbox', href: '#/checkbox' },
   { label: 'Dialog', href: '#/dialog' },
-  { label: 'Divider', href: '#/divider' },
   { label: 'Dropdown', href: '#/dropdown' },
   { label: 'Input', href: '#/input' },
   { label: 'Link', href: '#/link' },
