@@ -37,22 +37,6 @@ export default function Home() {
       <div className="mds-page-home__cards">
         <div className="mds-page-home__card">
           <div className="mds-page-home__card-text">
-            <h2 className="mds-page-home__card-title">Foundations</h2>
-            <p className="mds-page-home__card-body">
-              The core principles that define the overall look and feel of the product.
-            </p>
-          </div>
-          <Button
-            role="secondary"
-            size="default"
-            onClick={() => window.location.hash = '#/foundations'}
-          >
-            View Foundations
-          </Button>
-        </div>
-
-        <div className="mds-page-home__card">
-          <div className="mds-page-home__card-text">
             <h2 className="mds-page-home__card-title">Design Tokens</h2>
             <p className="mds-page-home__card-body">
               Named, reusable values that ensure consistency across design and code.
