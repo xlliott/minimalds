@@ -30,3 +30,10 @@
   pointer-events: none;
   user-select:    none;
 }
+
+@media (max-width: 768px) {
+  .mds-checkbox-page__variants {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+}

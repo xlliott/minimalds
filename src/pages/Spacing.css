@@ -86,3 +86,10 @@
   white-space:  nowrap;
   -webkit-font-smoothing: antialiased;
 }
+
+@media (max-width: 768px) {
+  .mds-page-spacing__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-layout-2xl);
+  }
+}

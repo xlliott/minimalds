@@ -32,3 +32,9 @@
 .mds-dropdown-page__panel .mds-dropdown {
   width: 400px;
 }
+
+@media (max-width: 768px) {
+  .mds-dropdown-page__panel .mds-dropdown {
+    width: 100%;
+  }
+}

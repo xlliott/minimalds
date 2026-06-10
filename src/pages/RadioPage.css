@@ -28,3 +28,10 @@
   pointer-events:   none;
   user-select:      none;
 }
+
+@media (max-width: 768px) {
+  .mds-radio-page__panel {
+    flex-direction: column;
+    align-items:    flex-start;
+  }
+}

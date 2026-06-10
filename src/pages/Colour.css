@@ -99,3 +99,10 @@
 .mds-colour__two-col .mds-colour__section {
   margin-bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .mds-colour__two-col {
+    grid-template-columns: 1fr;
+    gap: var(--space-layout-2xl);
+  }
+}

@@ -173,3 +173,9 @@
   border:        var(--border-default) solid var(--color-border-default);
   flex-shrink:   0;
 }
+
+@media (max-width: 768px) {
+  .mds-tokens__anchors {
+    grid-template-columns: 1fr;
+  }
+}

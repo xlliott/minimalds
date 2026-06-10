@@ -87,3 +87,18 @@
   padding:      0 8px;
   -webkit-font-smoothing: antialiased;
 }
+
+@media (max-width: 768px) {
+  .mds-page-icons__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* Reset last-row border rules for 3-col layout */
+  .mds-page-icons__item:nth-child(5n),
+  .mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+1),
+  .mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+2),
+  .mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+3),
+  .mds-page-icons__item:nth-last-child(-n+5):nth-child(5n+4),
+  .mds-page-icons__item:nth-last-child(-n+5) {
+    border-bottom: 1px solid var(--color-border-default);
+  }
+}
