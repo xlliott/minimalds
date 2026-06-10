@@ -29,3 +29,25 @@
   flex-direction:   column;
   align-items:      flex-start;
 }
+
+@media (max-width: 768px) {
+  .mds-layout__content {
+    padding: 32px 24px 48px;
+  }
+}
+
+/* --- Mobile backdrop --- */
+
+.mds-layout__backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mds-layout__backdrop {
+    display:          block;
+    position:         fixed;
+    inset:            0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index:          20;
+  }
+}
