@@ -1,0 +1,13 @@
+/* ============================================================
+   MinimalDS — Tabs Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Preview scope — tab group fills the preview width naturally */
+.mds-tabs-page .mds-component-page__preview-scope {
+  width: 100%;
+}
+
+.mds-tabs-page .mds-component-page__preview-scope > * {
+  width: 100%;
+}
