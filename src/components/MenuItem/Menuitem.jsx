@@ -1,4 +1,4 @@
-import './MenuItem.css';
+import './Menuitem.css';
 
 /**
  * MinimalDS — Menu Item
