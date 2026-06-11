@@ -47,6 +47,13 @@ button {
    ============================================================ */
 
 @media (max-width: 768px) {
+  /* The preview scope has data-brand + data-mode which triggers
+     the global [data-brand][data-mode] { min-height: 100vh } rule.
+     Override it here at the highest possible level. */
+  .mds-component-page__preview-scope[data-brand][data-mode] {
+    min-height: 0 !important;
+  }
+
   /* Kill all fixed preview heights globally */
   .mds-component-page__preview-area,
   .mds-dialog-page .mds-component-page__preview-area,
