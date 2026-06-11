@@ -11,7 +11,7 @@ const figmaIcon = (
   </svg>
 );
 
-export default function Home() {
+export default function Home({ onOpenSidebar }) {
   return (
     <div className="mds-page-home">
       <div className="mds-page-home__hero">
@@ -61,7 +61,13 @@ export default function Home() {
           <Button
             role="secondary"
             size="default"
-            onClick={() => window.location.hash = '#/accordion'}
+            onClick={() => {
+              if (window.innerWidth <= 768 && onOpenSidebar) {
+                onOpenSidebar();
+              } else {
+                window.location.hash = '#/accordion';
+              }
+            }}
           >
             View Components
           </Button>
