@@ -157,3 +157,19 @@
     overflow-x: hidden;
   }
 }
+
+@media (max-width: 768px) {
+  .mds-page-typography__controls .mds-dropdown {
+    min-width: 0;
+  }
+
+  .mds-page-typography__controls .mds-dropdown__field {
+    min-width: 0;
+  }
+
+  .mds-page-typography__controls .mds-dropdown__value {
+    overflow:     hidden;
+    text-overflow: ellipsis;
+    white-space:  nowrap;
+  }
+}
