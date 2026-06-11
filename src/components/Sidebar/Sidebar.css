@@ -178,10 +178,8 @@
     display: flex;
   }
 
-  /* Divider after the last mobile-only item */
+  /* Single divider only after the last mobile-only item (Release notes) */
   .mds-sidebar__nav-item--mobile-only:last-of-type {
     border-bottom: var(--border-default) solid var(--color-border-default);
-    margin-bottom: var(--space-layout-sm);
-    padding-bottom: var(--space-layout-sm);
   }
 }
