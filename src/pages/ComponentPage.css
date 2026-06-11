@@ -254,7 +254,7 @@
     min-height:      0        !important;
     max-height:      none     !important;
     padding:         24px     !important;
-    overflow:        hidden;
+    overflow:        visible;
     align-items:     center;
     justify-content: center;
   }
@@ -290,6 +290,10 @@
   }
 
   .mds-component-page__controls {
+    overflow: visible;
+  }
+
+  .mds-component-page__preview-panel {
     overflow: visible;
   }
 }
