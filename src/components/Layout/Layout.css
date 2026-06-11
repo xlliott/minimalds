@@ -42,7 +42,13 @@
 
   .mds-layout__content {
     padding:    32px 24px 64px;
-    overflow-x: clip;
+    overflow-x: hidden;
+    max-width:  100vw;
+  }
+
+  .mds-layout__content > * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
