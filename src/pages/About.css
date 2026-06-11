@@ -85,3 +85,9 @@
 .mds-page-about__card-link:hover {
   color: var(--color-interactive-default-hover);
 }
+
+@media (max-width: 768px) {
+  .mds-page-about__cards {
+    grid-template-columns: 1fr;
+  }
+}
