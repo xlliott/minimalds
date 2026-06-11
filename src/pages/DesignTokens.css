@@ -178,4 +178,28 @@
   .mds-tokens__anchors {
     grid-template-columns: 1fr;
   }
+
+  .mds-tokens__row {
+    flex-wrap:   wrap;
+    align-items: flex-start;
+    gap:         var(--space-component-xs);
+  }
+
+  .mds-tokens__name {
+    width:      100%;
+    flex-shrink: 0;
+  }
+
+  .mds-tokens__value {
+    white-space: normal;
+  }
+
+  .mds-tokens__colour-right {
+    margin-left: auto;
+  }
+
+  .mds-tokens__label {
+    white-space: normal;
+    text-align:  left;
+  }
 }
