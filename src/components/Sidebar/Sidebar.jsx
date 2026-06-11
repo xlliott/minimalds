@@ -1,6 +1,8 @@
 import './Sidebar.css';
 
 const navItems = [
+  { label: 'About',         href: '#/about',        mobileOnly: true },
+  { label: 'Release notes', href: '#/release-notes', mobileOnly: true },
   { label: 'FOUNDATIONS', section: true },
   { label: 'Colour', href: '#/colour' },
   { label: 'Typography', href: '#/typography' },
@@ -56,6 +58,7 @@ export default function Sidebar({ currentPath, isOpen, onClose }) {
                 className={[
                   'mds-sidebar__nav-item',
                   currentPath === item.href ? 'mds-sidebar__nav-item--active' : '',
+                  item.mobileOnly ? 'mds-sidebar__nav-item--mobile-only' : '',
                 ].join(' ').trim()}
                 onClick={onClose}
               >
