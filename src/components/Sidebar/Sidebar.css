@@ -173,13 +173,20 @@
   display: none;
 }
 
+/* Hide the divider after Release notes on desktop */
+.mds-sidebar__nav-item--mobile-only + div > .mds-sidebar__divider,
+.mds-sidebar__nav-item--mobile-only ~ .mds-sidebar__divider {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .mds-sidebar__nav-item--mobile-only {
     display: flex;
   }
 
-  /* Single divider only after the last mobile-only item (Release notes) */
-  .mds-sidebar__nav-item--mobile-only:last-of-type {
-    border-bottom: var(--border-default) solid var(--color-border-default);
+  /* Show the divider after Release notes on mobile */
+  .mds-sidebar__nav-item--mobile-only ~ .mds-sidebar__divider,
+  .mds-sidebar__nav-item--mobile-only + * .mds-sidebar__divider {
+    display: block;
   }
 }
