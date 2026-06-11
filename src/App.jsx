@@ -29,9 +29,13 @@ import './App.css';
 
 function Router() {
   const [path, setPath] = useState(window.location.hash || '#/');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
-    const handleHashChange = () => setPath(window.location.hash || '#/');
+    const handleHashChange = () => {
+      setPath(window.location.hash || '#/');
+      setSidebarOpen(false); // close sidebar on any navigation
+    };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
@@ -60,12 +64,17 @@ function Router() {
       case '#/switch':        return <SwitchPage />;
       case '#/tabs':          return <TabsPage />;
       case '#/tag':           return <TagPage />;
-      default:                return <Home />;
+      default:                return <Home onOpenSidebar={() => setSidebarOpen(true)} />;
     }
   };
 
   return (
-    <Layout currentPath={path}>
+    <Layout
+      currentPath={path}
+      sidebarOpen={sidebarOpen}
+      onSidebarOpen={() => setSidebarOpen(true)}
+      onSidebarClose={() => setSidebarOpen(false)}
+    >
       {renderPage()}
     </Layout>
   );
