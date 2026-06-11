@@ -166,3 +166,22 @@
     visibility: hidden;
   }
 }
+
+/* --- Mobile-only nav items (About, Release notes) --- */
+
+.mds-sidebar__nav-item--mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mds-sidebar__nav-item--mobile-only {
+    display: flex;
+  }
+
+  /* Divider after the last mobile-only item */
+  .mds-sidebar__nav-item--mobile-only:last-of-type {
+    border-bottom: var(--border-default) solid var(--color-border-default);
+    margin-bottom: var(--space-layout-sm);
+    padding-bottom: var(--space-layout-sm);
+  }
+}
