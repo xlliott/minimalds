@@ -121,13 +121,39 @@
 }
 
 @media (max-width: 768px) {
-  .mds-page-typography__row {
-    grid-template-columns: 100px 1fr;
+  .mds-page-typography {
+    max-width:  100%;
+    overflow-x: hidden;
   }
 
+  .mds-page-typography__table {
+    overflow-x: hidden;
+  }
+
+  .mds-page-typography__row {
+    grid-template-columns: 1fr;
+    grid-template-rows:    auto auto;
+    min-height:            0;
+    padding:               var(--space-layout-md) var(--space-component-md);
+  }
+
+  /* Preview renders first, meta label below it */
   .mds-page-typography__preview {
-    font-size: clamp(14px, 4vw, var(--font-size-desktop-display)) !important;
-    overflow:  hidden;
+    order:      1;
+    overflow:   hidden;
     word-break: break-word;
+    max-width:  100%;
+    font-size:  clamp(16px, 5vw, 32px) !important;
+  }
+
+  .mds-page-typography__meta {
+    order:     2;
+    margin-top: var(--space-component-xs);
+  }
+
+  /* Constrain the preview panel itself */
+  .mds-page-typography__preview-panel {
+    max-width:  100%;
+    overflow-x: hidden;
   }
 }
