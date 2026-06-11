@@ -2,7 +2,7 @@ import './Sidebar.css';
 
 const navItems = [
   { label: 'About',         href: '#/about',        mobileOnly: true },
-  { label: 'Release notes', href: '#/release-notes', mobileOnly: true },
+  { label: 'Release notes', href: '#/release-notes', mobileOnly: true, dividerAfter: true },
   { label: 'FOUNDATIONS', section: true },
   { label: 'Colour', href: '#/colour' },
   { label: 'Typography', href: '#/typography' },
