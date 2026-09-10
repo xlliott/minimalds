@@ -24,6 +24,7 @@ import SelectPage from './pages/SelectPage';
 import SwitchPage from './pages/SwitchPage';
 import TabsPage from './pages/TabsPage';
 import TagPage from './pages/TagPage';
+import TooltipPage from './pages/TooltipPage';
 import './theme/tokens.css';
 import './App.css';
 
@@ -64,6 +65,7 @@ function Router() {
       case '#/switch':        return <SwitchPage />;
       case '#/tabs':          return <TabsPage />;
       case '#/tag':           return <TagPage />;
+      case '#/tooltip':       return <TooltipPage />;
       default:                return <Home onOpenSidebar={() => setSidebarOpen(true)} />;
     }
   };

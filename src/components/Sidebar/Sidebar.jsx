@@ -25,6 +25,7 @@ const navItems = [
   { label: 'Switch', href: '#/switch' },
   { label: 'Tabs', href: '#/tabs' },
   { label: 'Tag', href: '#/tag' },
+  { label: 'Tooltip', href: '#/tooltip' },
 ];
 
 const closeIcon = (
