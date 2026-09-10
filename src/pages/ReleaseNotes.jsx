@@ -2,6 +2,16 @@ import './ReleaseNotes.css';
 
 const releases = [
   {
+    version: 'v1.1.0',
+    date: '10 Sep 2026',
+    label: 'Minor',
+    notes: [
+      'New Tooltip component — a short contextual message shown on hover or keyboard focus, with top, right, bottom and left placements and a configurable hover delay.',
+      'Tooltips are associated with their trigger through aria-describedby, and can be dismissed with the Escape key.',
+      'Tooltip documentation page added under Components, with brand, placement and trigger controls.',
+    ],
+  },
+  {
     version: 'v1.0.0',
     date: '10 Jun 2026',
     label: 'Major',

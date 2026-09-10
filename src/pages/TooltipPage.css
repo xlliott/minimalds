@@ -1,0 +1,69 @@
+/* ============================================================
+   MinimalDS — Tooltip Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* Trigger hugs content width, centred so every placement has room */
+.mds-tooltip-page__preview-inner {
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+  width:           100%;
+  padding:         var(--space-layout-lg) 0;   /* room for top/bottom bubbles */
+}
+
+.mds-tooltip-page__preview-inner .mds-button {
+  width: auto;
+}
+
+.mds-tooltip-page .mds-component-page__preview-scope {
+  width: auto;
+}
+
+.mds-tooltip-page .mds-component-page__preview-scope > * {
+  width: auto;
+}
+
+/* --- Placement list --- */
+
+.mds-tooltip-page__variants {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-layout-md);
+  margin-top:     var(--space-layout-md);
+}
+
+.mds-tooltip-page__variant {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);
+}
+
+.mds-tooltip-page__variant-name {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-strong);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-tooltip-page__variant-body {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Inline code in body copy --- */
+
+.mds-tooltip-page code {
+  padding:          2px var(--space-component-xs);
+  background-color: var(--color-surface-subtle);
+  border-radius:    var(--radius-md);
+  font-family:      var(--font-family-display);
+  font-size:        var(--font-size-helper);
+  color:            var(--color-text-default);
+}

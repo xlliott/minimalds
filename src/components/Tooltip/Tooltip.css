@@ -1,0 +1,120 @@
+/* ============================================================
+   MinimalDS — Tooltip
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Wrapper — sits inline around the trigger --- */
+
+.mds-tooltip {
+  position:       relative;
+  display:        inline-flex;
+  vertical-align: middle;
+}
+
+/* --- Bubble --- */
+
+.mds-tooltip__bubble {
+  position:         absolute;
+  z-index:          60;
+  display:          block;
+  max-width:        240px;
+  width:            max-content;
+  padding:          var(--space-component-sm) var(--space-component-md);  /* 8px 12px */
+  background-color: var(--color-surface-inverse);
+  border-radius:    var(--radius-md);
+  font-family:      var(--font-family-global);
+  font-size:        var(--font-size-helper);      /* 12px */
+  font-weight:      var(--font-weight-regular);
+  line-height:      1.5;
+  color:            var(--color-text-inverse);
+  text-align:       left;
+  /* visibility (not display) keeps the bubble out of the a11y tree
+     while still allowing the fade transition to run */
+  visibility:       hidden;
+  opacity:          0;
+  transition:       opacity 0.15s ease, visibility 0.15s ease;
+  pointer-events:   none;
+}
+
+.mds-tooltip__bubble--visible {
+  visibility: visible;
+  opacity:    1;
+}
+
+.mds-tooltip__content {
+  display: block;
+}
+
+/* --- Arrow --- */
+
+.mds-tooltip__arrow {
+  position:         absolute;
+  width:            8px;
+  height:           8px;
+  background-color: var(--color-surface-inverse);
+  transform:        rotate(45deg);
+}
+
+/* --- Placement: top --- */
+
+.mds-tooltip__bubble--top {
+  bottom:    calc(100% + var(--space-component-sm));   /* 8px gap */
+  left:      50%;
+  transform: translateX(-50%);
+}
+
+.mds-tooltip__bubble--top .mds-tooltip__arrow {
+  top:       calc(100% - 4px);
+  left:      50%;
+  margin-left: -4px;
+}
+
+/* --- Placement: bottom --- */
+
+.mds-tooltip__bubble--bottom {
+  top:       calc(100% + var(--space-component-sm));
+  left:      50%;
+  transform: translateX(-50%);
+}
+
+.mds-tooltip__bubble--bottom .mds-tooltip__arrow {
+  bottom:      calc(100% - 4px);
+  left:        50%;
+  margin-left: -4px;
+}
+
+/* --- Placement: left --- */
+
+.mds-tooltip__bubble--left {
+  right:     calc(100% + var(--space-component-sm));
+  top:       50%;
+  transform: translateY(-50%);
+}
+
+.mds-tooltip__bubble--left .mds-tooltip__arrow {
+  left:       calc(100% - 4px);
+  top:        50%;
+  margin-top: -4px;
+}
+
+/* --- Placement: right --- */
+
+.mds-tooltip__bubble--right {
+  left:      calc(100% + var(--space-component-sm));
+  top:       50%;
+  transform: translateY(-50%);
+}
+
+.mds-tooltip__bubble--right .mds-tooltip__arrow {
+  right:      calc(100% - 4px);
+  top:        50%;
+  margin-top: -4px;
+}
+
+/* --- Reduced motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  .mds-tooltip__bubble {
+    transition: none;
+  }
+}
