@@ -16,7 +16,7 @@
 
 .mds-page-home__title {
   font-family:    var(--font-family-display);
-  font-size:      var(--font-size-desktop-h1);
+  font-size:      var(--font-size-h1);
   font-weight:    var(--font-weight-strong);
   color:          var(--color-text-default);
   line-height:    1.2;
@@ -26,7 +26,7 @@
 
 .mds-page-home__subtitle {
   font-family:  var(--font-family-global);
-  font-size:    var(--font-size-desktop-h4);
+  font-size:    var(--font-size-h4);
   font-weight:  var(--font-weight-regular);
   color:        var(--color-text-default);
   line-height:  1.5;
@@ -77,7 +77,7 @@
 
 .mds-page-home__card-title {
   font-family:  var(--font-family-heading);
-  font-size:    var(--font-size-desktop-h4);
+  font-size:    var(--font-size-h4);
   font-weight:  var(--font-weight-strong);
   color:        var(--color-text-default);
   line-height:  1.2;
