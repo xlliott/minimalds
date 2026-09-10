@@ -88,7 +88,7 @@
 
 .mds-card__title {
   margin:      0;
-  font-size:   var(--font-size-desktop-h4);     /* 18px */
+  font-size:   var(--font-size-h4);
   font-weight: var(--font-weight-strong);       /* 700 */
   color:       var(--color-text-default);
   line-height: 1.2;

@@ -602,8 +602,8 @@
   --radius-card:    6px;
 
   /* --- Typography / Family --- */
-  --font-family-global:   'Source Sans Pro', sans-serif;
-  --font-family-heading:  'Source Sans Pro', sans-serif;
+  --font-family-global:   'Source Sans 3', 'Source Sans Pro', sans-serif;
+  --font-family-heading:  'Source Sans 3', 'Source Sans Pro', sans-serif;
   --font-family-display:  'Playfair Display', serif;
 }
 
@@ -714,7 +714,33 @@
   --radius-card:    6px;
 
   /* --- Typography / Family --- */
-  --font-family-global:   'Source Sans Pro', sans-serif;
-  --font-family-heading:  'Source Sans Pro', sans-serif;
+  --font-family-global:   'Source Sans 3', 'Source Sans Pro', sans-serif;
+  --font-family-heading:  'Source Sans 3', 'Source Sans Pro', sans-serif;
   --font-family-display:  'Playfair Display', serif;
+}
+
+/* ============================================================
+   RESPONSIVE TYPE SCALE
+   The desktop/* and mobile/* size tokens above mirror the Figma
+   variables. These aliases pick the right one for the current
+   viewport, and are what components and pages should reference.
+   Defined once for every brand and mode.
+   ============================================================ */
+
+:root {
+  --font-size-display: var(--font-size-desktop-display);
+  --font-size-h1:      var(--font-size-desktop-h1);
+  --font-size-h2:      var(--font-size-desktop-h2);
+  --font-size-h3:      var(--font-size-desktop-h3);
+  --font-size-h4:      var(--font-size-desktop-h4);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-display: var(--font-size-mobile-display);
+    --font-size-h1:      var(--font-size-mobile-h1);
+    --font-size-h2:      var(--font-size-mobile-h2);
+    --font-size-h3:      var(--font-size-mobile-h3);
+    --font-size-h4:      var(--font-size-mobile-h4);
+  }
 }
