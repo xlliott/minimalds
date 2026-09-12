@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <!--
+    MinimalDS mark — the same geometry as the NavBar logo, centred in a
+    square with padding. The fill follows the browser's colour scheme so
+    the mark stays visible on both light and dark tab bars, using the
+    --color-text-default values from src/theme/tokens.css.
+  -->
+  <style>
+    path { fill: #141414; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #F5F5F5; }
+    }
+  </style>
+  <g transform="translate(10, 66.5)">
+    <path d="M60.4317 0L0 62.6316V187L120 62.6316V0H60.4317Z"/>
+    <path d="M180.432 0L120 62.6316V187L240 62.6316V0H180.432Z"/>
+    <path d="M270 31.1667L240 62.3333V154.943L270 186.11L300 154.943V62.3333L270 31.1667Z"/>
+  </g>
+</svg>
