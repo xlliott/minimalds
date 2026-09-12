@@ -35,6 +35,10 @@ At the end of the file sits a responsive type scale: `--font-size-display`/`h1`�
 
 Global `brand`, however, is effectively fixed at `minimal` — `setBrand` is exposed but no consumer calls it. Instead, **each docs page owns local brand state** and passes it to `ComponentPagePreview`, which stamps `data-brand` on a nested preview scope. That nested element re-resolves every token, so one page can show a Purpura component inside an otherwise Minimal site. This is why previews change brand but the surrounding chrome does not.
 
+**A consequence worth knowing before reaching for `createPortal`:** anything portalled to `document.body` renders *outside* that wrapper, so its tokens resolve from `:root` — Minimal/light — whatever the app is set to. `Dialog` and `Toast` both render in place rather than portalling for this reason. Moving `data-brand`/`data-mode` onto `<html>` (see the backlog) would remove the constraint.
+
+App-level state lives in `src/context/`, and `App.jsx` nests the providers: `ThemeProvider` wraps `ToastProvider` wraps the router, so the toast region resolves the app's brand and mode.
+
 ### Routing
 
 `src/App.jsx` is a hand-rolled hash router: a `switch` over `window.location.hash` with one eager import per page. Adding a page means adding an import, a `case`, and a `navItems` entry in `src/components/Sidebar/Sidebar.jsx`. Unknown hashes silently fall through to `Home`. `Layout` scrolls content to the top on every path change.
@@ -69,7 +73,7 @@ Findings from a September 2026 audit, roughly highest value first. Items are ope
 
 ### Accessibility — the largest gap
 
-- **No keyboard dismissal or navigation outside `Tooltip`.** `Tooltip` is the only component handling a key event. `Dialog` cannot be closed with Escape and has no focus trap and no focus restore. `Select` and `Dropdown` close only on outside `mousedown`. `Menu` and `TabGroup` have no arrow-key roving focus.
+- **No keyboard dismissal or navigation in the older overlays.** `Tooltip` is still the only component handling a key event. `Dialog` cannot be closed with Escape and has no focus trap and no focus restore. `Select` and `Dropdown` close only on outside `mousedown`. `Menu` and `TabGroup` have no arrow-key roving focus.
 - **`Tab` is visual only.** `Tab.jsx` sets `role="tab"` with no `id`/`aria-controls`, and no `tabpanel` exists anywhere.
 - **ARIA mismatch in `Select`.** `Select.jsx:113` declares `aria-haspopup="listbox"` but renders `Menu`, which is `role="menu"` (`Menu.jsx:23`) with `role="menuitem"` children carrying `aria-selected` — invalid on `menuitem`. `Select` should render `listbox`/`option`; `Dropdown` already does this correctly.
 - **`Dialog` hardcodes `id="mds-dialog-title"`** (`Dialog.jsx:57,62`). Two dialogs on a page produce duplicate IDs and a broken `aria-labelledby`. `Tooltip` shows the fix: `useId`.
@@ -83,7 +87,7 @@ Findings from a September 2026 audit, roughly highest value first. Items are ope
 
 Shadows, z-indices and transition timings are hardcoded across component CSS. Add `--elevation-*`, `--z-*` and `--duration-*`/`--easing-*` tiers.
 
-The z-index ladder currently in use, if formalising it: NavBar 10, Layout backdrop 20, Sidebar 30, Dropdown/Select menus 50, Tooltip 60, Dialog 100. The shadows are the more urgent half — a black shadow on a `#141414` dark-mode surface is invisible.
+The z-index ladder currently in use, if formalising it: NavBar 10, Layout backdrop 20, Sidebar 30, Dropdown/Select menus 50, Tooltip 60, Dialog 100, Toast region 200. The shadows are the more urgent half — a black shadow on a `#141414` dark-mode surface is invisible.
 
 ### Duplication and API shape
 
@@ -93,7 +97,7 @@ The z-index ladder currently in use, if formalising it: NavBar 10, Layout backdr
 
 ### Missing components
 
-Against peer systems, still absent: Toast/Notification (transient feedback — `Alert` only covers inline), Avatar, Badge, Breadcrumb, Pagination, Progress/Spinner, Table. `src/pages/Icons.jsx` also holds ~60 inline icons that no exported `Icon` component makes available to consumers.
+Against peer systems, still absent: Avatar, Badge, Breadcrumb, Pagination, Progress/Spinner, Table. `src/pages/Icons.jsx` also holds ~60 inline icons that no exported `Icon` component makes available to consumers.
 
 ### Project hygiene
 
@@ -106,6 +110,7 @@ Against peer systems, still absent: Toast/Notification (transient feedback — `
 
 ### Recently fixed
 
+- Toast component, `ToastProvider`/`useToast`, and docs page added (v1.2.0) — the library's first context-based component after `ThemeProvider`.
 - Tooltip component and docs page added (v1.1.0).
 - Azure's `Source Sans Pro` was never loaded by `index.html`, so the brand fell back to a system sans. Now loads Source Sans 3 (the maintained successor) with Pro as fallback — Google Fonts serves Pro at only 400/700 and silently drops the 500 that `--font-weight-medium` needs.
 - `--font-size-mobile-*` tokens were defined but referenced nowhere; the responsive alias tier described above now wires them up.

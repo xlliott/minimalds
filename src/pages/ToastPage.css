@@ -1,0 +1,98 @@
+/* ============================================================
+   MinimalDS — Toast Page
+   Uses shared ComponentPage styles
+   ============================================================ */
+
+/* The static preview toast sits at its natural width, centred */
+.mds-toast-page__preview-inner {
+  display:         flex;
+  justify-content: center;
+  width:           100%;
+}
+
+.mds-toast-page__preview-inner .mds-toast {
+  width:     100%;
+  max-width: 380px;
+}
+
+/* --- Live demo --- */
+
+.mds-toast-page__demo {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-start;
+  gap:            var(--space-component-md);
+  margin-top:     var(--space-layout-md);
+}
+
+.mds-toast-page__demo .mds-button {
+  width: auto;
+}
+
+.mds-toast-page__demo-hint {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-helper);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-muted);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Code sample --- */
+
+.mds-toast-page__code {
+  margin:           var(--space-layout-md) 0 0;
+  padding:          var(--space-component-lg);
+  background-color: var(--color-surface-subtle);
+  border:           var(--border-default) solid var(--color-border-subtle);
+  border-radius:    var(--radius-card);
+  font-family:      var(--font-family-display);
+  font-size:        var(--font-size-helper);
+  color:            var(--color-text-default);
+  line-height:      1.6;
+  overflow-x:       auto;
+}
+
+/* --- Variants list --- */
+
+.mds-toast-page__variants {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-layout-md);
+  margin-top:     var(--space-layout-md);
+}
+
+.mds-toast-page__variant {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);
+}
+
+.mds-toast-page__variant-name {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-strong);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-toast-page__variant-body {
+  font-family: var(--font-family-global);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Inline code in body copy --- */
+
+.mds-toast-page code {
+  padding:          2px var(--space-component-xs);
+  background-color: var(--color-surface-subtle);
+  border-radius:    var(--radius-md);
+  font-family:      var(--font-family-display);
+  font-size:        var(--font-size-helper);
+  color:            var(--color-text-default);
+}

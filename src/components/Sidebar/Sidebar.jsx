@@ -25,6 +25,7 @@ const navItems = [
   { label: 'Switch', href: '#/switch' },
   { label: 'Tabs', href: '#/tabs' },
   { label: 'Tag', href: '#/tag' },
+  { label: 'Toast', href: '#/toast' },
   { label: 'Tooltip', href: '#/tooltip' },
 ];
 

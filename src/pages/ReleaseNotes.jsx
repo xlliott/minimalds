@@ -2,6 +2,17 @@ import './ReleaseNotes.css';
 
 const releases = [
   {
+    version: 'v1.2.0',
+    date: '12 Sep 2026',
+    label: 'Minor',
+    notes: [
+      'New Toast component — a brief, self-dismissing message that confirms an action or reports a background event, in positive, warning, danger and info roles.',
+      'Toasts are raised imperatively through the new ToastProvider and useToast hook, and stack in a fixed region with a configurable placement.',
+      'Countdowns pause while the stack is hovered or focused, danger toasts are announced assertively, and toasts never take focus.',
+      'Toast documentation page added under Components, with brand, role and modifier controls and a live demo.',
+    ],
+  },
+  {
     version: 'v1.1.0',
     date: '10 Sep 2026',
     label: 'Minor',
