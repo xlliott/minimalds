@@ -43,6 +43,10 @@ App-level state lives in `src/context/`, and `App.jsx` nests the providers: `The
 
 `src/App.jsx` is a hand-rolled hash router: a `switch` over `window.location.hash` with one eager import per page. Adding a page means adding an import, a `case`, and a `navItems` entry in `src/components/Sidebar/Sidebar.jsx`. Unknown hashes silently fall through to `Home`. `Layout` scrolls content to the top on every path change.
 
+### Static assets
+
+Files in `public/` are copied to the dist root and served from `/` — that is where the favicons live, and where anything else needing a root URL belongs. `public/favicon.svg` carries an internal `prefers-color-scheme` media query that swaps its fill between the `--color-text-default` values, so the mark stays visible on a dark browser tab bar; the two PNGs beside it are rendered from the same path data as fallbacks. That media query is deliberate, not stray styling.
+
 ### Component conventions
 
 Every component lives in `src/components/<Name>/` with `<Name>.jsx`, `<Name>.css`, and an `index.js` containing `export { default } from './<Name>'`. (`Layout`, `NavBar` and `Sidebar` predate this and lack `index.js`.)
@@ -110,7 +114,7 @@ Against peer systems, still absent: Avatar, Badge, Breadcrumb, Pagination, Progr
 
 ### Recently fixed
 
-- Toast component, `ToastProvider`/`useToast`, and docs page added (v1.2.0) — the library's first context-based component after `ThemeProvider`.
-- Tooltip component and docs page added (v1.1.0).
+Closed items from the list above, kept so a later audit does not re-report them. Shipped features belong in `src/pages/ReleaseNotes.jsx`, not here.
+
 - Azure's `Source Sans Pro` was never loaded by `index.html`, so the brand fell back to a system sans. Now loads Source Sans 3 (the maintained successor) with Pro as fallback — Google Fonts serves Pro at only 400/700 and silently drops the 500 that `--font-weight-medium` needs.
 - `--font-size-mobile-*` tokens were defined but referenced nowhere; the responsive alias tier described above now wires them up.
