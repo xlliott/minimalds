@@ -1,0 +1,218 @@
+/* ============================================================
+   MinimalDS — Toast
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Region — holds the stack of live toasts --- */
+
+.mds-toast-region {
+  position:       fixed;
+  z-index:        200;                          /* above Dialog (100) */
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-md);    /* 12px */
+  width:          min(380px, calc(100vw - var(--space-layout-md) * 2));
+  /* the region spans only its toasts, so the page stays clickable */
+  pointer-events: none;
+}
+
+.mds-toast-region > * {
+  pointer-events: auto;
+}
+
+.mds-toast-region--top-right {
+  top:   var(--space-layout-md);
+  right: var(--space-layout-md);
+}
+
+.mds-toast-region--top-left {
+  top:  var(--space-layout-md);
+  left: var(--space-layout-md);
+}
+
+.mds-toast-region--bottom-right {
+  bottom: var(--space-layout-md);
+  right:  var(--space-layout-md);
+}
+
+.mds-toast-region--bottom-left {
+  bottom: var(--space-layout-md);
+  left:   var(--space-layout-md);
+}
+
+/* Newest toast sits nearest the edge the region is anchored to */
+.mds-toast-region--bottom-right,
+.mds-toast-region--bottom-left {
+  flex-direction: column-reverse;
+}
+
+/* --- Base --- */
+
+.mds-toast {
+  display:          flex;
+  flex-direction:   row;
+  align-items:      flex-start;
+  gap:              var(--space-component-md);   /* 12px */
+  padding:          var(--space-component-lg);   /* 16px */
+  background-color: var(--color-surface-default);
+  border:           var(--border-default) solid var(--color-border-default);
+  border-radius:    var(--radius-card);
+  box-shadow:       0px 8px 16px rgba(0, 0, 0, 0.12);
+  font-family:      var(--font-family-global);
+  width:            100%;
+  box-sizing:       border-box;
+  -webkit-font-smoothing: antialiased;
+  animation:        mds-toast-enter 0.2s ease;
+}
+
+.mds-toast--static {
+  animation: none;
+}
+
+@keyframes mds-toast-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* --- Roles — the icon carries the colour, the surface stays neutral
+       so the toast reads as chrome rather than as page content --- */
+
+.mds-toast--success .mds-toast__icon {
+  color: var(--color-icon-positive);
+}
+
+.mds-toast--warning .mds-toast__icon {
+  color: var(--color-icon-warning);
+}
+
+.mds-toast--danger .mds-toast__icon {
+  color: var(--color-icon-danger);
+}
+
+.mds-toast--info .mds-toast__icon {
+  color: var(--color-icon-info);
+}
+
+.mds-toast--danger {
+  border-color: var(--color-border-danger);
+}
+
+/* --- Icon --- */
+
+.mds-toast__icon {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  height:      21px;          /* aligns the icon with the first line of text */
+}
+
+/* --- Content --- */
+
+.mds-toast__content {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);   /* 8px */
+  flex:           1;
+  min-width:      0;
+}
+
+.mds-toast__text {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-xs);   /* 4px */
+}
+
+.mds-toast__title {
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-strong);
+  color:       var(--color-text-default);
+  line-height: 1.5;
+}
+
+.mds-toast__description {
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-subtle);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* --- Action --- */
+
+.mds-toast__action {
+  align-self:       flex-start;
+  padding:          0;
+  background:       none;
+  border:           none;
+  font-family:      var(--font-family-global);
+  font-size:        var(--font-size-body);
+  font-weight:      var(--font-weight-medium);
+  color:            var(--color-text-default);
+  text-decoration:  underline;
+  text-underline-offset: 2px;
+  cursor:           pointer;
+}
+
+.mds-toast__action:hover {
+  color: var(--color-text-subtle);
+}
+
+.mds-toast__action:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --- Dismiss --- */
+
+.mds-toast__dismiss {
+  display:          flex;
+  align-items:      center;
+  justify-content:  center;
+  padding:          var(--space-component-xs);
+  margin:           calc(var(--space-component-xs) * -1);
+  background:       none;
+  border:           none;
+  border-radius:    var(--radius-sm);
+  color:            var(--color-icon-subtle);
+  cursor:           pointer;
+  flex-shrink:      0;
+  transition:       background-color 0.15s ease, color 0.15s ease;
+}
+
+.mds-toast__dismiss:hover {
+  background-color: var(--color-interactive-ghost-hover);
+  color:            var(--color-icon-default);
+}
+
+.mds-toast__dismiss:focus-visible {
+  outline:        var(--border-strong) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --- Mobile — full width, anchored to the bottom --- */
+
+@media (max-width: 768px) {
+  .mds-toast-region {
+    left:   var(--space-layout-sm);
+    right:  var(--space-layout-sm);
+    width:  auto;
+  }
+
+  .mds-toast-region--top-right,
+  .mds-toast-region--top-left {
+    top: var(--space-layout-sm);
+  }
+
+  .mds-toast-region--bottom-right,
+  .mds-toast-region--bottom-left {
+    bottom: var(--space-layout-sm);
+  }
+}
+
+/* --- Reduced motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  .mds-toast {
+    animation: none;
+  }
+}

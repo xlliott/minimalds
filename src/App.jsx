@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { ToastProvider } from './context/ToastContext';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -24,6 +25,7 @@ import SelectPage from './pages/SelectPage';
 import SwitchPage from './pages/SwitchPage';
 import TabsPage from './pages/TabsPage';
 import TagPage from './pages/TagPage';
+import ToastPage from './pages/ToastPage';
 import TooltipPage from './pages/TooltipPage';
 import './theme/tokens.css';
 import './App.css';
@@ -65,6 +67,7 @@ function Router() {
       case '#/switch':        return <SwitchPage />;
       case '#/tabs':          return <TabsPage />;
       case '#/tag':           return <TagPage />;
+      case '#/toast':         return <ToastPage />;
       case '#/tooltip':       return <TooltipPage />;
       default:                return <Home onOpenSidebar={() => setSidebarOpen(true)} />;
     }
@@ -85,7 +88,9 @@ function Router() {
 export default function App() {
   return (
     <ThemeProvider>
-      <Router />
+      <ToastProvider>
+        <Router />
+      </ToastProvider>
     </ThemeProvider>
   );
 }
