@@ -15,7 +15,7 @@ There is no test runner, linter, or formatter configured. `npm run build` is the
 
 ## What this is
 
-MinimalDS is a multi-brand design system: a React component library plus the documentation site that presents it. The published artifact today is the docs site — `package.json` is `private` with no library build or `exports`, so the components are not consumable via npm. A companion Figma Community file is the design source of truth.
+MinimalDS is a multi-brand design system: a React component library plus the documentation site that presents it. The published artifact today is the docs site, live at [minimal-ds.com](https://minimal-ds.com) — `package.json` is `private` with no library build or `exports`, so the components are not consumable via npm. A companion Figma Community file is the design source of truth.
 
 ## Architecture
 
@@ -106,11 +106,10 @@ Against peer systems, still absent: Avatar, Badge, Breadcrumb, Pagination, Table
 ### Project hygiene
 
 - No ESLint, no tests, no CI, no LICENSE.
-- `README.md` is two lines — no install, dev, or build instructions and no link to the live site.
 - Not consumable as a library: needs a `vite build --lib` config, an `exports` field, and a `src/components/index.js` barrel (which does not exist).
 - `ThemeContext` has no `localStorage` persistence and no `prefers-color-scheme` default, so mode resets to light on every reload.
 - The theme wrapper is a plain `<div>` rather than `data-*` on `<html>`, which is why `App.css` needs `!important` overrides in its mobile block.
-- 22 eager page imports in one bundle; no code splitting.
+- 26 eager page imports in one bundle; no code splitting.
 
 ### Recently fixed
 
@@ -118,3 +117,4 @@ Closed items from the list above, kept so a later audit does not re-report them.
 
 - Azure's `Source Sans Pro` was never loaded by `index.html`, so the brand fell back to a system sans. Now loads Source Sans 3 (the maintained successor) with Pro as fallback — Google Fonts serves Pro at only 400/700 and silently drops the 500 that `--font-weight-medium` needs.
 - `--font-size-mobile-*` tokens were defined but referenced nowhere; the responsive alias tier described above now wires them up.
+- `README.md` was two lines. It now covers setup, structure, theming and links to the live site and Figma file, and points here for contributor detail.
