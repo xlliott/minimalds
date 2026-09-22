@@ -101,7 +101,7 @@ The z-index ladder currently in use, if formalising it: NavBar 10, Layout backdr
 
 ### Missing components
 
-Against peer systems, still absent: Avatar, Badge, Breadcrumb, Pagination, Progress/Spinner, Table. `src/pages/Icons.jsx` also holds ~60 inline icons that no exported `Icon` component makes available to consumers.
+Against peer systems, still absent: Avatar, Badge, Breadcrumb, Pagination, Table. `src/pages/Icons.jsx` also holds ~60 inline icons that no exported `Icon` component makes available to consumers.
 
 ### Project hygiene
 

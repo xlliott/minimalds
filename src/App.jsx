@@ -20,6 +20,7 @@ import DialogPage from './pages/DialogPage';
 import DropdownPage from './pages/DropdownPage';
 import InputPage from './pages/InputPage';
 import LinkPage from './pages/LinkPage';
+import ProgressPage from './pages/ProgressPage';
 import RadioPage from './pages/RadioPage';
 import SelectPage from './pages/SelectPage';
 import SwitchPage from './pages/SwitchPage';
@@ -62,6 +63,7 @@ function Router() {
       case '#/dropdown':      return <DropdownPage />;
       case '#/input':         return <InputPage />;
       case '#/link':          return <LinkPage />;
+      case '#/progress':      return <ProgressPage />;
       case '#/radio':         return <RadioPage />;
       case '#/select':        return <SelectPage />;
       case '#/switch':        return <SwitchPage />;
