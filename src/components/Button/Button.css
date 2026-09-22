@@ -45,6 +45,14 @@
   height:      16px;
 }
 
+/* --- Loading ---
+   Stays in its role colours rather than greying out: the action was
+   accepted and is running, which is not the same as unavailable. */
+
+.mds-button--loading {
+  cursor: progress;
+}
+
 /* ============================================================
    ROLES
    ============================================================ */

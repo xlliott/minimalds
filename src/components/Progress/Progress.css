@@ -1,0 +1,191 @@
+/* ============================================================
+   MinimalDS — Progress
+   All values reference tokens from src/theme/tokens.css
+   ============================================================ */
+
+/* --- Base --- */
+
+.mds-progress {
+  font-family: var(--font-family-global);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mds-progress--linear {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-component-sm);
+  width:          100%;
+}
+
+.mds-progress--circular {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            var(--space-component-sm);
+  vertical-align: middle;
+}
+
+/* --- Label and value --- */
+
+.mds-progress__header {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     baseline;
+  gap:             var(--space-component-md);
+}
+
+.mds-progress__label {
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color:       var(--color-text-default);
+}
+
+.mds-progress__value {
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  color:       var(--color-text-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Linear: track and fill --- */
+
+.mds-progress__track {
+  position:         relative;
+  display:          block;
+  width:            100%;
+  overflow:         hidden;
+  background-color: var(--color-surface-subtle);
+  border-radius:    var(--radius-sm);
+}
+
+.mds-progress__fill {
+  display:          block;
+  height:           100%;
+  background-color: var(--color-interactive-brand-base);
+  border-radius:    var(--radius-sm);
+  transition:       width 0.3s ease;
+}
+
+.mds-progress--linear.mds-progress--small   .mds-progress__track { height: var(--space-component-xs); }  /* 4px  */
+.mds-progress--linear.mds-progress--default .mds-progress__track { height: var(--space-component-sm); }  /* 8px  */
+.mds-progress--linear.mds-progress--large   .mds-progress__track { height: var(--space-component-md); }  /* 12px */
+
+/* Indeterminate — a segment travels the track from left to right */
+.mds-progress--linear.mds-progress--indeterminate .mds-progress__fill {
+  position:  absolute;
+  top:       0;
+  left:      0;
+  width:     40%;
+  animation: mds-progress-slide 1.4s ease-in-out infinite;
+}
+
+@keyframes mds-progress-slide {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(250%);  }
+}
+
+/* --- Circular: ring --- */
+
+.mds-progress__ring {
+  display:    block;
+  flex:       none;
+  /* start the arc at twelve o'clock */
+  transform:  rotate(-90deg);
+}
+
+.mds-progress--circular.mds-progress--small   .mds-progress__ring { width: var(--space-component-lg);  height: var(--space-component-lg);  }  /* 16px */
+.mds-progress--circular.mds-progress--default .mds-progress__ring { width: var(--space-component-2xl); height: var(--space-component-2xl); }  /* 24px */
+.mds-progress--circular.mds-progress--large   .mds-progress__ring { width: var(--space-component-5xl); height: var(--space-component-5xl); }  /* 40px */
+
+.mds-progress__ring-track,
+.mds-progress__ring-fill {
+  stroke-width: 2.5;
+}
+
+.mds-progress__ring-track {
+  stroke: var(--color-surface-subtle);
+}
+
+.mds-progress__ring-fill {
+  stroke:         var(--color-interactive-brand-base);
+  stroke-linecap: butt;
+  transition:     stroke-dasharray 0.3s ease;
+}
+
+/* --- Colour: current ---
+   Inherits the surrounding text colour, for placing an indicator on a
+   filled surface such as a primary button, where the brand fill would
+   disappear against a brand background. */
+
+.mds-progress--current .mds-progress__fill,
+.mds-progress--current .mds-progress__track::before {
+  background-color: currentColor;
+}
+
+.mds-progress--current .mds-progress__track {
+  position:         relative;
+  background-color: transparent;
+}
+
+/* keeps a determinate fill painted above the positioned track layer */
+.mds-progress--current .mds-progress__fill {
+  position: relative;
+}
+
+.mds-progress--current .mds-progress__track::before {
+  content:  '';
+  position: absolute;
+  inset:    0;
+  opacity:  0.25;
+}
+
+.mds-progress--current .mds-progress__ring-fill {
+  stroke: currentColor;
+}
+
+.mds-progress--current .mds-progress__ring-track {
+  stroke:  currentColor;
+  opacity: 0.25;
+}
+
+/* Indeterminate — a quarter arc spins around the track */
+.mds-progress--circular.mds-progress--indeterminate .mds-progress__ring {
+  animation: mds-progress-spin 0.8s linear infinite;
+}
+
+.mds-progress--circular.mds-progress--indeterminate .mds-progress__ring-fill {
+  stroke-dasharray: 25 100;
+}
+
+@keyframes mds-progress-spin {
+  from { transform: rotate(-90deg); }
+  to   { transform: rotate(270deg); }
+}
+
+/* --- Reduced motion ---
+   Determinate progress stops easing between values. Indeterminate
+   progress cannot stop moving altogether — motion is the only signal
+   that work is still happening — so the spinner slows right down and
+   the travelling bar becomes a gentle pulse across the full track. */
+
+@media (prefers-reduced-motion: reduce) {
+  .mds-progress__fill,
+  .mds-progress__ring-fill {
+    transition: none;
+  }
+
+  .mds-progress--circular.mds-progress--indeterminate .mds-progress__ring {
+    animation-duration: 2.4s;
+  }
+
+  .mds-progress--linear.mds-progress--indeterminate .mds-progress__fill {
+    width:     100%;
+    animation: mds-progress-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes mds-progress-pulse {
+    0%, 100% { opacity: 0.3; }
+    50%      { opacity: 1;   }
+  }
+}

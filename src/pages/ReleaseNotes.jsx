@@ -2,6 +2,18 @@ import './ReleaseNotes.css';
 
 const releases = [
   {
+    version: 'v1.3.0',
+    date: '22 Sep 2026',
+    label: 'Minor',
+    notes: [
+      'New Progress component — shows that work is underway, in linear and circular variants and small, default and large sizes.',
+      'Pass a value from 0 to 100 for determinate progress, or omit it for an indeterminate indicator; an optional visible label and percentage sit alongside.',
+      'Every indicator is a labelled progressbar that reports aria-valuenow only when the value is known, and slows or pulses in place under reduced motion.',
+      'Progress documentation page added under Components, with brand, variant, value and size controls and a live demo.',
+      'Button gains a loading prop — a spinner replaces the leading icon, clicks are ignored, and the button stays focusable and in its role colours while the action runs.',
+    ],
+  },
+  {
     version: 'v1.2.0',
     date: '12 Sep 2026',
     label: 'Minor',

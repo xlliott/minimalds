@@ -20,6 +20,7 @@ const navItems = [
   { label: 'Dropdown', href: '#/dropdown' },
   { label: 'Input', href: '#/input' },
   { label: 'Link', href: '#/link' },
+  { label: 'Progress', href: '#/progress' },
   { label: 'Radio Button', href: '#/radio' },
   { label: 'Select', href: '#/select' },
   { label: 'Switch', href: '#/switch' },
