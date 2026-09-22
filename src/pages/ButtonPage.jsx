@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from '../components/Button/Button';
+import Link from '../components/Link/Link';
 import Dropdown from '../components/Dropdown/Dropdown';
 import {
   ComponentPageHeader,
@@ -28,6 +29,7 @@ const modifierOptions = [
   { value: 'label-only',     label: 'Label only'     },
   { value: 'leading-icon',   label: 'Leading icon'   },
   { value: 'trailing-icon',  label: 'Trailing icon'  },
+  { value: 'loading',        label: 'Loading'        },
 ];
 
 // Simple plus / arrow icons for the button modifiers
@@ -114,6 +116,7 @@ export default function ButtonPage() {
             role={role}
             leadingIcon={leadingIcon}
             trailingIcon={trailingIcon}
+            loading={modifier === 'loading'}
           >
             {brand.charAt(0).toUpperCase() + brand.slice(1)}
           </Button>
@@ -155,6 +158,24 @@ export default function ButtonPage() {
             </div>
           ))}
         </div>
+      </ComponentPageSection>
+
+      <ComponentPageSection title="Loading state">
+        <ComponentPageBody>
+          Set <code>loading</code> while the action a button started is still running, such as a
+          save or a submission that waits on the network. A small spinner takes the place of the
+          leading icon, or sits before the label when there is none, and the label stays so the
+          user can still read what they asked for. Clicks are ignored until <code>loading</code> is
+          cleared, which prevents the same request being sent twice.
+        </ComponentPageBody>
+        <ComponentPageBody>
+          A loading button is marked <code>aria-busy</code> and <code>aria-disabled</code> rather
+          than <code>disabled</code>, so it stays focusable and a keyboard user's focus does not
+          drop back to the top of the page. It keeps its role colours, because the action was
+          accepted — it is running, not unavailable. When the action finishes, report the outcome
+          with a <Link href="#/toast" style="regular">Toast</Link> or an inline message; a spinner
+          that simply disappears tells a screen reader user nothing.
+        </ComponentPageBody>
       </ComponentPageSection>
 
     </div>

@@ -10,6 +10,7 @@ const releases = [
       'Pass a value from 0 to 100 for determinate progress, or omit it for an indeterminate indicator; an optional visible label and percentage sit alongside.',
       'Every indicator is a labelled progressbar that reports aria-valuenow only when the value is known, and slows or pulses in place under reduced motion.',
       'Progress documentation page added under Components, with brand, variant, value and size controls and a live demo.',
+      'Button gains a loading prop — a spinner replaces the leading icon, clicks are ignored, and the button stays focusable and in its role colours while the action runs.',
     ],
   },
   {

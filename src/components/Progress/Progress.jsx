@@ -8,6 +8,7 @@ import './Progress.css';
  *   variant    — 'linear' | 'circular'
  *   value      — number 0–100 (omit for indeterminate)
  *   size       — 'small' | 'default' | 'large'
+ *   color      — 'brand' | 'current' (current inherits the surrounding text colour)
  *   label      — string (accessible name; always required)
  *   showLabel  — boolean (renders the label visibly beside the indicator)
  *   showValue  — boolean (renders the percentage; determinate only)
@@ -17,6 +18,7 @@ export default function Progress({
   variant = 'linear',
   value,
   size = 'default',
+  color = 'brand',
   label,
   showLabel = false,
   showValue = false,
@@ -56,12 +58,15 @@ export default function Progress({
     </span>
   );
 
+  // A span, not a div, so the indicator is valid inside phrasing content
+  // such as a button label.
   return (
-    <div
+    <span
       className={[
         'mds-progress',
         `mds-progress--${variant}`,
         `mds-progress--${size}`,
+        color === 'current' ? 'mds-progress--current' : '',
         isDeterminate ? '' : 'mds-progress--indeterminate',
       ].join(' ').trim()}
       role="progressbar"
@@ -86,6 +91,6 @@ export default function Progress({
       )}
 
       {variant === 'linear' && indicator}
-    </div>
+    </span>
   );
 }

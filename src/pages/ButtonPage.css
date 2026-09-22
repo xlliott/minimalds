@@ -69,3 +69,14 @@
   line-height:  1.5;
   -webkit-font-smoothing: antialiased;
 }
+
+/* --- Inline code in body copy --- */
+
+.mds-button-page code {
+  padding:          2px var(--space-component-xs);
+  background-color: var(--color-surface-subtle);
+  border-radius:    var(--radius-md);
+  font-family:      var(--font-family-display);
+  font-size:        var(--font-size-helper);
+  color:            var(--color-text-default);
+}
